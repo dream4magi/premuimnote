@@ -57,4 +57,15 @@
         Application.Exit()
     End Sub
 #End Region
+
+    Private Sub StartWithSystemToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StartWithSystemToolStripMenuItem.Click
+        My.Settings.START_WITH_SYSTEM = StartWithSystemToolStripMenuItem.Checked
+        My.Settings.Save()
+        registyStartWithSystem()
+    End Sub
+
+
+    Private Sub registyStartWithSystem()
+
+    End Sub
 End Class

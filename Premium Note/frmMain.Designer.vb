@@ -30,21 +30,22 @@ Partial Class frmMain
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
         Me.ExitPremiumNoteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.Button1 = New System.Windows.Forms.Button
+        Me.StartWithSystemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.TaskIconMenu.SuspendLayout()
         Me.SuspendLayout()
         '
         'NotifyIcon1
         '
         Me.NotifyIcon1.ContextMenuStrip = Me.TaskIconMenu
-        Me.NotifyIcon1.Icon = My.Resources.Blender
+        Me.NotifyIcon1.Icon = Global.Premium_Note.My.Resources.Resources.Blender
         Me.NotifyIcon1.Text = "Premium Not"
         Me.NotifyIcon1.Visible = True
         '
         'TaskIconMenu
         '
-        Me.TaskIconMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.HideToolStripMenuItem, Me.ToolStripMenuItem1, Me.ExitPremiumNoteToolStripMenuItem})
+        Me.TaskIconMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.HideToolStripMenuItem, Me.StartWithSystemToolStripMenuItem, Me.ToolStripMenuItem1, Me.ExitPremiumNoteToolStripMenuItem})
         Me.TaskIconMenu.Name = "TaskIconMenu"
-        Me.TaskIconMenu.Size = New System.Drawing.Size(182, 76)
+        Me.TaskIconMenu.Size = New System.Drawing.Size(182, 120)
         '
         'ShowToolStripMenuItem
         '
@@ -81,6 +82,13 @@ Partial Class frmMain
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'StartWithSystemToolStripMenuItem
+        '
+        Me.StartWithSystemToolStripMenuItem.CheckOnClick = True
+        Me.StartWithSystemToolStripMenuItem.Name = "StartWithSystemToolStripMenuItem"
+        Me.StartWithSystemToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.StartWithSystemToolStripMenuItem.Text = "Start With System"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -104,6 +112,7 @@ Partial Class frmMain
     Friend WithEvents ExitPremiumNoteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents HideToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents StartWithSystemToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class
