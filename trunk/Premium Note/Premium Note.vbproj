@@ -114,7 +114,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\Blender.ico" />
+    <Folder Include="resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
