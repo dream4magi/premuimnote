@@ -36,7 +36,7 @@ Partial Class frmMain
         'NotifyIcon1
         '
         Me.NotifyIcon1.ContextMenuStrip = Me.TaskIconMenu
-        Me.NotifyIcon1.Icon = Global.Premium_Note.My.Resources.Resources.Blender
+        Me.NotifyIcon1.Icon = My.Resources.Blender
         Me.NotifyIcon1.Text = "Premium Not"
         Me.NotifyIcon1.Visible = True
         '
