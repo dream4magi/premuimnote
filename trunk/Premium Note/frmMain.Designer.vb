@@ -27,11 +27,14 @@ Partial Class frmMain
         Me.TaskIconMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ShowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.HideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.StartWithSystemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
         Me.ExitPremiumNoteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.Button1 = New System.Windows.Forms.Button
-        Me.StartWithSystemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel
         Me.TaskIconMenu.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'NotifyIcon1
@@ -45,7 +48,7 @@ Partial Class frmMain
         '
         Me.TaskIconMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.HideToolStripMenuItem, Me.StartWithSystemToolStripMenuItem, Me.ToolStripMenuItem1, Me.ExitPremiumNoteToolStripMenuItem})
         Me.TaskIconMenu.Name = "TaskIconMenu"
-        Me.TaskIconMenu.Size = New System.Drawing.Size(182, 120)
+        Me.TaskIconMenu.Size = New System.Drawing.Size(182, 98)
         '
         'ShowToolStripMenuItem
         '
@@ -58,6 +61,13 @@ Partial Class frmMain
         Me.HideToolStripMenuItem.Name = "HideToolStripMenuItem"
         Me.HideToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
         Me.HideToolStripMenuItem.Text = "Hide"
+        '
+        'StartWithSystemToolStripMenuItem
+        '
+        Me.StartWithSystemToolStripMenuItem.CheckOnClick = True
+        Me.StartWithSystemToolStripMenuItem.Name = "StartWithSystemToolStripMenuItem"
+        Me.StartWithSystemToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.StartWithSystemToolStripMenuItem.Text = "Start With System"
         '
         'ToolStripMenuItem1
         '
@@ -72,29 +82,41 @@ Partial Class frmMain
         '
         'Button1
         '
+        Me.Button1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Image = Global.Premium_Note.My.Resources.Resources.add
-        Me.Button1.Location = New System.Drawing.Point(142, 83)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.Location = New System.Drawing.Point(0, 193)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(110, 29)
+        Me.Button1.Size = New System.Drawing.Size(294, 45)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "New &Note"
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'StartWithSystemToolStripMenuItem
+        'StatusStrip1
         '
-        Me.StartWithSystemToolStripMenuItem.CheckOnClick = True
-        Me.StartWithSystemToolStripMenuItem.Name = "StartWithSystemToolStripMenuItem"
-        Me.StartWithSystemToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
-        Me.StartWithSystemToolStripMenuItem.Text = "Start With System"
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 238)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(294, 22)
+        Me.StatusStrip1.SizingGrip = False
+        Me.StatusStrip1.TabIndex = 2
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'ToolStripStatusLabel1
+        '
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(54, 17)
+        Me.ToolStripStatusLabel1.Text = "note_no"
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 262)
+        Me.ClientSize = New System.Drawing.Size(294, 260)
         Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False
         Me.Name = "frmMain"
@@ -102,7 +124,10 @@ Partial Class frmMain
         Me.ShowIcon = False
         Me.Text = "Premium Note 1.0 by Spike"
         Me.TaskIconMenu.ResumeLayout(False)
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents NotifyIcon1 As System.Windows.Forms.NotifyIcon
@@ -113,6 +138,8 @@ Partial Class frmMain
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents HideToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StartWithSystemToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
+    Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
 
 
 End Class

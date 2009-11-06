@@ -65,6 +65,18 @@ Namespace My
                 Me("START_WITH_SYSTEM") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Microsoft JhengHei, 12pt")>  _
+        Public Property NOTE_FONT() As Global.System.Drawing.Font
+            Get
+                Return CType(Me("NOTE_FONT"), Global.System.Drawing.Font)
+            End Get
+            Set
+                Me("NOTE_FONT") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
