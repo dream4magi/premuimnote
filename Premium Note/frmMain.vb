@@ -2,11 +2,9 @@
     Dim exit_flag As Boolean = False
 
     Private Sub NotifyIcon1_MouseDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
-        If Me.WindowState = FormWindowState.Normal Then
-            Me.WindowState = FormWindowState.Minimized
+        If Me.Visible Then
             Me.Hide()
         Else
-            Me.WindowState = FormWindowState.Normal
             Me.Show()
         End If
 
@@ -18,7 +16,7 @@
 
 #Region "form event"
     Private Sub frmMain_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        Me.WindowState = FormWindowState.Minimized
+        '  Me.WindowState = FormWindowState.Minimized
         If Not exit_flag Then
             Me.Hide()
             e.Cancel = True
@@ -39,7 +37,8 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Me.Hide()
+        Dim frmAdd As Form = New frmAddNote
+        frmAdd.Show()
     End Sub
 
 

@@ -67,10 +67,31 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property Alerm() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Alerm", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property Blender() As System.Drawing.Icon
             Get
                 Dim obj As Object = ResourceManager.GetObject("Blender", resourceCulture)
                 Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property NG() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("NG", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property OK() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("OK", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
     End Module
