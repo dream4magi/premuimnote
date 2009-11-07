@@ -26,6 +26,8 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>Premium Note.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <CodeAnalysisRules>-Microsoft.Naming#CA1709;-Microsoft.Naming#CA1707</CodeAnalysisRules>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,6 +37,8 @@
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>Premium Note.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <CodeAnalysisRules>-Microsoft.Naming#CA1709;-Microsoft.Naming#CA1707</CodeAnalysisRules>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -66,6 +70,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAddNote.Designer.vb">
       <DependentUpon>frmAddNote.vb</DependentUpon>
     </Compile>
@@ -83,6 +93,18 @@
       <DependentUpon>frmNoteTemplate.vb</DependentUpon>
     </Compile>
     <Compile Include="frmNoteTemplate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecord.Designer.vb">
+      <DependentUpon>frmRecord.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecord.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetting.Designer.vb">
+      <DependentUpon>frmSetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetting.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mdlTools.vb" />
@@ -104,6 +126,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddNote.resx">
       <DependentUpon>frmAddNote.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -114,6 +140,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNoteTemplate.resx">
       <DependentUpon>frmNoteTemplate.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecord.resx">
+      <DependentUpon>frmRecord.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetting.resx">
+      <DependentUpon>frmSetting.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -136,13 +170,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\Alerm.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\NG.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\OK.png" />
+    <Folder Include="resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

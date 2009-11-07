@@ -60,6 +60,41 @@ Namespace My.Resources
             End Set
         End Property
         
+        Friend ReadOnly Property _00yelllow() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_00yelllow", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _01green() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_01green", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _02red() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_02red", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _03blue() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_03blue", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _04purple() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_04purple", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property add() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("add", resourceCulture)
@@ -78,6 +113,13 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("Blender", resourceCulture)
                 Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property etc() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("etc", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
