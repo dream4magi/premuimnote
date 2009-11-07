@@ -89,6 +89,18 @@ Namespace My
                 Me("Animation") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property NOTE_OPACITY() As Double
+            Get
+                Return CType(Me("NOTE_OPACITY"),Double)
+            End Get
+            Set
+                Me("NOTE_OPACITY") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

@@ -26,7 +26,7 @@ Namespace My.Resources
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
-    Friend Module Resources
+    Public Module Resources
         
         Private resourceMan As Global.System.Resources.ResourceManager
         
@@ -36,7 +36,7 @@ Namespace My.Resources
         '''  Returns the cached ResourceManager instance used by this class.
         '''</summary>
         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Friend ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
+        Public ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
             Get
                 If Object.ReferenceEquals(resourceMan, Nothing) Then
                     Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("Premium_Note.Resources", GetType(Resources).Assembly)
@@ -51,7 +51,7 @@ Namespace My.Resources
         '''  resource lookups using this strongly typed resource class.
         '''</summary>
         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Friend Property Culture() As Global.System.Globalization.CultureInfo
+        Public Property Culture() As Global.System.Globalization.CultureInfo
             Get
                 Return resourceCulture
             End Get
@@ -60,147 +60,224 @@ Namespace My.Resources
             End Set
         End Property
         
-        Friend ReadOnly Property _00yelllow() As System.Drawing.Bitmap
+        Public ReadOnly Property _00yelllow() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("_00yelllow", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _01green() As System.Drawing.Bitmap
+        Public ReadOnly Property _01green() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("_01green", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _02red() As System.Drawing.Bitmap
+        Public ReadOnly Property _02red() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("_02red", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _03blue() As System.Drawing.Bitmap
+        Public ReadOnly Property _03blue() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("_03blue", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _04purple() As System.Drawing.Bitmap
+        Public ReadOnly Property _04purple() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("_04purple", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property add() As System.Drawing.Bitmap
+        Public ReadOnly Property add() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("add", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property Alerm() As System.Drawing.Bitmap
+        Public ReadOnly Property Alerm() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Alerm", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property Blender() As System.Drawing.Icon
+        Public ReadOnly Property Blender() As System.Drawing.Icon
             Get
                 Dim obj As Object = ResourceManager.GetObject("Blender", resourceCulture)
                 Return CType(obj,System.Drawing.Icon)
             End Get
         End Property
         
-        Friend ReadOnly Property etc() As System.Drawing.Bitmap
+        Public ReadOnly Property delete() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("delete", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Public ReadOnly Property delete_hover() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("delete_hover", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Public ReadOnly Property done() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("done", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Public ReadOnly Property done_hover() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("done_hover", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Public ReadOnly Property edit() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("edit", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Public ReadOnly Property edit_hover() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("edit_hover", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Public ReadOnly Property etc() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("etc", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property NG() As System.Drawing.Bitmap
+        Public ReadOnly Property form_bg() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("form_bg", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Public ReadOnly Property max() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("max", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Public ReadOnly Property max_hover() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("max_hover", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Public ReadOnly Property min() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("min", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Public ReadOnly Property min_hover() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("min_hover", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Public ReadOnly Property NG() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("NG", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property noteColor0() As System.Drawing.Bitmap
+        Public ReadOnly Property noteColor0() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("noteColor0", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property noteColor1() As System.Drawing.Bitmap
+        Public ReadOnly Property noteColor1() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("noteColor1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property noteColor2() As System.Drawing.Bitmap
+        Public ReadOnly Property noteColor2() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("noteColor2", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property noteColor3() As System.Drawing.Bitmap
+        Public ReadOnly Property noteColor3() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("noteColor3", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property noteColor4() As System.Drawing.Bitmap
+        Public ReadOnly Property noteColor4() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("noteColor4", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property OK() As System.Drawing.Bitmap
+        Public ReadOnly Property OK() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("OK", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property tabColor0() As System.Drawing.Bitmap
+        Public ReadOnly Property tabColor0() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("tabColor0", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property tabColor1() As System.Drawing.Bitmap
+        Public ReadOnly Property tabColor1() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("tabColor1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property tabColor2() As System.Drawing.Bitmap
+        Public ReadOnly Property tabColor2() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("tabColor2", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property tabColor3() As System.Drawing.Bitmap
+        Public ReadOnly Property tabColor3() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("tabColor3", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property tabColor4() As System.Drawing.Bitmap
+        Public ReadOnly Property tabColor4() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("tabColor4", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
