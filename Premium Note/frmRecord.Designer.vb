@@ -66,6 +66,8 @@ Partial Class frmRecord
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.Premium_Note.My.Resources.Resources.form_bg
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(510, 444)
         Me.Controls.Add(Me.ListView1)
         Me.Name = "frmRecord"

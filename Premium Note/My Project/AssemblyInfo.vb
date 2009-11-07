@@ -10,9 +10,9 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("Premium Note")> 
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("Microsoft")> 
-<Assembly: AssemblyProduct("Premium Note")> 
-<Assembly: AssemblyCopyright("Copyright © Microsoft 2009")> 
+<Assembly: AssemblyCompany("None")> 
+<Assembly: AssemblyProduct("Premium Note 1.0 Alpha")> 
+<Assembly: AssemblyCopyright("Copyright © Spike Lee 2010")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(True)> 

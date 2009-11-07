@@ -62,14 +62,18 @@ Partial Class frmAddNote
         '
         'txtTitle
         '
-        Me.txtTitle.Location = New System.Drawing.Point(75, 15)
+        Me.txtTitle.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.txtTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtTitle.Location = New System.Drawing.Point(75, 5)
         Me.txtTitle.Name = "txtTitle"
         Me.txtTitle.Size = New System.Drawing.Size(243, 26)
         Me.txtTitle.TabIndex = 0
         '
         'txtContent
         '
-        Me.txtContent.Location = New System.Drawing.Point(75, 108)
+        Me.txtContent.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.txtContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtContent.Location = New System.Drawing.Point(75, 98)
         Me.txtContent.Multiline = True
         Me.txtContent.Name = "txtContent"
         Me.txtContent.Size = New System.Drawing.Size(243, 143)
@@ -81,7 +85,7 @@ Partial Class frmAddNote
         Me.lblTitle.BackColor = System.Drawing.Color.Transparent
         Me.lblTitle.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitle.ForeColor = System.Drawing.Color.Gray
-        Me.lblTitle.Location = New System.Drawing.Point(34, 20)
+        Me.lblTitle.Location = New System.Drawing.Point(34, 10)
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Size = New System.Drawing.Size(31, 15)
         Me.lblTitle.TabIndex = 2
@@ -93,7 +97,7 @@ Partial Class frmAddNote
         Me.lblContent.BackColor = System.Drawing.Color.Transparent
         Me.lblContent.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblContent.ForeColor = System.Drawing.Color.Gray
-        Me.lblContent.Location = New System.Drawing.Point(15, 111)
+        Me.lblContent.Location = New System.Drawing.Point(15, 101)
         Me.lblContent.Name = "lblContent"
         Me.lblContent.Size = New System.Drawing.Size(50, 15)
         Me.lblContent.TabIndex = 2
@@ -102,19 +106,25 @@ Partial Class frmAddNote
         'chkAlerm
         '
         Me.chkAlerm.AutoSize = True
-        Me.chkAlerm.Location = New System.Drawing.Point(75, 260)
+        Me.chkAlerm.BackColor = System.Drawing.Color.Transparent
+        Me.chkAlerm.Location = New System.Drawing.Point(75, 250)
         Me.chkAlerm.Name = "chkAlerm"
         Me.chkAlerm.Size = New System.Drawing.Size(65, 23)
         Me.chkAlerm.TabIndex = 3
         Me.chkAlerm.Text = "Alerm"
-        Me.chkAlerm.UseVisualStyleBackColor = True
+        Me.chkAlerm.UseVisualStyleBackColor = False
         '
         'DateTimePicker1
         '
         Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.CalendarForeColor = System.Drawing.Color.Black
+        Me.DateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.DateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.DateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.Black
+        Me.DateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.Black
         Me.DateTimePicker1.CustomFormat = "yyyy/MM/dd HH:mm"
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(144, 259)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(144, 249)
         Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(0)
         Me.DateTimePicker1.MaxDate = New Date(2020, 12, 31, 0, 0, 0, 0)
         Me.DateTimePicker1.MinDate = New Date(2009, 1, 1, 0, 0, 0, 0)
@@ -124,8 +134,9 @@ Partial Class frmAddNote
         '
         'picAlerm
         '
+        Me.picAlerm.BackColor = System.Drawing.Color.Transparent
         Me.picAlerm.Image = Global.Premium_Note.My.Resources.Resources.Alerm
-        Me.picAlerm.Location = New System.Drawing.Point(5, 309)
+        Me.picAlerm.Location = New System.Drawing.Point(5, 299)
         Me.picAlerm.Name = "picAlerm"
         Me.picAlerm.Size = New System.Drawing.Size(30, 32)
         Me.picAlerm.TabIndex = 7
@@ -135,7 +146,7 @@ Partial Class frmAddNote
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Image = Global.Premium_Note.My.Resources.Resources.OK
-        Me.Button1.Location = New System.Drawing.Point(190, 291)
+        Me.Button1.Location = New System.Drawing.Point(190, 281)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(64, 60)
         Me.Button1.TabIndex = 8
@@ -146,7 +157,7 @@ Partial Class frmAddNote
         '
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Image = Global.Premium_Note.My.Resources.Resources.NG
-        Me.Button2.Location = New System.Drawing.Point(255, 291)
+        Me.Button2.Location = New System.Drawing.Point(255, 281)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(64, 60)
         Me.Button2.TabIndex = 8
@@ -160,7 +171,7 @@ Partial Class frmAddNote
         Me.cboPiority.FormattingEnabled = True
         Me.cboPiority.ItemHeight = 19
         Me.cboPiority.Items.AddRange(New Object() {"Highest", "High", "Normal", "Low", "Lowest"})
-        Me.cboPiority.Location = New System.Drawing.Point(75, 46)
+        Me.cboPiority.Location = New System.Drawing.Point(75, 36)
         Me.cboPiority.Name = "cboPiority"
         Me.cboPiority.Size = New System.Drawing.Size(89, 27)
         Me.cboPiority.TabIndex = 9
@@ -171,7 +182,7 @@ Partial Class frmAddNote
         Me.lblPiority.BackColor = System.Drawing.Color.Transparent
         Me.lblPiority.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPiority.ForeColor = System.Drawing.Color.Gray
-        Me.lblPiority.Location = New System.Drawing.Point(23, 51)
+        Me.lblPiority.Location = New System.Drawing.Point(23, 41)
         Me.lblPiority.Name = "lblPiority"
         Me.lblPiority.Size = New System.Drawing.Size(42, 15)
         Me.lblPiority.TabIndex = 10
@@ -305,7 +316,7 @@ Partial Class frmAddNote
         Me.panColorMain.Controls.Add(Me.panColor3)
         Me.panColorMain.Controls.Add(Me.panColor1)
         Me.panColorMain.Controls.Add(Me.panColor2)
-        Me.panColorMain.Location = New System.Drawing.Point(75, 80)
+        Me.panColorMain.Location = New System.Drawing.Point(75, 70)
         Me.panColorMain.Name = "panColorMain"
         Me.panColorMain.Size = New System.Drawing.Size(128, 20)
         Me.panColorMain.TabIndex = 15
@@ -316,7 +327,7 @@ Partial Class frmAddNote
         Me.lblColor.BackColor = System.Drawing.Color.Transparent
         Me.lblColor.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblColor.ForeColor = System.Drawing.Color.Gray
-        Me.lblColor.Location = New System.Drawing.Point(29, 82)
+        Me.lblColor.Location = New System.Drawing.Point(29, 72)
         Me.lblColor.Name = "lblColor"
         Me.lblColor.Size = New System.Drawing.Size(36, 15)
         Me.lblColor.TabIndex = 16
@@ -325,7 +336,9 @@ Partial Class frmAddNote
         'frmAddNote
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(322, 353)
+        Me.BackgroundImage = Global.Premium_Note.My.Resources.Resources.form_bg
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(322, 344)
         Me.Controls.Add(Me.lblColor)
         Me.Controls.Add(Me.panColorMain)
         Me.Controls.Add(Me.lblPiority)
