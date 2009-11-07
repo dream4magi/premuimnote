@@ -28,9 +28,13 @@ Partial Class frmNoteTemplate
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.BackColor = System.Drawing.Color.Fuchsia
+        Me.BackgroundImage = Global.Premium_Note.My.Resources.Resources.Alerm
         Me.ClientSize = New System.Drawing.Size(244, 237)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmNoteTemplate"
         Me.Text = "frmNoteTemplate"
+        Me.TransparencyKey = System.Drawing.Color.Fuchsia
         Me.ResumeLayout(False)
 
     End Sub
