@@ -18,5 +18,5 @@
 End Class
 
 Module mdlVariable
-
+    Public blnNoteDetailmode As String
 End Module
