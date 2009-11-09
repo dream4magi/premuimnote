@@ -89,8 +89,7 @@ Partial Class frmNoteDetailTemplate
         Me.btnDone.Name = "btnDone"
         Me.btnDone.PressedImage = Global.Premium_Note.My.Resources.Resources.done
         Me.btnDone.RegularImage = Global.Premium_Note.My.Resources.Resources.done
-        Me.btnDone.size = New System.Drawing.Size(11, 11)
-        Me.btnDone.size = New System.Drawing.Size(11, 11)
+        Me.btnDone.Size = New System.Drawing.Size(11, 11)
         Me.btnDone.TabIndex = 1
         '
         'btnDelete
@@ -105,8 +104,7 @@ Partial Class frmNoteDetailTemplate
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.PressedImage = Global.Premium_Note.My.Resources.Resources.delete
         Me.btnDelete.RegularImage = Global.Premium_Note.My.Resources.Resources.delete
-        Me.btnDelete.size = New System.Drawing.Size(11, 11)
-        Me.btnDelete.size = New System.Drawing.Size(11, 11)
+        Me.btnDelete.Size = New System.Drawing.Size(11, 11)
         Me.btnDelete.TabIndex = 1
         '
         'btnEdit
@@ -121,8 +119,7 @@ Partial Class frmNoteDetailTemplate
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.PressedImage = Global.Premium_Note.My.Resources.Resources.edit
         Me.btnEdit.RegularImage = Global.Premium_Note.My.Resources.Resources.edit
-        Me.btnEdit.size = New System.Drawing.Size(11, 11)
-        Me.btnEdit.size = New System.Drawing.Size(11, 11)
+        Me.btnEdit.Size = New System.Drawing.Size(11, 11)
         Me.btnEdit.TabIndex = 1
         '
         'btnMin
@@ -137,8 +134,7 @@ Partial Class frmNoteDetailTemplate
         Me.btnMin.Name = "btnMin"
         Me.btnMin.PressedImage = Global.Premium_Note.My.Resources.Resources.min
         Me.btnMin.RegularImage = Global.Premium_Note.My.Resources.Resources.min
-        Me.btnMin.size = New System.Drawing.Size(11, 11)
-        Me.btnMin.size = New System.Drawing.Size(11, 11)
+        Me.btnMin.Size = New System.Drawing.Size(11, 11)
         Me.btnMin.TabIndex = 1
         '
         'frmNoteDetailTemplate
