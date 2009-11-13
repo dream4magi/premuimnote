@@ -1,4 +1,6 @@
-﻿Public Class frmSetting
+﻿Option Strict On
+Option Explicit On
+Public Class frmSetting
 
     Private Sub frmSetting_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         chkStartWSys.Checked = My.Settings.START_WITH_SYSTEM

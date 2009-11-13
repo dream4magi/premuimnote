@@ -29,8 +29,8 @@ Partial Class frmAddNote
         Me.chkAlerm = New System.Windows.Forms.CheckBox
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker
         Me.picAlerm = New System.Windows.Forms.PictureBox
-        Me.Button1 = New System.Windows.Forms.Button
-        Me.Button2 = New System.Windows.Forms.Button
+        Me.btnAdd = New System.Windows.Forms.Button
+        Me.btnClose = New System.Windows.Forms.Button
         Me.cboPiority = New System.Windows.Forms.ComboBox
         Me.lblPiority = New System.Windows.Forms.Label
         Me.color = New System.Windows.Forms.ColumnHeader
@@ -142,27 +142,27 @@ Partial Class frmAddNote
         Me.picAlerm.TabIndex = 7
         Me.picAlerm.TabStop = False
         '
-        'Button1
+        'btnAdd
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Image = Global.Premium_Note.My.Resources.Resources.OK
-        Me.Button1.Location = New System.Drawing.Point(190, 281)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(64, 60)
-        Me.Button1.TabIndex = 8
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Image = Global.Premium_Note.My.Resources.Resources.OK
+        Me.btnAdd.Location = New System.Drawing.Point(190, 281)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(64, 60)
+        Me.btnAdd.TabIndex = 8
+        Me.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAdd.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnClose
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Image = Global.Premium_Note.My.Resources.Resources.NG
-        Me.Button2.Location = New System.Drawing.Point(255, 281)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(64, 60)
-        Me.Button2.TabIndex = 8
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.Image = Global.Premium_Note.My.Resources.Resources.NG
+        Me.btnClose.Location = New System.Drawing.Point(255, 281)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(64, 60)
+        Me.btnClose.TabIndex = 8
+        Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnClose.UseVisualStyleBackColor = True
         '
         'cboPiority
         '
@@ -343,8 +343,8 @@ Partial Class frmAddNote
         Me.Controls.Add(Me.panColorMain)
         Me.Controls.Add(Me.lblPiority)
         Me.Controls.Add(Me.cboPiority)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnClose)
+        Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.picAlerm)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.chkAlerm)
@@ -380,8 +380,8 @@ Partial Class frmAddNote
     Friend WithEvents chkAlerm As System.Windows.Forms.CheckBox
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents picAlerm As System.Windows.Forms.PictureBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents btnAdd As System.Windows.Forms.Button
+    Friend WithEvents btnClose As System.Windows.Forms.Button
     Friend WithEvents cboPiority As System.Windows.Forms.ComboBox
     Friend WithEvents lblPiority As System.Windows.Forms.Label
     Friend WithEvents color As System.Windows.Forms.ColumnHeader

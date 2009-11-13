@@ -1,7 +1,9 @@
-﻿Public Class frmNoteDetailTemplate
+﻿Option Strict On
+Option Explicit On
+Public Class frmNoteDetailTemplate
 
 
-    Dim noteData As clsNoteData
+    Dim noteData As clsAllNotes.clsNoteData
     Private WithEvents tmr As New Timer
     'Public note_title As String
     'Public note_content As String
@@ -26,11 +28,11 @@
 
 
 
-    Property readNoteData() As clsNoteData
+    Property readNoteData() As clsAllNotes.clsNoteData
         Get
             Return noteData
         End Get
-        Set(ByVal value As clsNoteData)
+        Set(ByVal value As clsAllNotes.clsNoteData)
             noteData = value
         End Set
     End Property
@@ -94,6 +96,6 @@
         End If
     End Sub
 
- 
+
 
 End Class
