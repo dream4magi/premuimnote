@@ -1,3 +1,0 @@
-﻿Module mdlTools
-
-End Module
