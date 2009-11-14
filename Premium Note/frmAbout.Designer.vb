@@ -73,6 +73,7 @@ Partial Class frmAbout
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.Label1)
+        Me.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmAbout"
         Me.ShowInTaskbar = False
