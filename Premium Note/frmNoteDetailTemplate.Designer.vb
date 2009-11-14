@@ -28,11 +28,11 @@ Partial Class frmNoteDetailTemplate
         Me.lblContent = New System.Windows.Forms.Label
         Me.line = New System.Windows.Forms.Panel
         Me.lblTitle = New System.Windows.Forms.Label
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.btnDone = New Premium_Note.uscImageButton
         Me.btnDelete = New Premium_Note.uscImageButton
         Me.btnEdit = New Premium_Note.uscImageButton
         Me.btnMin = New Premium_Note.uscImageButton
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.panNote.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -91,14 +91,6 @@ Partial Class frmNoteDetailTemplate
         Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "Label2"
         Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'ToolTip1
-        '
-        Me.ToolTip1.AutomaticDelay = 400
-        Me.ToolTip1.AutoPopDelay = 5000
-        Me.ToolTip1.InitialDelay = 400
-        Me.ToolTip1.ReshowDelay = 80
-        Me.ToolTip1.ShowAlways = True
         '
         'btnDone
         '
@@ -167,6 +159,14 @@ Partial Class frmNoteDetailTemplate
         Me.btnMin.TabIndex = 5
         Me.ToolTip1.SetToolTip(Me.btnMin, "Edge Tab")
         Me.btnMin.ToolTip = ""
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.AutomaticDelay = 400
+        Me.ToolTip1.AutoPopDelay = 5000
+        Me.ToolTip1.InitialDelay = 400
+        Me.ToolTip1.ReshowDelay = 80
+        Me.ToolTip1.ShowAlways = True
         '
         'frmNoteDetailTemplate
         '

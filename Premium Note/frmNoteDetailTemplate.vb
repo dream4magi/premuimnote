@@ -151,7 +151,7 @@ Public Class frmNoteDetailTemplate
 
 
     Private Sub btnMin_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles btnMin.MouseClick
-        T.changeNoteMode(noteData, False, True)
+        T.changeNoteMode(noteData, False)
     End Sub
 
     Private Sub chkTop_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkTop.CheckedChanged
@@ -250,6 +250,7 @@ Public Class frmNoteDetailTemplate
     End Sub
 
 #End Region
+
 
 
 End Class

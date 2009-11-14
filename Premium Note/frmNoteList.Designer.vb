@@ -22,6 +22,7 @@ Partial Class frmNoteList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Me.lvw = New System.Windows.Forms.ListView
         Me.ColumnHeader5 = New System.Windows.Forms.ColumnHeader
         Me.ColumnHeader1 = New System.Windows.Forms.ColumnHeader
@@ -31,6 +32,9 @@ Partial Class frmNoteList
         Me.ColumnHeader6 = New System.Windows.Forms.ColumnHeader
         Me.ColumnHeader7 = New System.Windows.Forms.ColumnHeader
         Me.btnDelete = New System.Windows.Forms.Button
+        Me.btnNoteDone = New System.Windows.Forms.Button
+        Me.btnEdit = New System.Windows.Forms.Button
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.SuspendLayout()
         '
         'lvw
@@ -40,10 +44,10 @@ Partial Class frmNoteList
         Me.lvw.FullRowSelect = True
         Me.lvw.GridLines = True
         Me.lvw.HideSelection = False
-        Me.lvw.Location = New System.Drawing.Point(0, 40)
+        Me.lvw.Location = New System.Drawing.Point(0, 119)
         Me.lvw.Name = "lvw"
         Me.lvw.ShowGroups = False
-        Me.lvw.Size = New System.Drawing.Size(510, 404)
+        Me.lvw.Size = New System.Drawing.Size(510, 325)
         Me.lvw.TabIndex = 1
         Me.lvw.UseCompatibleStateImageBehavior = False
         Me.lvw.View = System.Windows.Forms.View.Details
@@ -82,12 +86,30 @@ Partial Class frmNoteList
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(28, 13)
+        Me.btnDelete.Location = New System.Drawing.Point(0, 64)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 23)
         Me.btnDelete.TabIndex = 0
-        Me.btnDelete.Text = "Delete Note"
+        Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
+        '
+        'btnNoteDone
+        '
+        Me.btnNoteDone.Location = New System.Drawing.Point(0, 26)
+        Me.btnNoteDone.Name = "btnNoteDone"
+        Me.btnNoteDone.Size = New System.Drawing.Size(75, 23)
+        Me.btnNoteDone.TabIndex = 2
+        Me.btnNoteDone.Text = "Note Done"
+        Me.btnNoteDone.UseVisualStyleBackColor = True
+        '
+        'btnEdit
+        '
+        Me.btnEdit.Location = New System.Drawing.Point(229, 26)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(75, 23)
+        Me.btnEdit.TabIndex = 2
+        Me.btnEdit.Text = "Edit"
+        Me.btnEdit.UseVisualStyleBackColor = True
         '
         'frmNoteList
         '
@@ -96,10 +118,14 @@ Partial Class frmNoteList
         Me.BackgroundImage = Global.Premium_Note.My.Resources.Resources.form_bg
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(510, 444)
+        Me.Controls.Add(Me.btnEdit)
+        Me.Controls.Add(Me.btnNoteDone)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.lvw)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmNoteList"
-        Me.Text = "frmRecord"
+        Me.ShowInTaskbar = False
+        Me.Text = "Note List"
         Me.ResumeLayout(False)
 
     End Sub
@@ -112,4 +138,7 @@ Partial Class frmNoteList
     Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader7 As System.Windows.Forms.ColumnHeader
     Friend WithEvents btnDelete As System.Windows.Forms.Button
+    Friend WithEvents btnNoteDone As System.Windows.Forms.Button
+    Friend WithEvents btnEdit As System.Windows.Forms.Button
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
 End Class

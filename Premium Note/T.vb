@@ -190,21 +190,16 @@
         Next
         Return NextNoteNo + 1
     End Function
-    Sub changeNoteMode(ByVal noteClass As clsAllNotes.clsNoteData, ByVal DetailMode As Boolean, ByVal createNotePaper As Boolean)
+    Sub changeNoteMode(ByVal noteClass As clsAllNotes.clsNoteData, ByVal DetailMode As Boolean)
         T.removeNotePaper(noteClass)
         If DetailMode Then
             noteClass.blnNoteDetailmode = "Y"
+            T.createNewNoteDetailPaper(noteClass)
         Else
             noteClass.blnNoteDetailmode = "N"
+            T.createNewNotePaper(noteClass)
         End If
-        If createNotePaper Then
-            If DetailMode Then
-                T.createNewNoteDetailPaper(noteClass)
-            Else
-                T.createNewNotePaper(noteClass)
-            End If
 
-        End If
     End Sub
     Function getTotalNoteCount() As Double
         Return aryALL_NOTES.Count
@@ -212,6 +207,25 @@
     Function getNoteClass(ByVal note_no As String) As clsAllNotes.clsNoteData
         For Each obj As clsAllNotes.clsNoteData In aryALL_NOTES
             If obj.note_no = note_no Then
+                Return obj
+            End If
+        Next
+        Return Nothing
+    End Function
+    Sub showNote(ByVal note_no As String)
+        Try
+            If T.getNotePaper(T.getNoteClass(note_no)).GetType.Equals(GetType(frmNoteTemplate)) Then
+
+                T.changeNoteMode(T.getNoteClass(note_no), True)
+            End If
+            CType(T.getNotePaper(T.getNoteClass(note_no)), Form).BringToFront()
+        Catch ex As Exception
+            MsgBox(ex.Message, , "Error")
+        End Try
+    End Sub
+    Function getNotePaper(ByVal noteClass As clsAllNotes.clsNoteData) As INotePaper
+        For Each obj As INotePaper In aryALL_NOTES_paper
+            If obj.readNoteData.Equals(noteClass) Then
                 Return obj
             End If
         Next
@@ -230,12 +244,14 @@
     Public Function createNewNoteDetailPaper(ByVal noteClass As clsAllNotes.clsNoteData) As frmNoteDetailTemplate
         Dim newNoteFormDetail As New frmNoteDetailTemplate(noteClass)
         newNoteFormDetail.Show()
+        newNoteFormDetail.Owner = frmMain
         aryALL_NOTES_paper.Add(newNoteFormDetail)
         Return newNoteFormDetail
     End Function
     Public Function createNewNotePaper(ByVal noteClass As clsAllNotes.clsNoteData) As frmNoteTemplate
         Dim newNoteForm As New frmNoteTemplate(noteClass)
         newNoteForm.Show()
+        newNoteForm.Owner = frmMain
         aryALL_NOTES_paper.Add(newNoteForm)
         Return newNoteForm
     End Function

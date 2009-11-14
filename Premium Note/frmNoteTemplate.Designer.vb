@@ -24,9 +24,9 @@ Partial Class frmNoteTemplate
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Me.panNote = New System.Windows.Forms.Panel
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.btnNoteDone = New Premium_Note.uscImageButton
         Me.btnChangeMode = New Premium_Note.uscImageButton
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.panNote.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -38,15 +38,8 @@ Partial Class frmNoteTemplate
         Me.panNote.Location = New System.Drawing.Point(0, 0)
         Me.panNote.Margin = New System.Windows.Forms.Padding(0)
         Me.panNote.Name = "panNote"
-        Me.panNote.Size = New System.Drawing.Size(62, 23)
+        Me.panNote.Size = New System.Drawing.Size(23, 62)
         Me.panNote.TabIndex = 0
-        '
-        'ToolTip1
-        '
-        Me.ToolTip1.AutomaticDelay = 300
-        Me.ToolTip1.AutoPopDelay = 5000
-        Me.ToolTip1.InitialDelay = 300
-        Me.ToolTip1.ReshowDelay = 60
         '
         'btnNoteDone
         '
@@ -72,7 +65,7 @@ Partial Class frmNoteTemplate
         Me.btnChangeMode.BackColor = System.Drawing.Color.Transparent
         Me.btnChangeMode.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnChangeMode.HoverImage = Global.Premium_Note.My.Resources.Resources.max_hover
-        Me.btnChangeMode.Location = New System.Drawing.Point(0, 12)
+        Me.btnChangeMode.Location = New System.Drawing.Point(11, 0)
         Me.btnChangeMode.Margin = New System.Windows.Forms.Padding(0)
         Me.btnChangeMode.Name = "btnChangeMode"
         Me.btnChangeMode.PressedImage = Global.Premium_Note.My.Resources.Resources.max
@@ -82,13 +75,20 @@ Partial Class frmNoteTemplate
         Me.ToolTip1.SetToolTip(Me.btnChangeMode, "Detail Mode")
         Me.btnChangeMode.ToolTip = ""
         '
+        'ToolTip1
+        '
+        Me.ToolTip1.AutomaticDelay = 300
+        Me.ToolTip1.AutoPopDelay = 5000
+        Me.ToolTip1.InitialDelay = 300
+        Me.ToolTip1.ReshowDelay = 60
+        '
         'frmNoteTemplate
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.Fuchsia
-        Me.ClientSize = New System.Drawing.Size(62, 23)
+        Me.ClientSize = New System.Drawing.Size(23, 62)
         Me.Controls.Add(Me.panNote)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmNoteTemplate"
