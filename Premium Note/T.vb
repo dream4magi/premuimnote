@@ -162,12 +162,6 @@
     End Sub
 #End Region
 
-
-
-
-
-
-
 #Region "Note Handle"
     Sub loadAllNotePaper()
         For Each obj As clsAllNotes.clsNoteData In aryALL_NOTES
