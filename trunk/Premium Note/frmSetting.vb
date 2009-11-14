@@ -52,10 +52,11 @@ Public Class frmSetting
  
 
     Sub noteSettingRefresh()
-        For Each noteForm In My.Application.OpenForms
-            If noteForm.GetType.Equals(GetType(frmNoteDetailTemplate)) Then
-                CType(noteForm, frmNoteDetailTemplate).Opacity = My.Settings.NOTE_OPACITY
+        For Each obj As INotePaper In aryALL_NOTES_paper
+            If obj.GetType.Equals(GetType(frmNoteDetailTemplate)) Then
+                CType(obj, frmNoteDetailTemplate).Opacity = My.Settings.NOTE_OPACITY
             End If
+
         Next
     End Sub
 End Class

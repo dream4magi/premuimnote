@@ -36,6 +36,7 @@ Partial Class frmMain
         Me.btnSetting = New System.Windows.Forms.Button
         Me.btnRecord = New System.Windows.Forms.Button
         Me.btnNoteList = New System.Windows.Forms.Button
+        Me.AddNewNoteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.TaskIconMenu.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -49,9 +50,9 @@ Partial Class frmMain
         '
         'TaskIconMenu
         '
-        Me.TaskIconMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.HideToolStripMenuItem, Me.StartWithSystemToolStripMenuItem, Me.ToolStripMenuItem1, Me.ExitPremiumNoteToolStripMenuItem})
+        Me.TaskIconMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.AddNewNoteToolStripMenuItem, Me.StartWithSystemToolStripMenuItem, Me.ToolStripMenuItem1, Me.HideToolStripMenuItem, Me.ExitPremiumNoteToolStripMenuItem})
         Me.TaskIconMenu.Name = "TaskIconMenu"
-        Me.TaskIconMenu.Size = New System.Drawing.Size(182, 98)
+        Me.TaskIconMenu.Size = New System.Drawing.Size(182, 120)
         '
         'ShowToolStripMenuItem
         '
@@ -151,6 +152,12 @@ Partial Class frmMain
         Me.btnNoteList.Text = "Note List"
         Me.btnNoteList.UseVisualStyleBackColor = True
         '
+        'AddNewNoteToolStripMenuItem
+        '
+        Me.AddNewNoteToolStripMenuItem.Name = "AddNewNoteToolStripMenuItem"
+        Me.AddNewNoteToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.AddNewNoteToolStripMenuItem.Text = "Add New Note"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -168,6 +175,7 @@ Partial Class frmMain
         Me.Name = "frmMain"
         Me.Opacity = 0.9
         Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Premium Note 1.0 by Spike"
         Me.TaskIconMenu.ResumeLayout(False)
         Me.StatusStrip1.ResumeLayout(False)
@@ -189,6 +197,7 @@ Partial Class frmMain
     Friend WithEvents btnSetting As System.Windows.Forms.Button
     Friend WithEvents btnRecord As System.Windows.Forms.Button
     Friend WithEvents btnNoteList As System.Windows.Forms.Button
+    Friend WithEvents AddNewNoteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class

@@ -77,9 +77,12 @@ Public Class frmMain
         mdlVariable.initialNoteColor()
 
         Dim ALL_NOTES As clsAllNotes = readDataFile()
-        For i As Integer = 0 To ALL_NOTES.Notes.Length - 1
-            aryALL_NOTES.Add(ALL_NOTES.Notes(i))
-        Next
+        If ALL_NOTES.Notes IsNot Nothing Then
+            For i As Integer = 0 To ALL_NOTES.Notes.Length - 1
+                aryALL_NOTES.Add(ALL_NOTES.Notes(i))
+            Next
+        End If
+
         ALL_NOTES = Nothing
 
 
@@ -88,8 +91,9 @@ Public Class frmMain
         'aryALL_NOTES.Add(a)
         'a = New clsAllNotes.clsNoteData(T.getNewNoteNo.ToString)
         'aryALL_NOTES.Add(a)
-        saveDataFile()
+
         refreshNote_no()
+        loadAllNotePaper()
     End Sub
 
 
@@ -99,10 +103,19 @@ Public Class frmMain
 
 
     Sub refreshNote_no()
-        tlblNoteNo.Text = (T.getNewNoteNo() - 1).ToString
+        tlblNoteNo.Text = String.Format("Total Notes Count: {0}", getTotalNoteCount())
     End Sub
 
     Private Sub btnNoteList_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNoteList.Click
         frmNoteList.Show()
+    End Sub
+
+    Private Sub btnSetting_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSetting.Click
+        frmSetting.Show()
+    End Sub
+
+    Private Sub AddNewNoteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddNewNoteToolStripMenuItem.Click
+        frmAddNote.Show()
+        frmAddNote.Owner = Me
     End Sub
 End Class

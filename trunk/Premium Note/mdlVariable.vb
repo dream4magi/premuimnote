@@ -28,7 +28,8 @@ Public Class clsAllNotes
 
         Public X As String = CInt((My.Computer.Screen.PrimaryScreen.Bounds.Width - 200) / 2).ToString
         Public Y As String = CInt((My.Computer.Screen.PrimaryScreen.Bounds.Height - 200) / 2).ToString
-
+        Public tabX As String = "0"
+        Public tabY As String = "0"
 
         Function getNo() As String
             Return Me.note_no
@@ -42,9 +43,9 @@ Module mdlVariable
 
     Public NoteColor(4) As Color
     Public aryALL_NOTES As New List(Of clsAllNotes.clsNoteData)
+    Public aryALL_NOTES_paper As New List(Of INotePaper)
 
-    Public aryALL_NOTES_paper As New ArrayList
-
+    Public aryDONE_NOTES As New List(Of clsAllNotes.clsNoteData)
     Sub initialNoteColor()
         NoteColor(0) = System.Drawing.Color.FromArgb(255, 230, 62)
         NoteColor(1) = System.Drawing.Color.FromArgb(181, 228, 97)
