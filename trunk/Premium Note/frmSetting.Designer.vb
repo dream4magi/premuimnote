@@ -30,13 +30,13 @@ Partial Class frmSetting
         Me.TrackBarTabOpacity = New System.Windows.Forms.TrackBar
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.TrackBarOpacity = New System.Windows.Forms.TrackBar
+        Me.chkAnimation = New System.Windows.Forms.CheckBox
         Me.lblTabOpacity = New System.Windows.Forms.Label
         Me.lblOpacity = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.lblFont = New System.Windows.Forms.Label
-        Me.chkAnimation = New System.Windows.Forms.CheckBox
         Me.FontDialog1 = New System.Windows.Forms.FontDialog
         Me.btnClose = New System.Windows.Forms.Button
         Me.grbVisualSetting.SuspendLayout()
@@ -152,6 +152,19 @@ Partial Class frmSetting
         Me.TrackBarOpacity.TickStyle = System.Windows.Forms.TickStyle.TopLeft
         Me.TrackBarOpacity.Value = 100
         '
+        'chkAnimation
+        '
+        Me.chkAnimation.AutoSize = True
+        Me.chkAnimation.BackColor = System.Drawing.Color.Transparent
+        Me.chkAnimation.Font = New System.Drawing.Font("Arial", 9.75!)
+        Me.chkAnimation.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.chkAnimation.Location = New System.Drawing.Point(6, 19)
+        Me.chkAnimation.Name = "chkAnimation"
+        Me.chkAnimation.Size = New System.Drawing.Size(111, 20)
+        Me.chkAnimation.TabIndex = 0
+        Me.chkAnimation.Text = "Use Animation"
+        Me.chkAnimation.UseVisualStyleBackColor = False
+        '
         'lblTabOpacity
         '
         Me.lblTabOpacity.ForeColor = System.Drawing.SystemColors.ControlText
@@ -213,19 +226,6 @@ Partial Class frmSetting
         Me.lblFont.TabIndex = 3
         Me.lblFont.Text = "Note Font"
         '
-        'chkAnimation
-        '
-        Me.chkAnimation.AutoSize = True
-        Me.chkAnimation.BackColor = System.Drawing.Color.Transparent
-        Me.chkAnimation.Font = New System.Drawing.Font("Arial", 9.75!)
-        Me.chkAnimation.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.chkAnimation.Location = New System.Drawing.Point(6, 19)
-        Me.chkAnimation.Name = "chkAnimation"
-        Me.chkAnimation.Size = New System.Drawing.Size(111, 20)
-        Me.chkAnimation.TabIndex = 0
-        Me.chkAnimation.Text = "Use Animation"
-        Me.chkAnimation.UseVisualStyleBackColor = False
-        '
         'btnClose
         '
         Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -250,8 +250,9 @@ Partial Class frmSetting
         Me.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmSetting"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmSetting"
+        Me.Text = "Setting"
         Me.grbVisualSetting.ResumeLayout(False)
         Me.grbVisualSetting.PerformLayout()
         Me.Panel2.ResumeLayout(False)

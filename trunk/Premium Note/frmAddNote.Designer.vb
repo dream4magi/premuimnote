@@ -356,8 +356,9 @@ Partial Class frmAddNote
         Me.ForeColor = System.Drawing.Color.Gray
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmAddNote"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmAddNote"
+        Me.Text = "Add New Note"
         CType(Me.picAlerm, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picColor0, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panColor0.ResumeLayout(False)

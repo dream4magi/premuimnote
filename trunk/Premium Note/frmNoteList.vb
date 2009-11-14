@@ -34,36 +34,48 @@ Public Class frmNoteList
         Next
     End Sub
 
-
-
-
-
-    Public note_no As String = ""
-
-    Public note_title As String = ""
-    Public note_content As String = ""
-
-    Public note_create_time As String = ""
-    Public note_done_time As String = ""
-
-
-    Public note_alerm_enable As String = ""
-    Public note_alerm_time As String = ""
-
-    Public note_piority As String = ""
-    Public blnNoteDetailmode As String = ""
-
-    Public note_color As String = ""
-
-    Public X As String = ""
-    Public Y As String = ""
-
-
     Private Sub btnDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDelete.Click
+        If lvw.SelectedItems.Count > 0 Then
+            If MsgBox("This will delete the Note forever," & vbCrLf & "Continue ?", MsgBoxStyle.YesNo, "Please Confirm.") = MsgBoxResult.Yes Then
+                For i As Integer = 0 To lvw.SelectedItems.Count - 1
+                    T.deleteNote(lvw.SelectedItems(i).SubItems(T.getLvwColnumByName(strLvwColname, "no")).Text)
+                Next
 
-        For i As Integer = 0 To lvw.SelectedItems.Count - 1
-            T.deleteNote(lvw.SelectedItems(i).SubItems(T.getLvwColnumByName(strLvwColname, "no")).Text)
-        Next
-        loadLvw()
+            End If
+            T.noteDataChanged()
+        End If
+    End Sub
+
+    Private Sub btnNoteDone_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNoteDone.Click
+        If lvw.SelectedItems.Count > 0 Then
+            If MsgBox("Note Done ?", MsgBoxStyle.YesNo, "Please Confirm.") = MsgBoxResult.Yes Then
+                For i As Integer = 0 To lvw.SelectedItems.Count - 1
+                    T.doneNote(lvw.SelectedItems(i).SubItems(T.getLvwColnumByName(strLvwColname, "no")).Text)
+                Next
+            End If
+            T.noteDataChanged()
+        End If
+    End Sub
+
+    Private Sub lvw_ItemMouseHover(ByVal sender As Object, ByVal e As System.Windows.Forms.ListViewItemMouseHoverEventArgs) Handles lvw.ItemMouseHover
+        Dim str As String
+        str = e.Item.SubItems(T.getLvwColnumByName(strLvwColname, "title")).Text & vbCrLf _
+            & e.Item.SubItems(T.getLvwColnumByName(strLvwColname, "content")).Text
+        Me.ToolTip1.SetToolTip(Me.lvw, str)
+    End Sub
+
+    Private Sub lvw_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles lvw.MouseDoubleClick
+        If lvw.GetItemAt(e.X, e.Y) IsNot Nothing Then
+            showNote(lvw.GetItemAt(e.X, e.Y).SubItems(T.getLvwColnumByName(strLvwColname, "no")).Text)
+        End If
+    End Sub
+
+   
+
+
+    Private Sub btnEdit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEdit.Click
+        If lvw.SelectedItems.Count = 1 Then
+
+        End If
     End Sub
 End Class

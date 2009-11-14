@@ -70,8 +70,11 @@ Partial Class frmRecord
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(510, 444)
         Me.Controls.Add(Me.ListView1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "frmRecord"
-        Me.Text = "frmRecord"
+        Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "History"
         Me.ResumeLayout(False)
 
     End Sub

@@ -38,13 +38,7 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        'Dim frmAdd As Form = New frmAddNote
-        'frmAdd.Show()
-        frmAddNote.Show()
-        frmAddNote.Owner = Me
 
-    End Sub
 
 
 
@@ -108,14 +102,31 @@ Public Class frmMain
 
     Private Sub btnNoteList_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNoteList.Click
         frmNoteList.Show()
+        frmNoteList.Owner = Me
     End Sub
 
     Private Sub btnSetting_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSetting.Click
         frmSetting.Show()
+        frmSetting.Owner = Me
     End Sub
 
     Private Sub AddNewNoteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddNewNoteToolStripMenuItem.Click
         frmAddNote.Show()
         frmAddNote.Owner = Me
+    End Sub
+
+    Private Sub btnAbout_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles btnAbout.LinkClicked
+        frmAbout.Show()
+        frmAbout.Owner = Me
+    End Sub
+
+    Private Sub btnAddNote_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAddNote.Click
+        frmAddNote.Show()
+        frmAddNote.Owner = Me
+    End Sub
+
+    Private Sub tmr_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles tmr.Tick
+        T.saveDataFile()
+        tlblStatus.Text = String.Format("Auto Save at {0}", Now().ToString("MM-dd HH:mm"))
     End Sub
 End Class

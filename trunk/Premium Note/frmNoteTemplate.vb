@@ -62,7 +62,7 @@ Public Class frmNoteTemplate
         Me.TopMost = My.Settings.NOTE_TAB_ON_TOP
 
         loadNoteDataToNote(Me.noteData)
-        Me.Location = New Point(0, CInt(noteData.Y))
+        Me.Location = New Point(CInt(noteData.X), 0)
     End Sub
 
     Sub loadNoteDataToNote(ByVal noteClass As clsAllNotes.clsNoteData) Implements INotePaper.loadNoteDataToNote
@@ -87,11 +87,11 @@ Public Class frmNoteTemplate
 
 
 #Region "Move"
-    'Private shiftX As Integer
-    Private shiftY As Integer
+    Private shiftX As Integer
+    'Private shiftY As Integer
     Private Sub frmNoteTemplate_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
-        '  shiftX = e.X
-        shiftY = e.Y
+        shiftX = e.X
+        'shiftY = e.Y
 
         If My.Settings.Animation Then
             fageIn = False
@@ -101,9 +101,9 @@ Public Class frmNoteTemplate
     End Sub
     Private Sub frmNoteTemplate_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseMove
         If e.Button = Windows.Forms.MouseButtons.Left Then
-            Me.Top = Me.Top + e.Y - shiftY
-            Me.Left = 0
-            '   Me.Left = Me.Left + e.X - shiftX
+            'Me.Top = Me.Top + e.Y - shiftY
+            Me.Top = 0
+            Me.Left = Me.Left + e.X - shiftX
         End If
     End Sub
     Private Sub frmNoteTemplate_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseUp
@@ -141,13 +141,13 @@ Public Class frmNoteTemplate
 
 
     Private Sub btnChangeMode_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles btnChangeMode.MouseClick
-        T.changeNoteMode(noteData, True, True)
+        T.changeNoteMode(noteData, True)
     End Sub
 
 
     Private Sub frmNoteTemplate_Move(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Move
-        'noteData.X = Me.Left.ToString
-        noteData.Y = Me.Top.ToString
+        noteData.X = Me.Left.ToString
+        ' noteData.Y = Me.Top.ToString
     End Sub
 
 
