@@ -49,10 +49,7 @@ Public Class frmSetting
         Me.lblOpacity.Text = TrackBarOpacity.Value.ToString
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        frmNoteDetailTemplate.Show()
-        noteSettingRefresh()
-    End Sub
+ 
 
     Sub noteSettingRefresh()
         For Each noteForm In My.Application.OpenForms

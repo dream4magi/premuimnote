@@ -42,6 +42,8 @@ Public Class frmMain
         'Dim frmAdd As Form = New frmAddNote
         'frmAdd.Show()
         frmAddNote.Show()
+        frmAddNote.Owner = Me
+
     End Sub
 
 
@@ -81,68 +83,24 @@ Public Class frmMain
         ALL_NOTES = Nothing
 
 
+        'Dim a As New clsAllNotes.clsNoteData(T.getNewNoteNo.ToString)
+
+        'aryALL_NOTES.Add(a)
+        'a = New clsAllNotes.clsNoteData(T.getNewNoteNo.ToString)
+        'aryALL_NOTES.Add(a)
         saveDataFile()
-    End Sub
-
-
-    Function readDataFile() As clsAllNotes
-        Dim ALL_NOTES As clsAllNotes
-        Try
-
-
-            Dim fileContents As String
-            fileContents = My.Computer.FileSystem.ReadAllText("data.xml")
-
-            Dim Xmsg As New Xstream.Core.XStream
-            Xmsg.Alias("AllNotes", GetType(clsAllNotes))
-            Xmsg.Alias("Note", GetType(clsAllNotes.clsNoteData))
-            ALL_NOTES = CType(Xmsg.FromXml(fileContents), clsAllNotes)
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-
-        End Try
-        If ALL_NOTES Is Nothing Then
-            ALL_NOTES = New clsAllNotes
-        End If
-        Return ALL_NOTES
-    End Function
-
-    Sub saveDataFile()
-
-        Dim ALL_NOTES = New clsAllNotes
-        ReDim ALL_NOTES.Notes(aryALL_NOTES.Count - 1)
-
-        For i As Integer = 0 To aryALL_NOTES.Count - 1
-            ALL_NOTES.Notes(i) = aryALL_NOTES.Item(i)
-        Next
-
-        Try
-            Dim Xmsg As New Xstream.Core.XStream
-            Xmsg.Alias("AllNotes", GetType(clsAllNotes))
-            Xmsg.Alias("Note", GetType(clsAllNotes.clsNoteData))
-
-
-            My.Computer.FileSystem.WriteAllText("data.xml", Xmsg.ToXml(ALL_NOTES), False)
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-
+        refreshNote_no()
     End Sub
 
 
 
-    Function getNewNoteNo() As Double
-        Dim NextNoteNo As Double = -1
-        For Each obj As clsAllNotes.clsNoteData In aryALL_NOTES
-            If CType(obj.note_no, Double) > NextNoteNo Then
-                NextNoteNo = CType(obj.note_no, Double)
-            End If
-        Next
-        Return NextNoteNo + 1
-    End Function
 
+
+
+
+    Sub refreshNote_no()
+        tlblNoteNo.Text = (T.getNewNoteNo() - 1).ToString
+    End Sub
 
     Private Sub btnNoteList_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNoteList.Click
         frmNoteList.Show()

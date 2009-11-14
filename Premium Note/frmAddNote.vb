@@ -70,4 +70,15 @@ Public Class frmAddNote
     End Function
 #End Region
 
+    Private Sub btnAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAdd.Click
+
+        T.createNewNoteDetailPaper( _
+            T.addNote(txtTitle.Text, txtContent.Text, IIf(chkAlerm.Checked, "Y", "N").ToString, IIf(chkAlerm.Checked, DateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm"), "").ToString, cboPiority.Text, getSelectedColorNum.ToString) _
+        )
+
+        T.saveDataFile()
+
+        Me.Close()
+    End Sub
+
 End Class
