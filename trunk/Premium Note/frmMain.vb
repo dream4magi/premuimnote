@@ -97,7 +97,7 @@ Public Class frmMain
 
 
     Sub refreshNote_no()
-        tlblNoteNo.Text = String.Format("Total Notes Count: {0}", getTotalNoteCount())
+        tlblNoteNo.Text = String.Format("Total Notes: {0}", getTotalNoteCount())
     End Sub
 
     Private Sub btnNoteList_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNoteList.Click
@@ -127,6 +127,10 @@ Public Class frmMain
 
     Private Sub tmr_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles tmr.Tick
         T.saveDataFile()
-        tlblStatus.Text = String.Format("Auto Save at {0}", Now().ToString("MM-dd HH:mm"))
+        tlblStatus.Text = String.Format("Auto Save at {0}", Now().ToString("MM/dd HH:mm"))
+    End Sub
+
+    Private Sub btnRecord_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRecord.Click
+
     End Sub
 End Class
