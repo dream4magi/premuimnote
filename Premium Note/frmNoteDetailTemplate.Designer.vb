@@ -23,9 +23,10 @@ Partial Class frmNoteDetailTemplate
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.panNote = New System.Windows.Forms.Panel
+        Me.chkTop = New System.Windows.Forms.CheckBox
+        Me.lblContent = New System.Windows.Forms.Label
         Me.line = New System.Windows.Forms.Panel
         Me.lblTitle = New System.Windows.Forms.Label
-        Me.lblContent = New System.Windows.Forms.Label
         Me.btnDone = New Premium_Note.uscImageButton
         Me.btnDelete = New Premium_Note.uscImageButton
         Me.btnEdit = New Premium_Note.uscImageButton
@@ -36,9 +37,10 @@ Partial Class frmNoteDetailTemplate
         'panNote
         '
         Me.panNote.BackgroundImage = Global.Premium_Note.My.Resources.Resources.noteColor0
+        Me.panNote.Controls.Add(Me.chkTop)
+        Me.panNote.Controls.Add(Me.lblContent)
         Me.panNote.Controls.Add(Me.line)
         Me.panNote.Controls.Add(Me.lblTitle)
-        Me.panNote.Controls.Add(Me.lblContent)
         Me.panNote.Controls.Add(Me.btnDone)
         Me.panNote.Controls.Add(Me.btnDelete)
         Me.panNote.Controls.Add(Me.btnEdit)
@@ -47,6 +49,27 @@ Partial Class frmNoteDetailTemplate
         Me.panNote.Name = "panNote"
         Me.panNote.Size = New System.Drawing.Size(174, 179)
         Me.panNote.TabIndex = 1
+        '
+        'chkTop
+        '
+        Me.chkTop.AutoSize = True
+        Me.chkTop.BackColor = System.Drawing.Color.Transparent
+        Me.chkTop.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkTop.Location = New System.Drawing.Point(77, 160)
+        Me.chkTop.Name = "chkTop"
+        Me.chkTop.Size = New System.Drawing.Size(77, 19)
+        Me.chkTop.TabIndex = 5
+        Me.chkTop.Text = "Stay on Top"
+        Me.chkTop.UseVisualStyleBackColor = False
+        '
+        'lblContent
+        '
+        Me.lblContent.BackColor = System.Drawing.Color.Transparent
+        Me.lblContent.Location = New System.Drawing.Point(7, 27)
+        Me.lblContent.Name = "lblContent"
+        Me.lblContent.Size = New System.Drawing.Size(160, 134)
+        Me.lblContent.TabIndex = 2
+        Me.lblContent.Text = "Label1"
         '
         'line
         '
@@ -67,15 +90,6 @@ Partial Class frmNoteDetailTemplate
         Me.lblTitle.TabIndex = 4
         Me.lblTitle.Text = "Label2"
         Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lblContent
-        '
-        Me.lblContent.BackColor = System.Drawing.Color.Transparent
-        Me.lblContent.Location = New System.Drawing.Point(7, 27)
-        Me.lblContent.Name = "lblContent"
-        Me.lblContent.Size = New System.Drawing.Size(160, 134)
-        Me.lblContent.TabIndex = 2
-        Me.lblContent.Text = "Label1"
         '
         'btnDone
         '
@@ -146,6 +160,8 @@ Partial Class frmNoteDetailTemplate
         Me.Controls.Add(Me.panNote)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmNoteDetailTemplate"
+        Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "frmNoteTemplate"
         Me.TransparencyKey = System.Drawing.Color.Fuchsia
         Me.panNote.ResumeLayout(False)
@@ -161,4 +177,5 @@ Partial Class frmNoteDetailTemplate
     Friend WithEvents btnDelete As Premium_Note.uscImageButton
     Friend WithEvents btnEdit As Premium_Note.uscImageButton
     Friend WithEvents lblTitle As System.Windows.Forms.Label
+    Friend WithEvents chkTop As System.Windows.Forms.CheckBox
 End Class

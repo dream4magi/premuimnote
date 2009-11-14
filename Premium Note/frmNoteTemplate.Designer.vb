@@ -23,61 +23,64 @@ Partial Class frmNoteTemplate
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.panNote = New System.Windows.Forms.Panel
-        Me.UscImageButton5 = New Premium_Note.uscImageButton
-        Me.UscImageButton6 = New Premium_Note.uscImageButton
+        Me.btnNoteDone = New Premium_Note.uscImageButton
+        Me.btnChangeMode = New Premium_Note.uscImageButton
         Me.panNote.SuspendLayout()
         Me.SuspendLayout()
         '
         'panNote
         '
         Me.panNote.BackgroundImage = Global.Premium_Note.My.Resources.Resources.tabColor0
-        Me.panNote.Controls.Add(Me.UscImageButton5)
-        Me.panNote.Controls.Add(Me.UscImageButton6)
-        Me.panNote.Location = New System.Drawing.Point(9, 9)
+        Me.panNote.Controls.Add(Me.btnNoteDone)
+        Me.panNote.Controls.Add(Me.btnChangeMode)
+        Me.panNote.Location = New System.Drawing.Point(0, 0)
         Me.panNote.Margin = New System.Windows.Forms.Padding(0)
         Me.panNote.Name = "panNote"
         Me.panNote.Size = New System.Drawing.Size(62, 23)
         Me.panNote.TabIndex = 0
         '
-        'UscImageButton5
+        'btnNoteDone
         '
-        Me.UscImageButton5.AutoSize = True
-        Me.UscImageButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.UscImageButton5.BackColor = System.Drawing.Color.Transparent
-        Me.UscImageButton5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.UscImageButton5.HoverImage = Global.Premium_Note.My.Resources.Resources.done_hover
-        Me.UscImageButton5.Location = New System.Drawing.Point(0, 0)
-        Me.UscImageButton5.Margin = New System.Windows.Forms.Padding(0)
-        Me.UscImageButton5.Name = "UscImageButton5"
-        Me.UscImageButton5.PressedImage = Global.Premium_Note.My.Resources.Resources.done
-        Me.UscImageButton5.RegularImage = Global.Premium_Note.My.Resources.Resources.done
-        Me.UscImageButton5.Size = New System.Drawing.Size(11, 11)
-        Me.UscImageButton5.TabIndex = 1
+        Me.btnNoteDone.AutoSize = True
+        Me.btnNoteDone.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btnNoteDone.BackColor = System.Drawing.Color.Transparent
+        Me.btnNoteDone.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNoteDone.HoverImage = Global.Premium_Note.My.Resources.Resources.done_hover
+        Me.btnNoteDone.Location = New System.Drawing.Point(0, 0)
+        Me.btnNoteDone.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnNoteDone.Name = "btnNoteDone"
+        Me.btnNoteDone.PressedImage = Global.Premium_Note.My.Resources.Resources.done
+        Me.btnNoteDone.RegularImage = Global.Premium_Note.My.Resources.Resources.done
+        Me.btnNoteDone.Size = New System.Drawing.Size(11, 11)
+        Me.btnNoteDone.TabIndex = 1
         '
-        'UscImageButton6
+        'btnChangeMode
         '
-        Me.UscImageButton6.AutoSize = True
-        Me.UscImageButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.UscImageButton6.BackColor = System.Drawing.Color.Transparent
-        Me.UscImageButton6.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.UscImageButton6.HoverImage = Global.Premium_Note.My.Resources.Resources.max_hover
-        Me.UscImageButton6.Location = New System.Drawing.Point(0, 12)
-        Me.UscImageButton6.Margin = New System.Windows.Forms.Padding(0)
-        Me.UscImageButton6.Name = "UscImageButton6"
-        Me.UscImageButton6.PressedImage = Global.Premium_Note.My.Resources.Resources.max
-        Me.UscImageButton6.RegularImage = Global.Premium_Note.My.Resources.Resources.max
-        Me.UscImageButton6.Size = New System.Drawing.Size(11, 11)
-        Me.UscImageButton6.TabIndex = 1
+        Me.btnChangeMode.AutoSize = True
+        Me.btnChangeMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btnChangeMode.BackColor = System.Drawing.Color.Transparent
+        Me.btnChangeMode.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnChangeMode.HoverImage = Global.Premium_Note.My.Resources.Resources.max_hover
+        Me.btnChangeMode.Location = New System.Drawing.Point(0, 12)
+        Me.btnChangeMode.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnChangeMode.Name = "btnChangeMode"
+        Me.btnChangeMode.PressedImage = Global.Premium_Note.My.Resources.Resources.max
+        Me.btnChangeMode.RegularImage = Global.Premium_Note.My.Resources.Resources.max
+        Me.btnChangeMode.Size = New System.Drawing.Size(11, 11)
+        Me.btnChangeMode.TabIndex = 1
         '
         'frmNoteTemplate
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.Fuchsia
-        Me.ClientSize = New System.Drawing.Size(244, 237)
+        Me.ClientSize = New System.Drawing.Size(62, 23)
         Me.Controls.Add(Me.panNote)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmNoteTemplate"
+        Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "frmNoteTemplate"
         Me.TransparencyKey = System.Drawing.Color.Fuchsia
         Me.panNote.ResumeLayout(False)
@@ -86,6 +89,6 @@ Partial Class frmNoteTemplate
 
     End Sub
     Friend WithEvents panNote As System.Windows.Forms.Panel
-    Friend WithEvents UscImageButton5 As Premium_Note.uscImageButton
-    Friend WithEvents UscImageButton6 As Premium_Note.uscImageButton
+    Friend WithEvents btnNoteDone As Premium_Note.uscImageButton
+    Friend WithEvents btnChangeMode As Premium_Note.uscImageButton
 End Class

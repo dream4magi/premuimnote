@@ -25,8 +25,9 @@ Partial Class frmSetting
         Me.chkStartWSys = New System.Windows.Forms.CheckBox
         Me.Button1 = New System.Windows.Forms.Button
         Me.grbVisualSetting = New System.Windows.Forms.GroupBox
-        Me.lblOpacity = New System.Windows.Forms.Label
+        Me.Panel1 = New System.Windows.Forms.Panel
         Me.TrackBarOpacity = New System.Windows.Forms.TrackBar
+        Me.lblOpacity = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.lblFont = New System.Windows.Forms.Label
@@ -34,10 +35,9 @@ Partial Class frmSetting
         Me.FontDialog1 = New System.Windows.Forms.FontDialog
         Me.btnClose = New System.Windows.Forms.Button
         Me.Button2 = New System.Windows.Forms.Button
-        Me.Panel1 = New System.Windows.Forms.Panel
         Me.grbVisualSetting.SuspendLayout()
-        CType(Me.TrackBarOpacity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.TrackBarOpacity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'chkStartWSys
@@ -80,6 +80,31 @@ Partial Class frmSetting
         Me.grbVisualSetting.TabStop = False
         Me.grbVisualSetting.Text = "Visual Setting"
         '
+        'Panel1
+        '
+        Me.Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Panel1.BackColor = System.Drawing.Color.DarkGray
+        Me.Panel1.Controls.Add(Me.TrackBarOpacity)
+        Me.Panel1.Location = New System.Drawing.Point(9, 85)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Padding = New System.Windows.Forms.Padding(1)
+        Me.Panel1.Size = New System.Drawing.Size(193, 33)
+        Me.Panel1.TabIndex = 7
+        '
+        'TrackBarOpacity
+        '
+        Me.TrackBarOpacity.AutoSize = False
+        Me.TrackBarOpacity.BackColor = System.Drawing.SystemColors.Control
+        Me.TrackBarOpacity.Location = New System.Drawing.Point(1, 1)
+        Me.TrackBarOpacity.Maximum = 100
+        Me.TrackBarOpacity.Minimum = 50
+        Me.TrackBarOpacity.Name = "TrackBarOpacity"
+        Me.TrackBarOpacity.Size = New System.Drawing.Size(191, 31)
+        Me.TrackBarOpacity.TabIndex = 5
+        Me.TrackBarOpacity.TickFrequency = 10
+        Me.TrackBarOpacity.TickStyle = System.Windows.Forms.TickStyle.TopLeft
+        Me.TrackBarOpacity.Value = 100
+        '
         'lblOpacity
         '
         Me.lblOpacity.ForeColor = System.Drawing.SystemColors.ControlText
@@ -89,20 +114,6 @@ Partial Class frmSetting
         Me.lblOpacity.TabIndex = 6
         Me.lblOpacity.Text = "Opacity"
         Me.lblOpacity.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'TrackBarOpacity
-        '
-        Me.TrackBarOpacity.AutoSize = False
-        Me.TrackBarOpacity.BackColor = System.Drawing.SystemColors.Control
-        Me.TrackBarOpacity.Location = New System.Drawing.Point(1, 1)
-        Me.TrackBarOpacity.Maximum = 100
-        Me.TrackBarOpacity.Minimum = 10
-        Me.TrackBarOpacity.Name = "TrackBarOpacity"
-        Me.TrackBarOpacity.Size = New System.Drawing.Size(191, 31)
-        Me.TrackBarOpacity.TabIndex = 5
-        Me.TrackBarOpacity.TickFrequency = 10
-        Me.TrackBarOpacity.TickStyle = System.Windows.Forms.TickStyle.TopLeft
-        Me.TrackBarOpacity.Value = 100
         '
         'Label2
         '
@@ -167,23 +178,12 @@ Partial Class frmSetting
         Me.Button2.Text = "Button2"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'Panel1
-        '
-        Me.Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Panel1.BackColor = System.Drawing.Color.DarkGray
-        Me.Panel1.Controls.Add(Me.TrackBarOpacity)
-        Me.Panel1.Location = New System.Drawing.Point(9, 85)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Padding = New System.Windows.Forms.Padding(1)
-        Me.Panel1.Size = New System.Drawing.Size(193, 33)
-        Me.Panel1.TabIndex = 7
-        '
         'frmSetting
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackgroundImage = Global.Premium_Note.My.Resources.Resources.form_bg
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(403, 294)
+        Me.ClientSize = New System.Drawing.Size(403, 314)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.grbVisualSetting)
@@ -195,8 +195,8 @@ Partial Class frmSetting
         Me.Text = "frmSetting"
         Me.grbVisualSetting.ResumeLayout(False)
         Me.grbVisualSetting.PerformLayout()
-        CType(Me.TrackBarOpacity, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        CType(Me.TrackBarOpacity, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

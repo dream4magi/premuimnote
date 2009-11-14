@@ -144,6 +144,7 @@
     <Compile Include="frmSetting.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Interface1.vb" />
     <Compile Include="T.vb" />
     <Compile Include="mdlVariable.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

@@ -34,5 +34,9 @@ Namespace My
         Protected Overrides Sub OnCreateMainForm()
             Me.MainForm = Global.Premium_Note.frmMain
         End Sub
+
+        Private Sub MyApplication_Shutdown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shutdown
+            T.saveDataFile()
+        End Sub
     End Class
 End Namespace
