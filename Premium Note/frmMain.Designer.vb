@@ -40,6 +40,7 @@ Partial Class frmMain
         Me.btnNoteList = New System.Windows.Forms.Button
         Me.btnAbout = New System.Windows.Forms.LinkLabel
         Me.tmr = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrAlermCheck = New System.Windows.Forms.Timer(Me.components)
         Me.TaskIconMenu.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -189,7 +190,12 @@ Partial Class frmMain
         'tmr
         '
         Me.tmr.Enabled = True
-        Me.tmr.Interval = 5000
+        Me.tmr.Interval = 1800000
+        '
+        'tmrAlermCheck
+        '
+        Me.tmrAlermCheck.Enabled = True
+        Me.tmrAlermCheck.Interval = 25000
         '
         'frmMain
         '
@@ -234,6 +240,7 @@ Partial Class frmMain
     Friend WithEvents tlblStatus As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents btnAbout As System.Windows.Forms.LinkLabel
     Friend WithEvents tmr As System.Windows.Forms.Timer
+    Friend WithEvents tmrAlermCheck As System.Windows.Forms.Timer
 
 
 End Class
