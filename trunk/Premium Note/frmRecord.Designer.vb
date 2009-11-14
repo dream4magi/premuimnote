@@ -33,13 +33,15 @@ Partial Class frmRecord
         '
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.ListView1.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(0, 40)
+        Me.ListView1.Location = New System.Drawing.Point(0, 50)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.ShowGroups = False
-        Me.ListView1.Size = New System.Drawing.Size(510, 404)
+        Me.ListView1.Size = New System.Drawing.Size(595, 496)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -64,13 +66,15 @@ Partial Class frmRecord
         '
         'frmRecord
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Premium_Note.My.Resources.Resources.form_bg
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(510, 444)
+        Me.ClientSize = New System.Drawing.Size(595, 546)
         Me.Controls.Add(Me.ListView1)
+        Me.Font = New System.Drawing.Font("Arial", 9.75!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "frmRecord"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

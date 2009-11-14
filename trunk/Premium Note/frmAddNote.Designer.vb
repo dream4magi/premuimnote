@@ -64,6 +64,7 @@ Partial Class frmAddNote
         '
         Me.txtTitle.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.txtTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtTitle.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTitle.Location = New System.Drawing.Point(75, 5)
         Me.txtTitle.Name = "txtTitle"
         Me.txtTitle.Size = New System.Drawing.Size(243, 26)
@@ -73,6 +74,7 @@ Partial Class frmAddNote
         '
         Me.txtContent.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.txtContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtContent.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContent.Location = New System.Drawing.Point(75, 98)
         Me.txtContent.Multiline = True
         Me.txtContent.Name = "txtContent"
@@ -107,9 +109,9 @@ Partial Class frmAddNote
         '
         Me.chkAlerm.AutoSize = True
         Me.chkAlerm.BackColor = System.Drawing.Color.Transparent
-        Me.chkAlerm.Location = New System.Drawing.Point(75, 250)
+        Me.chkAlerm.Location = New System.Drawing.Point(75, 252)
         Me.chkAlerm.Name = "chkAlerm"
-        Me.chkAlerm.Size = New System.Drawing.Size(65, 23)
+        Me.chkAlerm.Size = New System.Drawing.Size(61, 20)
         Me.chkAlerm.TabIndex = 7
         Me.chkAlerm.Text = "Alerm"
         Me.chkAlerm.UseVisualStyleBackColor = False
@@ -123,6 +125,7 @@ Partial Class frmAddNote
         Me.DateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.Black
         Me.DateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.Black
         Me.DateTimePicker1.CustomFormat = "yyyy/MM/dd HH:mm"
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker1.Location = New System.Drawing.Point(144, 249)
         Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(0)
@@ -169,11 +172,11 @@ Partial Class frmAddNote
         Me.cboPiority.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cboPiority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboPiority.FormattingEnabled = True
-        Me.cboPiority.ItemHeight = 19
+        Me.cboPiority.ItemHeight = 16
         Me.cboPiority.Items.AddRange(New Object() {"Highest", "High", "Normal", "Low", "Lowest"})
         Me.cboPiority.Location = New System.Drawing.Point(75, 36)
         Me.cboPiority.Name = "cboPiority"
-        Me.cboPiority.Size = New System.Drawing.Size(89, 27)
+        Me.cboPiority.Size = New System.Drawing.Size(89, 24)
         Me.cboPiority.TabIndex = 3
         '
         'lblPiority
@@ -352,7 +355,7 @@ Partial Class frmAddNote
         Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.txtContent)
         Me.Controls.Add(Me.txtTitle)
-        Me.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Arial", 9.75!)
         Me.ForeColor = System.Drawing.Color.Gray
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmAddNote"

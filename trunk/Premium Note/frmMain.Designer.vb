@@ -144,7 +144,7 @@ Partial Class frmMain
         Me.btnSetting.Name = "btnSetting"
         Me.btnSetting.Size = New System.Drawing.Size(95, 28)
         Me.btnSetting.TabIndex = 3
-        Me.btnSetting.Text = "Setting"
+        Me.btnSetting.Text = "Preference"
         Me.btnSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSetting.UseVisualStyleBackColor = True
         '
@@ -177,11 +177,12 @@ Partial Class frmMain
         Me.btnAbout.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnAbout.AutoSize = True
         Me.btnAbout.BackColor = System.Drawing.Color.Transparent
+        Me.btnAbout.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAbout.ForeColor = System.Drawing.Color.DimGray
         Me.btnAbout.LinkColor = System.Drawing.Color.DimGray
         Me.btnAbout.Location = New System.Drawing.Point(1, 224)
         Me.btnAbout.Name = "btnAbout"
-        Me.btnAbout.Size = New System.Drawing.Size(35, 13)
+        Me.btnAbout.Size = New System.Drawing.Size(36, 14)
         Me.btnAbout.TabIndex = 6
         Me.btnAbout.TabStop = True
         Me.btnAbout.Text = "About"
@@ -209,6 +210,7 @@ Partial Class frmMain
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.btnAddNote)
         Me.Controls.Add(Me.btnSetting)
+        Me.Font = New System.Drawing.Font("Arial", 9.75!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False
         Me.Name = "frmMain"
