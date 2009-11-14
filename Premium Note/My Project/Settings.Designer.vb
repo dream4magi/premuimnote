@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
         Public Property START_WITH_SYSTEM() As Boolean
             Get
                 Return CType(Me("START_WITH_SYSTEM"),Boolean)
@@ -92,7 +92,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0.95")>  _
         Public Property NOTE_OPACITY() As Double
             Get
                 Return CType(Me("NOTE_OPACITY"),Double)
@@ -104,7 +104,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0.85")>  _
         Public Property NOTE_TAB_OPACITY() As Double
             Get
                 Return CType(Me("NOTE_TAB_OPACITY"),Double)

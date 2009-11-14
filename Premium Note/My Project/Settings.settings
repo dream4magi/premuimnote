@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="START_WITH_SYSTEM" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="NOTE_FONT" Type="System.Drawing.Font" Scope="User">
       <Value Profile="(Default)">Microsoft JhengHei, 12pt</Value>
@@ -12,10 +12,10 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="NOTE_OPACITY" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">1</Value>
+      <Value Profile="(Default)">0.95</Value>
     </Setting>
     <Setting Name="NOTE_TAB_OPACITY" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">1</Value>
+      <Value Profile="(Default)">0.85</Value>
     </Setting>
     <Setting Name="NOTE_TAB_ON_TOP" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
