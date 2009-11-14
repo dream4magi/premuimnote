@@ -28,8 +28,7 @@ Public Class clsAllNotes
 
         Public X As String = CInt((My.Computer.Screen.PrimaryScreen.Bounds.Width - 200) / 2).ToString
         Public Y As String = CInt((My.Computer.Screen.PrimaryScreen.Bounds.Height - 200) / 2).ToString
-        Public tabX As String = "0"
-        Public tabY As String = "0"
+
 
         Function getNo() As String
             Return Me.note_no

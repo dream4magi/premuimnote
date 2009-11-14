@@ -67,7 +67,7 @@ Partial Class frmAddNote
         Me.txtTitle.Location = New System.Drawing.Point(75, 5)
         Me.txtTitle.Name = "txtTitle"
         Me.txtTitle.Size = New System.Drawing.Size(243, 26)
-        Me.txtTitle.TabIndex = 0
+        Me.txtTitle.TabIndex = 1
         '
         'txtContent
         '
@@ -77,7 +77,7 @@ Partial Class frmAddNote
         Me.txtContent.Multiline = True
         Me.txtContent.Name = "txtContent"
         Me.txtContent.Size = New System.Drawing.Size(243, 143)
-        Me.txtContent.TabIndex = 1
+        Me.txtContent.TabIndex = 6
         '
         'lblTitle
         '
@@ -88,7 +88,7 @@ Partial Class frmAddNote
         Me.lblTitle.Location = New System.Drawing.Point(34, 10)
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Size = New System.Drawing.Size(31, 15)
-        Me.lblTitle.TabIndex = 2
+        Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "Title"
         '
         'lblContent
@@ -100,7 +100,7 @@ Partial Class frmAddNote
         Me.lblContent.Location = New System.Drawing.Point(15, 101)
         Me.lblContent.Name = "lblContent"
         Me.lblContent.Size = New System.Drawing.Size(50, 15)
-        Me.lblContent.TabIndex = 2
+        Me.lblContent.TabIndex = 5
         Me.lblContent.Text = "Content"
         '
         'chkAlerm
@@ -110,7 +110,7 @@ Partial Class frmAddNote
         Me.chkAlerm.Location = New System.Drawing.Point(75, 250)
         Me.chkAlerm.Name = "chkAlerm"
         Me.chkAlerm.Size = New System.Drawing.Size(65, 23)
-        Me.chkAlerm.TabIndex = 3
+        Me.chkAlerm.TabIndex = 7
         Me.chkAlerm.Text = "Alerm"
         Me.chkAlerm.UseVisualStyleBackColor = False
         '
@@ -130,7 +130,7 @@ Partial Class frmAddNote
         Me.DateTimePicker1.MinDate = New Date(2009, 1, 1, 0, 0, 0, 0)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(174, 26)
-        Me.DateTimePicker1.TabIndex = 6
+        Me.DateTimePicker1.TabIndex = 8
         '
         'picAlerm
         '
@@ -149,7 +149,7 @@ Partial Class frmAddNote
         Me.btnAdd.Location = New System.Drawing.Point(190, 281)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(64, 60)
-        Me.btnAdd.TabIndex = 8
+        Me.btnAdd.TabIndex = 9
         Me.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAdd.UseVisualStyleBackColor = True
         '
@@ -160,7 +160,7 @@ Partial Class frmAddNote
         Me.btnClose.Location = New System.Drawing.Point(255, 281)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(64, 60)
-        Me.btnClose.TabIndex = 8
+        Me.btnClose.TabIndex = 10
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = True
         '
@@ -174,7 +174,7 @@ Partial Class frmAddNote
         Me.cboPiority.Location = New System.Drawing.Point(75, 36)
         Me.cboPiority.Name = "cboPiority"
         Me.cboPiority.Size = New System.Drawing.Size(89, 27)
-        Me.cboPiority.TabIndex = 9
+        Me.cboPiority.TabIndex = 3
         '
         'lblPiority
         '
@@ -185,7 +185,7 @@ Partial Class frmAddNote
         Me.lblPiority.Location = New System.Drawing.Point(23, 41)
         Me.lblPiority.Name = "lblPiority"
         Me.lblPiority.Size = New System.Drawing.Size(42, 15)
-        Me.lblPiority.TabIndex = 10
+        Me.lblPiority.TabIndex = 2
         Me.lblPiority.Text = "Piority"
         '
         'color
@@ -213,7 +213,7 @@ Partial Class frmAddNote
         Me.panColor0.Name = "panColor0"
         Me.panColor0.Padding = New System.Windows.Forms.Padding(2)
         Me.panColor0.Size = New System.Drawing.Size(20, 20)
-        Me.panColor0.TabIndex = 13
+        Me.panColor0.TabIndex = 1
         '
         'panColor1
         '
@@ -225,7 +225,7 @@ Partial Class frmAddNote
         Me.panColor1.Name = "panColor1"
         Me.panColor1.Padding = New System.Windows.Forms.Padding(2)
         Me.panColor1.Size = New System.Drawing.Size(20, 20)
-        Me.panColor1.TabIndex = 14
+        Me.panColor1.TabIndex = 1
         '
         'picColor1
         '
@@ -330,7 +330,7 @@ Partial Class frmAddNote
         Me.lblColor.Location = New System.Drawing.Point(29, 72)
         Me.lblColor.Name = "lblColor"
         Me.lblColor.Size = New System.Drawing.Size(36, 15)
-        Me.lblColor.TabIndex = 16
+        Me.lblColor.TabIndex = 4
         Me.lblColor.Text = "Color"
         '
         'frmAddNote

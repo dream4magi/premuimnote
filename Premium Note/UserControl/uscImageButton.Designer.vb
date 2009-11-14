@@ -22,7 +22,9 @@ Partial Class uscImageButton
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Me.picBtn = New System.Windows.Forms.PictureBox
+        Me.ToolTip0 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.picBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -48,5 +50,6 @@ Partial Class uscImageButton
 
     End Sub
     Friend WithEvents picBtn As System.Windows.Forms.PictureBox
+    Friend WithEvents ToolTip0 As System.Windows.Forms.ToolTip
 
 End Class

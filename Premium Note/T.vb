@@ -62,6 +62,13 @@
                 Return My.Resources.tabColor0
         End Select
     End Function
+    Sub noteDataChanged()
+        If frmNoteList IsNot Nothing Then
+            frmNoteList.loadLvw()
+        End If
+
+
+    End Sub
 #End Region
 
 #Region "File Handle"

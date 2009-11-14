@@ -6,9 +6,11 @@ Public Class frmSetting
         chkStartWSys.Checked = My.Settings.START_WITH_SYSTEM
         updateLabelFont()
         TrackBarOpacity.Value = CType(My.Settings.NOTE_OPACITY * 100, Int32)
+        TrackBarTabOpacity.Value = CType(My.Settings.NOTE_TAB_OPACITY * 100, Int32)
         Me.lblOpacity.Text = TrackBarOpacity.Value.ToString
-
-
+        Me.lblTabOpacity.Text = TrackBarTabOpacity.Value.ToString
+        chkTabOnTop.Checked = My.Settings.NOTE_TAB_ON_TOP
+        chkAnimation.Checked = My.Settings.Animation
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
@@ -33,7 +35,7 @@ Public Class frmSetting
     End Sub
 
     Private Sub chkAnimation_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkAnimation.CheckedChanged
-        My.Settings.Animation = chkStartWSys.Checked
+        My.Settings.Animation = chkAnimation.Checked
 
     End Sub
 
@@ -49,14 +51,27 @@ Public Class frmSetting
         Me.lblOpacity.Text = TrackBarOpacity.Value.ToString
     End Sub
 
- 
+    Private Sub TrackBarTabOpacity_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TrackBarTabOpacity.Scroll
+        My.Settings.NOTE_TAB_OPACITY = TrackBarTabOpacity.Value / 100
+        Me.lblTabOpacity.Text = TrackBarTabOpacity.Value.ToString
+    End Sub
 
     Sub noteSettingRefresh()
         For Each obj As INotePaper In aryALL_NOTES_paper
             If obj.GetType.Equals(GetType(frmNoteDetailTemplate)) Then
                 CType(obj, frmNoteDetailTemplate).Opacity = My.Settings.NOTE_OPACITY
+                CType(obj, frmNoteDetailTemplate).Font = My.Settings.NOTE_FONT
+            ElseIf obj.GetType.Equals(GetType(frmNoteTemplate)) Then
+                CType(obj, frmNoteTemplate).Opacity = My.Settings.NOTE_TAB_OPACITY
+                CType(obj, frmNoteTemplate).TopMost = My.Settings.NOTE_TAB_ON_TOP
             End If
 
         Next
     End Sub
+
+    Private Sub chkTabOnTop_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkTabOnTop.CheckedChanged
+        My.Settings.NOTE_TAB_ON_TOP = chkTabOnTop.Checked
+    End Sub
+
+ 
 End Class
