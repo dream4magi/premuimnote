@@ -12,6 +12,7 @@ Public Class frmNoteList
 
 
     Public Sub loadLvw()
+        lvw.Items.Clear()
         For Each obj As clsAllNotes.clsNoteData In aryALL_NOTES
             Dim lvwItem As New ListViewItem
             Dim item(strLvwColname.Length - 1) As String
@@ -58,4 +59,11 @@ Public Class frmNoteList
     Public Y As String = ""
 
 
+    Private Sub btnDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDelete.Click
+
+        For i As Integer = 0 To lvw.SelectedItems.Count - 1
+            T.deleteNote(lvw.SelectedItems(i).SubItems(T.getLvwColnumByName(strLvwColname, "no")).Text)
+        Next
+        loadLvw()
+    End Sub
 End Class

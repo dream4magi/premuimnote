@@ -32,7 +32,7 @@ Partial Class frmMain
         Me.ExitPremiumNoteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.Button1 = New System.Windows.Forms.Button
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel
+        Me.tlblNoteNo = New System.Windows.Forms.ToolStripStatusLabel
         Me.btnSetting = New System.Windows.Forms.Button
         Me.btnRecord = New System.Windows.Forms.Button
         Me.btnNoteList = New System.Windows.Forms.Button
@@ -100,7 +100,7 @@ Partial Class frmMain
         'StatusStrip1
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.LightGray
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tlblNoteNo})
         Me.StatusStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 279)
         Me.StatusStrip1.Name = "StatusStrip1"
@@ -109,11 +109,11 @@ Partial Class frmMain
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'ToolStripStatusLabel1
+        'tlblNoteNo
         '
-        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(54, 16)
-        Me.ToolStripStatusLabel1.Text = "note_no"
+        Me.tlblNoteNo.Name = "tlblNoteNo"
+        Me.tlblNoteNo.Size = New System.Drawing.Size(54, 16)
+        Me.tlblNoteNo.Text = "note_no"
         '
         'btnSetting
         '
@@ -185,7 +185,7 @@ Partial Class frmMain
     Friend WithEvents HideToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StartWithSystemToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
-    Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents tlblNoteNo As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents btnSetting As System.Windows.Forms.Button
     Friend WithEvents btnRecord As System.Windows.Forms.Button
     Friend WithEvents btnNoteList As System.Windows.Forms.Button

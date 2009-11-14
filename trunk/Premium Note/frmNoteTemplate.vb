@@ -2,7 +2,8 @@
 Option Explicit On
 Public Class frmNoteTemplate
 
-
+    Dim title As String
+    Dim content As String
     Dim noteData As clsAllNotes.clsNoteData
     Private WithEvents tmr As New Timer
     'Public note_title As String
@@ -28,41 +29,55 @@ Public Class frmNoteTemplate
 
 
 
+ 
+
+    'Public note_title As String
+    'Public note_content As String
+
+    'Public note_create_time As String
+    'Public note_done_time As String
+
+
+    'Public note_alerm_enable As String
+    'Public note_alerm_time As String
+
+    'Public note_piority As String
+    'Public blnNoteDetailmode As String
+    Public Sub New(ByVal noteClass As clsAllNotes.clsNoteData)
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+        noteData = noteClass
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+    Private Sub frmNoteTemplate_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        tmr.Interval = 50
+        tmr.Stop()
+        Me.Opacity = My.Settings.NOTE_OPACITY
+
+
+        loadNoteDataToNote(Me.noteData)
+
+    End Sub
+
+    Sub loadNoteDataToNote(ByVal noteClass As clsAllNotes.clsNoteData)
+        title = Me.noteData.note_title
+        content = Me.noteData.note_content
+        Me.panNote.BackgroundImage = getNoteBackgroundImage(Me.noteData.note_color)
+    End Sub
+
     Property readNoteData() As clsAllNotes.clsNoteData
         Get
             Return noteData
         End Get
         Set(ByVal value As clsAllNotes.clsNoteData)
-            noteData = value
+            Me.noteData = value
+            loadNoteDataToNote(Me.noteData)
         End Set
     End Property
 
 
-    Property noteDetailMode() As Boolean
-        Get
-            If noteData.blnNoteDetailmode.ToLower.Equals("true") Then
-                Return True
-            Else
-                Return False
-            End If
-        End Get
-        Set(ByVal value As Boolean)
-
-            noteData.blnNoteDetailmode = value.ToString
-            changeNoteMode(value)
-        End Set
-    End Property
-
-
-
-
-
-
-    Private Sub frmNoteTemplate_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        tmr.Interval = 50
-        tmr.Stop()
-
-    End Sub
 
 
     Private shiftX As Integer
@@ -95,7 +110,10 @@ Public Class frmNoteTemplate
         End If
     End Sub
 
-    Private Sub Panel2_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs)
 
+  
+
+    Private Sub UscImageButton6_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles UscImageButton6.MouseClick
+        T.changeNoteMode(noteData, True, True)
     End Sub
 End Class

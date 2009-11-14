@@ -23,13 +23,14 @@ Partial Class frmNoteList
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.lvw = New System.Windows.Forms.ListView
+        Me.ColumnHeader5 = New System.Windows.Forms.ColumnHeader
         Me.ColumnHeader1 = New System.Windows.Forms.ColumnHeader
         Me.ColumnHeader2 = New System.Windows.Forms.ColumnHeader
         Me.ColumnHeader3 = New System.Windows.Forms.ColumnHeader
-        Me.ColumnHeader5 = New System.Windows.Forms.ColumnHeader
         Me.ColumnHeader4 = New System.Windows.Forms.ColumnHeader
         Me.ColumnHeader6 = New System.Windows.Forms.ColumnHeader
         Me.ColumnHeader7 = New System.Windows.Forms.ColumnHeader
+        Me.btnDelete = New System.Windows.Forms.Button
         Me.SuspendLayout()
         '
         'lvw
@@ -47,6 +48,11 @@ Partial Class frmNoteList
         Me.lvw.UseCompatibleStateImageBehavior = False
         Me.lvw.View = System.Windows.Forms.View.Details
         '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "No"
+        Me.ColumnHeader5.Width = 40
+        '
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "Title"
@@ -59,11 +65,6 @@ Partial Class frmNoteList
         '
         Me.ColumnHeader3.Text = "Added Time"
         Me.ColumnHeader3.Width = 70
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "No"
-        Me.ColumnHeader5.Width = 40
         '
         'ColumnHeader4
         '
@@ -79,6 +80,15 @@ Partial Class frmNoteList
         Me.ColumnHeader7.Text = "Alerm Time"
         Me.ColumnHeader7.Width = 81
         '
+        'btnDelete
+        '
+        Me.btnDelete.Location = New System.Drawing.Point(28, 13)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(75, 23)
+        Me.btnDelete.TabIndex = 1
+        Me.btnDelete.Text = "Delete Note"
+        Me.btnDelete.UseVisualStyleBackColor = True
+        '
         'frmNoteList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -86,6 +96,7 @@ Partial Class frmNoteList
         Me.BackgroundImage = Global.Premium_Note.My.Resources.Resources.form_bg
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(510, 444)
+        Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.lvw)
         Me.Name = "frmNoteList"
         Me.Text = "frmRecord"
@@ -100,4 +111,5 @@ Partial Class frmNoteList
     Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader7 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents btnDelete As System.Windows.Forms.Button
 End Class

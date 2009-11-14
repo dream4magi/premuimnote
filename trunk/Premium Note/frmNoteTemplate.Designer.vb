@@ -22,22 +22,22 @@ Partial Class frmNoteTemplate
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.panNote = New System.Windows.Forms.Panel
         Me.UscImageButton5 = New Premium_Note.uscImageButton
         Me.UscImageButton6 = New Premium_Note.uscImageButton
-        Me.Panel1.SuspendLayout()
+        Me.panNote.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Panel1
+        'panNote
         '
-        Me.Panel1.BackgroundImage = Global.Premium_Note.My.Resources.Resources.tabColor0
-        Me.Panel1.Controls.Add(Me.UscImageButton5)
-        Me.Panel1.Controls.Add(Me.UscImageButton6)
-        Me.Panel1.Location = New System.Drawing.Point(9, 9)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(62, 23)
-        Me.Panel1.TabIndex = 0
+        Me.panNote.BackgroundImage = Global.Premium_Note.My.Resources.Resources.tabColor0
+        Me.panNote.Controls.Add(Me.UscImageButton5)
+        Me.panNote.Controls.Add(Me.UscImageButton6)
+        Me.panNote.Location = New System.Drawing.Point(9, 9)
+        Me.panNote.Margin = New System.Windows.Forms.Padding(0)
+        Me.panNote.Name = "panNote"
+        Me.panNote.Size = New System.Drawing.Size(62, 23)
+        Me.panNote.TabIndex = 0
         '
         'UscImageButton5
         '
@@ -51,8 +51,7 @@ Partial Class frmNoteTemplate
         Me.UscImageButton5.Name = "UscImageButton5"
         Me.UscImageButton5.PressedImage = Global.Premium_Note.My.Resources.Resources.done
         Me.UscImageButton5.RegularImage = Global.Premium_Note.My.Resources.Resources.done
-        Me.UscImageButton5.size = New System.Drawing.Size(11, 11)
-        Me.UscImageButton5.size = New System.Drawing.Size(11, 11)
+        Me.UscImageButton5.Size = New System.Drawing.Size(11, 11)
         Me.UscImageButton5.TabIndex = 1
         '
         'UscImageButton6
@@ -67,8 +66,7 @@ Partial Class frmNoteTemplate
         Me.UscImageButton6.Name = "UscImageButton6"
         Me.UscImageButton6.PressedImage = Global.Premium_Note.My.Resources.Resources.max
         Me.UscImageButton6.RegularImage = Global.Premium_Note.My.Resources.Resources.max
-        Me.UscImageButton6.size = New System.Drawing.Size(11, 11)
-        Me.UscImageButton6.size = New System.Drawing.Size(11, 11)
+        Me.UscImageButton6.Size = New System.Drawing.Size(11, 11)
         Me.UscImageButton6.TabIndex = 1
         '
         'frmNoteTemplate
@@ -77,17 +75,17 @@ Partial Class frmNoteTemplate
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.Fuchsia
         Me.ClientSize = New System.Drawing.Size(244, 237)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.panNote)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmNoteTemplate"
         Me.Text = "frmNoteTemplate"
         Me.TransparencyKey = System.Drawing.Color.Fuchsia
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.panNote.ResumeLayout(False)
+        Me.panNote.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents panNote As System.Windows.Forms.Panel
     Friend WithEvents UscImageButton5 As Premium_Note.uscImageButton
     Friend WithEvents UscImageButton6 As Premium_Note.uscImageButton
 End Class
