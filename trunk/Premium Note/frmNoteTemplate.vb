@@ -58,11 +58,11 @@ Public Class frmNoteTemplate
     Private Sub frmNoteTemplate_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         tmr.Interval = 50
         tmr.Stop()
-        Me.Opacity = My.Settings.NOTE_OPACITY
-
+        Me.Opacity = My.Settings.NOTE_TAB_OPACITY
+        Me.TopMost = My.Settings.NOTE_TAB_ON_TOP
 
         loadNoteDataToNote(Me.noteData)
-        Me.Location = New Point(CInt(noteData.tabX), CInt(noteData.tabY))
+        Me.Location = New Point(0, CInt(noteData.Y))
     End Sub
 
     Sub loadNoteDataToNote(ByVal noteClass As clsAllNotes.clsNoteData) Implements INotePaper.loadNoteDataToNote
@@ -87,23 +87,30 @@ Public Class frmNoteTemplate
 
 
 #Region "Move"
-    Private shiftX As Integer
+    'Private shiftX As Integer
     Private shiftY As Integer
     Private Sub frmNoteTemplate_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
-        shiftX = e.X
+        '  shiftX = e.X
         shiftY = e.Y
-        fageIn = False
-        tmr.Start()
+
+        If My.Settings.Animation Then
+            fageIn = False
+            tmr.Start()
+        End If
+
     End Sub
     Private Sub frmNoteTemplate_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseMove
         If e.Button = Windows.Forms.MouseButtons.Left Then
             Me.Top = Me.Top + e.Y - shiftY
-            Me.Left = Me.Left + e.X - shiftX
+            Me.Left = 0
+            '   Me.Left = Me.Left + e.X - shiftX
         End If
     End Sub
     Private Sub frmNoteTemplate_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseUp
-        fageIn = True
-        tmr.Start()
+        If My.Settings.Animation Then
+            fageIn = True
+            tmr.Start()
+        End If
     End Sub
 
     Dim fageIn As Boolean
@@ -139,8 +146,8 @@ Public Class frmNoteTemplate
 
 
     Private Sub frmNoteTemplate_Move(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Move
-        noteData.tabX = Me.Left.ToString
-        noteData.tabY = Me.Top.ToString
+        'noteData.X = Me.Left.ToString
+        noteData.Y = Me.Top.ToString
     End Sub
 
 
@@ -148,10 +155,9 @@ Public Class frmNoteTemplate
     Private Sub btnNoteDone_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles btnNoteDone.MouseClick
         If MsgBox("Note Done ?", MsgBoxStyle.YesNo, "Please Confirm.") = MsgBoxResult.Yes Then
             T.doneNote(Me.noteData.note_no)
+            T.noteDataChanged()
         End If
     End Sub
 
-    Private Sub UscImageButton5_MouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs)
-
-    End Sub
+ 
 End Class

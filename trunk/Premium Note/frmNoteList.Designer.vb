@@ -44,7 +44,7 @@ Partial Class frmNoteList
         Me.lvw.Name = "lvw"
         Me.lvw.ShowGroups = False
         Me.lvw.Size = New System.Drawing.Size(510, 404)
-        Me.lvw.TabIndex = 0
+        Me.lvw.TabIndex = 1
         Me.lvw.UseCompatibleStateImageBehavior = False
         Me.lvw.View = System.Windows.Forms.View.Details
         '
@@ -85,7 +85,7 @@ Partial Class frmNoteList
         Me.btnDelete.Location = New System.Drawing.Point(28, 13)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 23)
-        Me.btnDelete.TabIndex = 1
+        Me.btnDelete.TabIndex = 0
         Me.btnDelete.Text = "Delete Note"
         Me.btnDelete.UseVisualStyleBackColor = True
         '

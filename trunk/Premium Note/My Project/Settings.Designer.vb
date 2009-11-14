@@ -101,6 +101,30 @@ Namespace My
                 Me("NOTE_OPACITY") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property NOTE_TAB_OPACITY() As Double
+            Get
+                Return CType(Me("NOTE_TAB_OPACITY"),Double)
+            End Get
+            Set
+                Me("NOTE_TAB_OPACITY") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property NOTE_TAB_ON_TOP() As Boolean
+            Get
+                Return CType(Me("NOTE_TAB_ON_TOP"),Boolean)
+            End Get
+            Set
+                Me("NOTE_TAB_ON_TOP") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

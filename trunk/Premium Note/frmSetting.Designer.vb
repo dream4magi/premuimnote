@@ -25,17 +25,23 @@ Partial Class frmSetting
         Me.chkStartWSys = New System.Windows.Forms.CheckBox
         Me.Button1 = New System.Windows.Forms.Button
         Me.grbVisualSetting = New System.Windows.Forms.GroupBox
+        Me.chkTabOnTop = New System.Windows.Forms.CheckBox
+        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.TrackBarTabOpacity = New System.Windows.Forms.TrackBar
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.TrackBarOpacity = New System.Windows.Forms.TrackBar
+        Me.lblTabOpacity = New System.Windows.Forms.Label
         Me.lblOpacity = New System.Windows.Forms.Label
+        Me.Label3 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.lblFont = New System.Windows.Forms.Label
         Me.chkAnimation = New System.Windows.Forms.CheckBox
         Me.FontDialog1 = New System.Windows.Forms.FontDialog
         Me.btnClose = New System.Windows.Forms.Button
-        Me.Button2 = New System.Windows.Forms.Button
         Me.grbVisualSetting.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        CType(Me.TrackBarTabOpacity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.TrackBarOpacity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -55,41 +61,82 @@ Partial Class frmSetting
         '
         Me.Button1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Image = Global.Premium_Note.My.Resources.Resources.etc
-        Me.Button1.Location = New System.Drawing.Point(65, 22)
+        Me.Button1.Location = New System.Drawing.Point(65, 46)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(32, 18)
-        Me.Button1.TabIndex = 1
+        Me.Button1.TabIndex = 2
         Me.Button1.UseVisualStyleBackColor = True
         '
         'grbVisualSetting
         '
         Me.grbVisualSetting.BackColor = System.Drawing.Color.Transparent
+        Me.grbVisualSetting.Controls.Add(Me.chkTabOnTop)
+        Me.grbVisualSetting.Controls.Add(Me.Panel2)
         Me.grbVisualSetting.Controls.Add(Me.Panel1)
+        Me.grbVisualSetting.Controls.Add(Me.chkAnimation)
+        Me.grbVisualSetting.Controls.Add(Me.lblTabOpacity)
         Me.grbVisualSetting.Controls.Add(Me.lblOpacity)
+        Me.grbVisualSetting.Controls.Add(Me.Label3)
         Me.grbVisualSetting.Controls.Add(Me.Label2)
         Me.grbVisualSetting.Controls.Add(Me.Label1)
         Me.grbVisualSetting.Controls.Add(Me.Button1)
         Me.grbVisualSetting.Controls.Add(Me.lblFont)
-        Me.grbVisualSetting.Controls.Add(Me.chkAnimation)
         Me.grbVisualSetting.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grbVisualSetting.ForeColor = System.Drawing.Color.PaleVioletRed
-        Me.grbVisualSetting.Location = New System.Drawing.Point(12, 60)
+        Me.grbVisualSetting.Location = New System.Drawing.Point(12, 39)
         Me.grbVisualSetting.Name = "grbVisualSetting"
-        Me.grbVisualSetting.Size = New System.Drawing.Size(273, 176)
-        Me.grbVisualSetting.TabIndex = 2
+        Me.grbVisualSetting.Size = New System.Drawing.Size(251, 242)
+        Me.grbVisualSetting.TabIndex = 1
         Me.grbVisualSetting.TabStop = False
         Me.grbVisualSetting.Text = "Visual Setting"
+        '
+        'chkTabOnTop
+        '
+        Me.chkTabOnTop.AutoSize = True
+        Me.chkTabOnTop.Font = New System.Drawing.Font("Arial", 9.75!)
+        Me.chkTabOnTop.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.chkTabOnTop.Location = New System.Drawing.Point(6, 207)
+        Me.chkTabOnTop.Name = "chkTabOnTop"
+        Me.chkTabOnTop.Size = New System.Drawing.Size(147, 20)
+        Me.chkTabOnTop.TabIndex = 10
+        Me.chkTabOnTop.Text = "Tabs Always in Front"
+        Me.chkTabOnTop.UseVisualStyleBackColor = True
+        '
+        'Panel2
+        '
+        Me.Panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Panel2.BackColor = System.Drawing.Color.DarkGray
+        Me.Panel2.Controls.Add(Me.TrackBarTabOpacity)
+        Me.Panel2.Location = New System.Drawing.Point(9, 168)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Padding = New System.Windows.Forms.Padding(1)
+        Me.Panel2.Size = New System.Drawing.Size(193, 33)
+        Me.Panel2.TabIndex = 9
+        '
+        'TrackBarTabOpacity
+        '
+        Me.TrackBarTabOpacity.AutoSize = False
+        Me.TrackBarTabOpacity.BackColor = System.Drawing.SystemColors.Control
+        Me.TrackBarTabOpacity.Location = New System.Drawing.Point(1, 1)
+        Me.TrackBarTabOpacity.Maximum = 100
+        Me.TrackBarTabOpacity.Minimum = 50
+        Me.TrackBarTabOpacity.Name = "TrackBarTabOpacity"
+        Me.TrackBarTabOpacity.Size = New System.Drawing.Size(191, 31)
+        Me.TrackBarTabOpacity.TabIndex = 0
+        Me.TrackBarTabOpacity.TickFrequency = 10
+        Me.TrackBarTabOpacity.TickStyle = System.Windows.Forms.TickStyle.TopLeft
+        Me.TrackBarTabOpacity.Value = 100
         '
         'Panel1
         '
         Me.Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Panel1.BackColor = System.Drawing.Color.DarkGray
         Me.Panel1.Controls.Add(Me.TrackBarOpacity)
-        Me.Panel1.Location = New System.Drawing.Point(9, 85)
+        Me.Panel1.Location = New System.Drawing.Point(9, 109)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Padding = New System.Windows.Forms.Padding(1)
         Me.Panel1.Size = New System.Drawing.Size(193, 33)
-        Me.Panel1.TabIndex = 7
+        Me.Panel1.TabIndex = 6
         '
         'TrackBarOpacity
         '
@@ -100,26 +147,46 @@ Partial Class frmSetting
         Me.TrackBarOpacity.Minimum = 50
         Me.TrackBarOpacity.Name = "TrackBarOpacity"
         Me.TrackBarOpacity.Size = New System.Drawing.Size(191, 31)
-        Me.TrackBarOpacity.TabIndex = 5
+        Me.TrackBarOpacity.TabIndex = 0
         Me.TrackBarOpacity.TickFrequency = 10
         Me.TrackBarOpacity.TickStyle = System.Windows.Forms.TickStyle.TopLeft
         Me.TrackBarOpacity.Value = 100
         '
+        'lblTabOpacity
+        '
+        Me.lblTabOpacity.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblTabOpacity.Location = New System.Drawing.Point(140, 152)
+        Me.lblTabOpacity.Name = "lblTabOpacity"
+        Me.lblTabOpacity.Size = New System.Drawing.Size(50, 13)
+        Me.lblTabOpacity.TabIndex = 8
+        Me.lblTabOpacity.Text = "Opacity"
+        Me.lblTabOpacity.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'lblOpacity
         '
         Me.lblOpacity.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblOpacity.Location = New System.Drawing.Point(141, 68)
+        Me.lblOpacity.Location = New System.Drawing.Point(141, 92)
         Me.lblOpacity.Name = "lblOpacity"
         Me.lblOpacity.Size = New System.Drawing.Size(50, 13)
-        Me.lblOpacity.TabIndex = 6
+        Me.lblOpacity.TabIndex = 5
         Me.lblOpacity.Text = "Opacity"
         Me.lblOpacity.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label3.Location = New System.Drawing.Point(5, 152)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(89, 14)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "Note Tab Opacity"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label2.Location = New System.Drawing.Point(6, 68)
+        Me.Label2.Location = New System.Drawing.Point(6, 92)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(100, 14)
         Me.Label2.TabIndex = 4
@@ -129,10 +196,10 @@ Partial Class frmSetting
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label1.Location = New System.Drawing.Point(5, 24)
+        Me.Label1.Location = New System.Drawing.Point(5, 48)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(53, 14)
-        Me.Label1.TabIndex = 3
+        Me.Label1.TabIndex = 1
         Me.Label1.Text = "Note Font"
         '
         'lblFont
@@ -140,51 +207,42 @@ Partial Class frmSetting
         Me.lblFont.AutoEllipsis = True
         Me.lblFont.Font = New System.Drawing.Font("Arial", 9.75!)
         Me.lblFont.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblFont.Location = New System.Drawing.Point(5, 41)
+        Me.lblFont.Location = New System.Drawing.Point(5, 65)
         Me.lblFont.Name = "lblFont"
-        Me.lblFont.Size = New System.Drawing.Size(262, 20)
-        Me.lblFont.TabIndex = 2
+        Me.lblFont.Size = New System.Drawing.Size(236, 20)
+        Me.lblFont.TabIndex = 3
         Me.lblFont.Text = "Note Font"
         '
         'chkAnimation
         '
         Me.chkAnimation.AutoSize = True
+        Me.chkAnimation.BackColor = System.Drawing.Color.Transparent
         Me.chkAnimation.Font = New System.Drawing.Font("Arial", 9.75!)
         Me.chkAnimation.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.chkAnimation.Location = New System.Drawing.Point(9, 124)
+        Me.chkAnimation.Location = New System.Drawing.Point(6, 19)
         Me.chkAnimation.Name = "chkAnimation"
-        Me.chkAnimation.Size = New System.Drawing.Size(85, 20)
+        Me.chkAnimation.Size = New System.Drawing.Size(111, 20)
         Me.chkAnimation.TabIndex = 0
-        Me.chkAnimation.Text = "Animation"
-        Me.chkAnimation.UseVisualStyleBackColor = True
+        Me.chkAnimation.Text = "Use Animation"
+        Me.chkAnimation.UseVisualStyleBackColor = False
         '
         'btnClose
         '
         Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.Image = Global.Premium_Note.My.Resources.Resources.OK
-        Me.btnClose.Location = New System.Drawing.Point(245, 242)
+        Me.btnClose.Location = New System.Drawing.Point(269, 221)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(40, 40)
-        Me.btnClose.TabIndex = 9
+        Me.btnClose.Size = New System.Drawing.Size(64, 60)
+        Me.btnClose.TabIndex = 2
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnClose.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(70, 283)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 10
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'frmSetting
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackgroundImage = Global.Premium_Note.My.Resources.Resources.form_bg
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(403, 314)
-        Me.Controls.Add(Me.Button2)
+        Me.ClientSize = New System.Drawing.Size(340, 288)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.grbVisualSetting)
         Me.Controls.Add(Me.chkStartWSys)
@@ -192,9 +250,12 @@ Partial Class frmSetting
         Me.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmSetting"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmSetting"
         Me.grbVisualSetting.ResumeLayout(False)
         Me.grbVisualSetting.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        CType(Me.TrackBarTabOpacity, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         CType(Me.TrackBarOpacity, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -212,6 +273,10 @@ Partial Class frmSetting
     Friend WithEvents TrackBarOpacity As System.Windows.Forms.TrackBar
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents lblOpacity As System.Windows.Forms.Label
-    Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents TrackBarTabOpacity As System.Windows.Forms.TrackBar
+    Friend WithEvents lblTabOpacity As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents chkTabOnTop As System.Windows.Forms.CheckBox
 End Class

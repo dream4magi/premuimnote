@@ -22,11 +22,13 @@ Partial Class frmNoteDetailTemplate
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Me.panNote = New System.Windows.Forms.Panel
         Me.chkTop = New System.Windows.Forms.CheckBox
         Me.lblContent = New System.Windows.Forms.Label
         Me.line = New System.Windows.Forms.Panel
         Me.lblTitle = New System.Windows.Forms.Label
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.btnDone = New Premium_Note.uscImageButton
         Me.btnDelete = New Premium_Note.uscImageButton
         Me.btnEdit = New Premium_Note.uscImageButton
@@ -48,7 +50,7 @@ Partial Class frmNoteDetailTemplate
         Me.panNote.Location = New System.Drawing.Point(0, 0)
         Me.panNote.Name = "panNote"
         Me.panNote.Size = New System.Drawing.Size(174, 179)
-        Me.panNote.TabIndex = 1
+        Me.panNote.TabIndex = 0
         '
         'chkTop
         '
@@ -58,7 +60,7 @@ Partial Class frmNoteDetailTemplate
         Me.chkTop.Location = New System.Drawing.Point(77, 160)
         Me.chkTop.Name = "chkTop"
         Me.chkTop.Size = New System.Drawing.Size(77, 19)
-        Me.chkTop.TabIndex = 5
+        Me.chkTop.TabIndex = 6
         Me.chkTop.Text = "Stay on Top"
         Me.chkTop.UseVisualStyleBackColor = False
         '
@@ -68,7 +70,7 @@ Partial Class frmNoteDetailTemplate
         Me.lblContent.Location = New System.Drawing.Point(7, 27)
         Me.lblContent.Name = "lblContent"
         Me.lblContent.Size = New System.Drawing.Size(160, 134)
-        Me.lblContent.TabIndex = 2
+        Me.lblContent.TabIndex = 1
         Me.lblContent.Text = "Label1"
         '
         'line
@@ -83,13 +85,20 @@ Partial Class frmNoteDetailTemplate
         '
         Me.lblTitle.AutoEllipsis = True
         Me.lblTitle.BackColor = System.Drawing.Color.Transparent
-        Me.lblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitle.Location = New System.Drawing.Point(4, 3)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(167, 18)
-        Me.lblTitle.TabIndex = 4
+        Me.lblTitle.Size = New System.Drawing.Size(166, 18)
+        Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "Label2"
         Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.AutomaticDelay = 400
+        Me.ToolTip1.AutoPopDelay = 5000
+        Me.ToolTip1.InitialDelay = 400
+        Me.ToolTip1.ReshowDelay = 80
+        Me.ToolTip1.ShowAlways = True
         '
         'btnDone
         '
@@ -104,7 +113,9 @@ Partial Class frmNoteDetailTemplate
         Me.btnDone.PressedImage = Global.Premium_Note.My.Resources.Resources.done
         Me.btnDone.RegularImage = Global.Premium_Note.My.Resources.Resources.done
         Me.btnDone.Size = New System.Drawing.Size(11, 11)
-        Me.btnDone.TabIndex = 1
+        Me.btnDone.TabIndex = 2
+        Me.ToolTip1.SetToolTip(Me.btnDone, "Done!")
+        Me.btnDone.ToolTip = ""
         '
         'btnDelete
         '
@@ -119,7 +130,9 @@ Partial Class frmNoteDetailTemplate
         Me.btnDelete.PressedImage = Global.Premium_Note.My.Resources.Resources.delete
         Me.btnDelete.RegularImage = Global.Premium_Note.My.Resources.Resources.delete
         Me.btnDelete.Size = New System.Drawing.Size(11, 11)
-        Me.btnDelete.TabIndex = 1
+        Me.btnDelete.TabIndex = 3
+        Me.ToolTip1.SetToolTip(Me.btnDelete, "Delete")
+        Me.btnDelete.ToolTip = ""
         '
         'btnEdit
         '
@@ -134,7 +147,9 @@ Partial Class frmNoteDetailTemplate
         Me.btnEdit.PressedImage = Global.Premium_Note.My.Resources.Resources.edit
         Me.btnEdit.RegularImage = Global.Premium_Note.My.Resources.Resources.edit
         Me.btnEdit.Size = New System.Drawing.Size(11, 11)
-        Me.btnEdit.TabIndex = 1
+        Me.btnEdit.TabIndex = 4
+        Me.ToolTip1.SetToolTip(Me.btnEdit, "Edit")
+        Me.btnEdit.ToolTip = ""
         '
         'btnMin
         '
@@ -149,7 +164,9 @@ Partial Class frmNoteDetailTemplate
         Me.btnMin.PressedImage = Global.Premium_Note.My.Resources.Resources.min
         Me.btnMin.RegularImage = Global.Premium_Note.My.Resources.Resources.min
         Me.btnMin.Size = New System.Drawing.Size(11, 11)
-        Me.btnMin.TabIndex = 1
+        Me.btnMin.TabIndex = 5
+        Me.ToolTip1.SetToolTip(Me.btnMin, "Edge Tab")
+        Me.btnMin.ToolTip = ""
         '
         'frmNoteDetailTemplate
         '
@@ -178,4 +195,5 @@ Partial Class frmNoteDetailTemplate
     Friend WithEvents btnEdit As Premium_Note.uscImageButton
     Friend WithEvents lblTitle As System.Windows.Forms.Label
     Friend WithEvents chkTop As System.Windows.Forms.CheckBox
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
 End Class

@@ -22,7 +22,9 @@ Partial Class frmNoteTemplate
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Me.panNote = New System.Windows.Forms.Panel
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.btnNoteDone = New Premium_Note.uscImageButton
         Me.btnChangeMode = New Premium_Note.uscImageButton
         Me.panNote.SuspendLayout()
@@ -39,6 +41,13 @@ Partial Class frmNoteTemplate
         Me.panNote.Size = New System.Drawing.Size(62, 23)
         Me.panNote.TabIndex = 0
         '
+        'ToolTip1
+        '
+        Me.ToolTip1.AutomaticDelay = 300
+        Me.ToolTip1.AutoPopDelay = 5000
+        Me.ToolTip1.InitialDelay = 300
+        Me.ToolTip1.ReshowDelay = 60
+        '
         'btnNoteDone
         '
         Me.btnNoteDone.AutoSize = True
@@ -52,7 +61,9 @@ Partial Class frmNoteTemplate
         Me.btnNoteDone.PressedImage = Global.Premium_Note.My.Resources.Resources.done
         Me.btnNoteDone.RegularImage = Global.Premium_Note.My.Resources.Resources.done
         Me.btnNoteDone.Size = New System.Drawing.Size(11, 11)
-        Me.btnNoteDone.TabIndex = 1
+        Me.btnNoteDone.TabIndex = 0
+        Me.ToolTip1.SetToolTip(Me.btnNoteDone, "Done!")
+        Me.btnNoteDone.ToolTip = ""
         '
         'btnChangeMode
         '
@@ -68,6 +79,8 @@ Partial Class frmNoteTemplate
         Me.btnChangeMode.RegularImage = Global.Premium_Note.My.Resources.Resources.max
         Me.btnChangeMode.Size = New System.Drawing.Size(11, 11)
         Me.btnChangeMode.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.btnChangeMode, "Detail Mode")
+        Me.btnChangeMode.ToolTip = ""
         '
         'frmNoteTemplate
         '
@@ -82,6 +95,7 @@ Partial Class frmNoteTemplate
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "frmNoteTemplate"
+        Me.TopMost = True
         Me.TransparencyKey = System.Drawing.Color.Fuchsia
         Me.panNote.ResumeLayout(False)
         Me.panNote.PerformLayout()
@@ -91,4 +105,5 @@ Partial Class frmNoteTemplate
     Friend WithEvents panNote As System.Windows.Forms.Panel
     Friend WithEvents btnNoteDone As Premium_Note.uscImageButton
     Friend WithEvents btnChangeMode As Premium_Note.uscImageButton
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
 End Class
