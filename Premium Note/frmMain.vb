@@ -106,8 +106,8 @@ Public Class frmMain
     End Sub
 
     Private Sub btnSetting_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSetting.Click
-        frmSetting.Show()
-        frmSetting.Owner = Me
+        frmPreference.Show()
+        frmPreference.Owner = Me
     End Sub
 
     Private Sub AddNewNoteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddNewNoteToolStripMenuItem.Click
