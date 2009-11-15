@@ -7,14 +7,14 @@
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
-        Me.ToolTip0.SetToolTip(Me.picBtn, ToolTip)
+        Me.ToolTip0.SetToolTip(Me.picBtn, ToolTipMe)
     End Sub
     Private Sub uscImageButton_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.picBtn.Image = imgRegular
     End Sub
 
     Private strToolTip As String = ""
-    Property ToolTip() As String
+    Property ToolTipMe() As String
         Get
             Return strToolTip
         End Get

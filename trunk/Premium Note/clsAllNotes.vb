@@ -26,6 +26,8 @@ Public Class clsAllNotes
 
         Public note_color As String = "0"
 
+        Public note_TabAutoHide As String = "Y"
+
         Public X As String = CInt((My.Computer.Screen.PrimaryScreen.Bounds.Width - 200) / 2).ToString
         Public Y As String = CInt((My.Computer.Screen.PrimaryScreen.Bounds.Height - 200) / 2).ToString
 

@@ -41,6 +41,7 @@ Partial Class frmMain
         Me.btnAbout = New System.Windows.Forms.LinkLabel
         Me.tmr = New System.Windows.Forms.Timer(Me.components)
         Me.tmrAlermCheck = New System.Windows.Forms.Timer(Me.components)
+        Me.ArrangeTabsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.TaskIconMenu.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -54,9 +55,9 @@ Partial Class frmMain
         '
         'TaskIconMenu
         '
-        Me.TaskIconMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.AddNewNoteToolStripMenuItem, Me.StartWithSystemToolStripMenuItem, Me.ToolStripMenuItem1, Me.HideToolStripMenuItem, Me.ExitPremiumNoteToolStripMenuItem})
+        Me.TaskIconMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.HideToolStripMenuItem, Me.AddNewNoteToolStripMenuItem, Me.ArrangeTabsToolStripMenuItem, Me.StartWithSystemToolStripMenuItem, Me.ToolStripMenuItem1, Me.ExitPremiumNoteToolStripMenuItem})
         Me.TaskIconMenu.Name = "TaskIconMenu"
-        Me.TaskIconMenu.Size = New System.Drawing.Size(182, 120)
+        Me.TaskIconMenu.Size = New System.Drawing.Size(182, 164)
         '
         'ShowToolStripMenuItem
         '
@@ -198,6 +199,12 @@ Partial Class frmMain
         Me.tmrAlermCheck.Enabled = True
         Me.tmrAlermCheck.Interval = 25000
         '
+        'ArrangeTabsToolStripMenuItem
+        '
+        Me.ArrangeTabsToolStripMenuItem.Name = "ArrangeTabsToolStripMenuItem"
+        Me.ArrangeTabsToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.ArrangeTabsToolStripMenuItem.Text = "Arrange Tabs"
+        '
         'frmMain
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -243,6 +250,7 @@ Partial Class frmMain
     Friend WithEvents btnAbout As System.Windows.Forms.LinkLabel
     Friend WithEvents tmr As System.Windows.Forms.Timer
     Friend WithEvents tmrAlermCheck As System.Windows.Forms.Timer
+    Friend WithEvents ArrangeTabsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class

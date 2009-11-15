@@ -133,4 +133,8 @@ Public Class frmMain
     Private Sub btnRecord_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRecord.Click
 
     End Sub
+
+    Private Sub ArrangeTabsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArrangeTabsToolStripMenuItem.Click
+        T.arrangeTabs()
+    End Sub
 End Class

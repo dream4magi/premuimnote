@@ -8,7 +8,7 @@
     <Setting Name="NOTE_FONT" Type="System.Drawing.Font" Scope="User">
       <Value Profile="(Default)">Microsoft JhengHei, 12pt</Value>
     </Setting>
-    <Setting Name="Animation" Type="System.Boolean" Scope="User">
+    <Setting Name="ANIMATION" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="NOTE_OPACITY" Type="System.Double" Scope="User">

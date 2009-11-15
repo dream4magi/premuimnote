@@ -69,6 +69,31 @@
 
 
     End Sub
+    Sub arrangeTabs()
+        Dim start_X As Integer = 100
+        Dim end_X As Integer = My.Computer.Screen.PrimaryScreen.Bounds.Width - 120
+        Dim tab_count As Integer = 0
+
+        Dim aryTabs As New List(Of frmNoteTemplate)
+        For Each obj As INotePaper In aryALL_NOTES_paper
+            If obj.GetType.Equals(GetType(frmNoteTemplate)) Then
+                tab_count += 1
+                aryTabs.Add(CType(obj, frmNoteTemplate))
+            End If
+        Next
+
+        If tab_count * 23 + (tab_count - 1) * 2 > end_X - start_X Then
+
+        Else
+
+            For i As Integer = 0 To aryTabs.Count - 1
+                aryTabs.Item(i).Left = start_X + i * (23 + 2)
+                aryTabs.Item(i).BringToFront()
+            Next
+
+        End If
+
+    End Sub
 #End Region
 
 #Region "File Handle"
@@ -308,7 +333,7 @@
         newNote.note_alerm_time = alerm_time
         newNote.note_piority = piority
         newNote.note_color = noteColor
-
+        newNote.note_TabAutoHide = "Y"
         aryALL_NOTES.Add(newNote)
         frmMain.refreshNote_no()
         Return newNote

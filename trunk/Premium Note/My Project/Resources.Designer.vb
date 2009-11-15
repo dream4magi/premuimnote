@@ -109,6 +109,20 @@ Namespace My.Resources
             End Get
         End Property
         
+        Public ReadOnly Property AutoHide() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("AutoHide", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Public ReadOnly Property AutoHide_hover() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("AutoHide_hover", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Public ReadOnly Property Blender() As System.Drawing.Icon
             Get
                 Dim obj As Object = ResourceManager.GetObject("Blender", resourceCulture)

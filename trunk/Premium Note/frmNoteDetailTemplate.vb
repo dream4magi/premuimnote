@@ -87,7 +87,7 @@ Public Class frmNoteDetailTemplate
     Private Sub frmNoteTemplate_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
         shiftX = e.X
         shiftY = e.Y
-        If My.Settings.Animation Then
+        If My.Settings.ANIMATION Then
             fageIn = False
             tmr.Start()
         End If
@@ -99,7 +99,7 @@ Public Class frmNoteDetailTemplate
         End If
     End Sub
     Private Sub frmNoteTemplate_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseUp
-        If My.Settings.Animation Then
+        If My.Settings.ANIMATION Then
             fageIn = True
             tmr.Start()
         End If
@@ -253,4 +253,5 @@ Public Class frmNoteDetailTemplate
 
 
 
+ 
 End Class
