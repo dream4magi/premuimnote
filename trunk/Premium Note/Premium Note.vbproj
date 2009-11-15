@@ -145,10 +145,10 @@
     <Compile Include="frmRecord.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSetting.Designer.vb">
-      <DependentUpon>frmSetting.vb</DependentUpon>
+    <Compile Include="frmPreference.Designer.vb">
+      <DependentUpon>frmPreference.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmSetting.vb">
+    <Compile Include="frmPreference.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="INotePaper.vb" />
@@ -205,8 +205,8 @@
       <DependentUpon>frmRecord.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSetting.resx">
-      <DependentUpon>frmSetting.vb</DependentUpon>
+    <EmbeddedResource Include="frmPreference.resx">
+      <DependentUpon>frmPreference.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
