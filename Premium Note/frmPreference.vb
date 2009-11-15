@@ -10,7 +10,7 @@ Public Class frmPreference
         Me.lblOpacity.Text = TrackBarOpacity.Value.ToString
         Me.lblTabOpacity.Text = TrackBarTabOpacity.Value.ToString
         chkTabOnTop.Checked = My.Settings.NOTE_TAB_ON_TOP
-        chkAnimation.Checked = My.Settings.Animation
+        chkAnimation.Checked = My.Settings.ANIMATION
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
@@ -35,7 +35,7 @@ Public Class frmPreference
     End Sub
 
     Private Sub chkAnimation_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkAnimation.CheckedChanged
-        My.Settings.Animation = chkAnimation.Checked
+        My.Settings.ANIMATION = chkAnimation.Checked
 
     End Sub
 

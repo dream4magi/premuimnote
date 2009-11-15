@@ -106,8 +106,7 @@ Partial Class frmNoteDetailTemplate
         Me.btnDone.RegularImage = Global.Premium_Note.My.Resources.Resources.done
         Me.btnDone.Size = New System.Drawing.Size(11, 11)
         Me.btnDone.TabIndex = 2
-        Me.ToolTip1.SetToolTip(Me.btnDone, "Done!")
-        Me.btnDone.ToolTip = ""
+        Me.btnDone.ToolTipMe = "Done!"
         '
         'btnDelete
         '
@@ -123,8 +122,7 @@ Partial Class frmNoteDetailTemplate
         Me.btnDelete.RegularImage = Global.Premium_Note.My.Resources.Resources.delete
         Me.btnDelete.Size = New System.Drawing.Size(11, 11)
         Me.btnDelete.TabIndex = 3
-        Me.ToolTip1.SetToolTip(Me.btnDelete, "Delete")
-        Me.btnDelete.ToolTip = ""
+        Me.btnDelete.ToolTipMe = "Delete"
         '
         'btnEdit
         '
@@ -140,8 +138,7 @@ Partial Class frmNoteDetailTemplate
         Me.btnEdit.RegularImage = Global.Premium_Note.My.Resources.Resources.edit
         Me.btnEdit.Size = New System.Drawing.Size(11, 11)
         Me.btnEdit.TabIndex = 4
-        Me.ToolTip1.SetToolTip(Me.btnEdit, "Edit")
-        Me.btnEdit.ToolTip = ""
+        Me.btnEdit.ToolTipMe = "Edit"
         '
         'btnMin
         '
@@ -157,8 +154,7 @@ Partial Class frmNoteDetailTemplate
         Me.btnMin.RegularImage = Global.Premium_Note.My.Resources.Resources.min
         Me.btnMin.Size = New System.Drawing.Size(11, 11)
         Me.btnMin.TabIndex = 5
-        Me.ToolTip1.SetToolTip(Me.btnMin, "Edge Tab")
-        Me.btnMin.ToolTip = ""
+        Me.btnMin.ToolTipMe = "Edge Tab"
         '
         'ToolTip1
         '

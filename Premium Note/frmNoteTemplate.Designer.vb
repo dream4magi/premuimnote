@@ -25,7 +25,7 @@ Partial Class frmNoteTemplate
         Me.components = New System.ComponentModel.Container
         Me.panNote = New System.Windows.Forms.Panel
         Me.btnNoteDone = New Premium_Note.uscImageButton
-        Me.btnChangeMode = New Premium_Note.uscImageButton
+        Me.btnAutoHide = New Premium_Note.uscImageButton
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.panNote.SuspendLayout()
         Me.SuspendLayout()
@@ -34,7 +34,7 @@ Partial Class frmNoteTemplate
         '
         Me.panNote.BackgroundImage = Global.Premium_Note.My.Resources.Resources.tabColor0
         Me.panNote.Controls.Add(Me.btnNoteDone)
-        Me.panNote.Controls.Add(Me.btnChangeMode)
+        Me.panNote.Controls.Add(Me.btnAutoHide)
         Me.panNote.Location = New System.Drawing.Point(0, 0)
         Me.panNote.Margin = New System.Windows.Forms.Padding(0)
         Me.panNote.Name = "panNote"
@@ -55,25 +55,23 @@ Partial Class frmNoteTemplate
         Me.btnNoteDone.RegularImage = Global.Premium_Note.My.Resources.Resources.done
         Me.btnNoteDone.Size = New System.Drawing.Size(11, 11)
         Me.btnNoteDone.TabIndex = 0
-        Me.ToolTip1.SetToolTip(Me.btnNoteDone, "Done!")
-        Me.btnNoteDone.ToolTip = ""
+        Me.btnNoteDone.ToolTipMe = "Done!"
         '
-        'btnChangeMode
+        'btnAutoHide
         '
-        Me.btnChangeMode.AutoSize = True
-        Me.btnChangeMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnChangeMode.BackColor = System.Drawing.Color.Transparent
-        Me.btnChangeMode.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnChangeMode.HoverImage = Global.Premium_Note.My.Resources.Resources.max_hover
-        Me.btnChangeMode.Location = New System.Drawing.Point(11, 0)
-        Me.btnChangeMode.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnChangeMode.Name = "btnChangeMode"
-        Me.btnChangeMode.PressedImage = Global.Premium_Note.My.Resources.Resources.max
-        Me.btnChangeMode.RegularImage = Global.Premium_Note.My.Resources.Resources.max
-        Me.btnChangeMode.Size = New System.Drawing.Size(11, 11)
-        Me.btnChangeMode.TabIndex = 1
-        Me.ToolTip1.SetToolTip(Me.btnChangeMode, "Detail Mode")
-        Me.btnChangeMode.ToolTip = ""
+        Me.btnAutoHide.AutoSize = True
+        Me.btnAutoHide.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btnAutoHide.BackColor = System.Drawing.Color.Transparent
+        Me.btnAutoHide.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAutoHide.HoverImage = Global.Premium_Note.My.Resources.Resources.AutoHide_hover
+        Me.btnAutoHide.Location = New System.Drawing.Point(11, 0)
+        Me.btnAutoHide.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnAutoHide.Name = "btnAutoHide"
+        Me.btnAutoHide.PressedImage = Global.Premium_Note.My.Resources.Resources.AutoHide
+        Me.btnAutoHide.RegularImage = Global.Premium_Note.My.Resources.Resources.AutoHide
+        Me.btnAutoHide.Size = New System.Drawing.Size(11, 11)
+        Me.btnAutoHide.TabIndex = 1
+        Me.btnAutoHide.ToolTipMe = "Auto Hide"
         '
         'ToolTip1
         '
@@ -104,6 +102,6 @@ Partial Class frmNoteTemplate
     End Sub
     Friend WithEvents panNote As System.Windows.Forms.Panel
     Friend WithEvents btnNoteDone As Premium_Note.uscImageButton
-    Friend WithEvents btnChangeMode As Premium_Note.uscImageButton
+    Friend WithEvents btnAutoHide As Premium_Note.uscImageButton
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
 End Class
