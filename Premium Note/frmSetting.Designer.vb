@@ -97,9 +97,9 @@ Partial Class frmSetting
         Me.chkTabOnTop.ForeColor = System.Drawing.SystemColors.ControlText
         Me.chkTabOnTop.Location = New System.Drawing.Point(6, 207)
         Me.chkTabOnTop.Name = "chkTabOnTop"
-        Me.chkTabOnTop.Size = New System.Drawing.Size(147, 20)
+        Me.chkTabOnTop.Size = New System.Drawing.Size(169, 20)
         Me.chkTabOnTop.TabIndex = 10
-        Me.chkTabOnTop.Text = "Tabs Always in Front"
+        Me.chkTabOnTop.Text = "Tabs Always in the Front"
         Me.chkTabOnTop.UseVisualStyleBackColor = True
         '
         'Panel2
