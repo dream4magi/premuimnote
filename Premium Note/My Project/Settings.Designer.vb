@@ -104,7 +104,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("0.85")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0.9")>  _
         Public Property NOTE_TAB_OPACITY() As Double
             Get
                 Return CType(Me("NOTE_TAB_OPACITY"),Double)
