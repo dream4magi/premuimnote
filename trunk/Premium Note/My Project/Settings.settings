@@ -15,7 +15,7 @@
       <Value Profile="(Default)">0.95</Value>
     </Setting>
     <Setting Name="NOTE_TAB_OPACITY" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0.85</Value>
+      <Value Profile="(Default)">0.9</Value>
     </Setting>
     <Setting Name="NOTE_TAB_ON_TOP" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
