@@ -71,19 +71,22 @@ Public Class frmMain
         mdlVariable.initialNoteColor()
 
         Dim ALL_NOTES As clsAllNotes = readDataFile()
+
         If ALL_NOTES.Notes IsNot Nothing Then
             For i As Integer = 0 To ALL_NOTES.Notes.Length - 1
-                aryALL_NOTES.Add(ALL_NOTES.Notes(i))
+
+                aryALL_NOTES.Add(CType(ALL_NOTES.Notes(i).Clone, clsNoteData))
             Next
         End If
 
+
         ALL_NOTES = Nothing
+        'GC.SuppressFinalize(ALL_NOTES)
 
-
-        'Dim a As New clsAllNotes.clsNoteData(T.getNewNoteNo.ToString)
+        'Dim a As New clsNoteData(T.getNewNoteNo.ToString)
 
         'aryALL_NOTES.Add(a)
-        'a = New clsAllNotes.clsNoteData(T.getNewNoteNo.ToString)
+        'a = New clsNoteData(T.getNewNoteNo.ToString)
         'aryALL_NOTES.Add(a)
 
         refreshNote_no()
@@ -136,5 +139,13 @@ Public Class frmMain
 
     Private Sub ArrangeTabsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArrangeTabsToolStripMenuItem.Click
         T.arrangeTabs()
+    End Sub
+
+    Private Sub ArrangeTabsByColorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArrangeTabsByColorToolStripMenuItem.Click
+        T.arrangeTabsByColor()
+    End Sub
+
+    Private Sub ArrangeTabsByAutoHideToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArrangeTabsByAutoHideToolStripMenuItem.Click
+        T.arrangeTabsByAutoHide()
     End Sub
 End Class

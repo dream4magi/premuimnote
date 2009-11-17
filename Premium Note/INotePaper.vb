@@ -1,7 +1,7 @@
 ﻿Public Interface INotePaper
 
-    Property readNoteData() As clsAllNotes.clsNoteData
-    Sub loadNoteDataToNote(ByVal noteClass As clsAllNotes.clsNoteData)
+    Property readNoteData() As clsNoteData
+    Sub loadNoteDataToNote(ByVal noteClass As clsNoteData)
 
 
 End Interface

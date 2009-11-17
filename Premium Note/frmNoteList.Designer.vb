@@ -132,6 +132,7 @@ Partial Class frmNoteList
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "frmNoteList"
         Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Note List"
         Me.ResumeLayout(False)
 

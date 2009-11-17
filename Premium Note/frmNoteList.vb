@@ -13,7 +13,7 @@ Public Class frmNoteList
 
     Public Sub loadLvw()
         lvw.Items.Clear()
-        For Each obj As clsAllNotes.clsNoteData In aryALL_NOTES
+        For Each obj As clsNoteData In aryALL_NOTES
             Dim lvwItem As New ListViewItem
             Dim item(strLvwColname.Length - 1) As String
             item(T.getLvwColnumByName(strLvwColname, "no")) = obj.note_no
@@ -43,6 +43,7 @@ Public Class frmNoteList
 
             End If
             T.noteDataChanged()
+            '   GC.Collect()
         End If
     End Sub
 

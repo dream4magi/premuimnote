@@ -8,7 +8,7 @@ Public Class frmNoteTemplate
 
     Dim title As String
     Dim content As String
-    Dim noteData As clsAllNotes.clsNoteData
+    Dim noteData As clsNoteData
     Private WithEvents tmr As New Timer
 
     Private WithEvents tmrMove As New Timer
@@ -30,7 +30,7 @@ Public Class frmNoteTemplate
 
 
 
-    Public Sub New(ByVal noteClass As clsAllNotes.clsNoteData, Optional ByVal Opacity As Double = 1)
+    Public Sub New(ByVal noteClass As clsNoteData, Optional ByVal Opacity As Double = 1)
 
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
@@ -52,21 +52,23 @@ Public Class frmNoteTemplate
         loadNoteDataToNote(Me.noteData)
         Me.Location = New Point(CInt(noteData.X), 0)
 
+        '  chk_AutoHideOnOffToolStripMenuItem()
+
         blnOpen = True
         tmrMove.Start()
     End Sub
 
-    Sub loadNoteDataToNote(ByVal noteClass As clsAllNotes.clsNoteData) Implements INotePaper.loadNoteDataToNote
+    Sub loadNoteDataToNote(ByVal noteClass As clsNoteData) Implements INotePaper.loadNoteDataToNote
         title = Me.noteData.note_title
         content = Me.noteData.note_content
         Me.panNote.BackgroundImage = getNoteBackgroundImage(Me.noteData.note_color)
     End Sub
 
-    Property readNoteData() As clsAllNotes.clsNoteData Implements INotePaper.readNoteData
+    Property readNoteData() As clsNoteData Implements INotePaper.readNoteData
         Get
             Return noteData
         End Get
-        Set(ByVal value As clsAllNotes.clsNoteData)
+        Set(ByVal value As clsNoteData)
             Me.noteData = value
             loadNoteDataToNote(Me.noteData)
         End Set
@@ -81,23 +83,21 @@ Public Class frmNoteTemplate
     Private shiftX As Integer
     'Private shiftY As Integer
     Private Sub frmNoteTemplate_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
-        shiftX = e.X
-        'shiftY = e.Y
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            shiftX = e.X
+            'shiftY = e.Y
 
-        If My.Settings.ANIMATION Then
-            fageIn = False
-            tmr.Start()
+            If My.Settings.ANIMATION Then
+                fageIn = False
+                tmr.Start()
+            End If
         End If
-
     End Sub
 
     Private Sub panNote_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles panNote.MouseDoubleClick
         T.changeNoteMode(noteData, True)
     End Sub
 
-    Private Sub frmNoteTemplate_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.MouseEnter, panNote.MouseEnter
-
-    End Sub
 
     Private Sub frmNoteTemplate_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.MouseHover, panNote.MouseHover, btnAutoHide.MouseHover, btnNoteDone.MouseHover
         If noteData.note_TabAutoHide.ToUpper.Equals("Y") Then
@@ -169,11 +169,7 @@ Public Class frmNoteTemplate
 
 
     Private Sub btnChangeMode_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles btnAutoHide.MouseClick
-        If noteData.note_TabAutoHide.ToUpper.Equals("Y") Then
-            noteData.note_TabAutoHide = "N"
-        Else
-            noteData.note_TabAutoHide = "Y"
-        End If
+        AutoHide()
     End Sub
 
 
@@ -182,13 +178,15 @@ Public Class frmNoteTemplate
         ' noteData.Y = Me.Top.ToString
     End Sub
 
-
-
-    Private Sub btnNoteDone_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles btnNoteDone.MouseClick
+    Sub NoteDone()
         If MsgBox("Note Done ?", MsgBoxStyle.YesNo, "Please Confirm.") = MsgBoxResult.Yes Then
             T.doneNote(Me.noteData.note_no)
             T.noteDataChanged()
         End If
+    End Sub
+
+    Private Sub btnNoteDone_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles btnNoteDone.MouseClick
+        NoteDone()
     End Sub
 
  
@@ -223,20 +221,73 @@ Public Class frmNoteTemplate
     End Sub
 
     Private Sub tmrChkMouseHover_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles tmrChkMouseHover.Tick
+        If noteData IsNot Nothing Then
+            If noteData.note_TabAutoHide.ToUpper.Equals("Y") Then
+                If Not (Me.MousePosition.X > Me.Left AndAlso Me.MousePosition.X < Me.Left + Me.Width AndAlso _
+                    Me.MousePosition.Y > Me.Top AndAlso Me.MousePosition.Y < Me.Top + Me.Height) Then
 
-        If noteData.note_TabAutoHide.ToUpper.Equals("Y") Then
-            If Not (Me.MousePosition.X > Me.Left AndAlso Me.MousePosition.X < Me.Left + Me.Width AndAlso _
-                Me.MousePosition.Y > Me.Top AndAlso Me.MousePosition.Y < Me.Top + Me.Height) Then
-
-                blnOpen = False
-                tmrMove.Start()
+                    blnOpen = False
+                    tmrMove.Start()
+                End If
             End If
         End If
 
 
     End Sub
 
-    Private Sub panNote_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles panNote.Paint
 
+
+
+
+    Sub chk_AutoHideOnOffToolStripMenuItem()
+        If Me.noteData.note_TabAutoHide.ToUpper.Equals("Y") Then
+            AutoHideOnOffToolStripMenuItem.Checked = True
+        Else
+            AutoHideOnOffToolStripMenuItem.Checked = False
+        End If
+    End Sub
+
+    Sub AutoHide()
+        If noteData.note_TabAutoHide.ToUpper.Equals("Y") Then
+            noteData.note_TabAutoHide = "N"
+        Else
+            noteData.note_TabAutoHide = "Y"
+        End If
+        chk_AutoHideOnOffToolStripMenuItem()
+    End Sub
+
+    Private Sub AddNotToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddNotToolStripMenuItem.Click
+        frmAddNote.Show()
+    End Sub
+
+    Private Sub AutoHideOnOffToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles AutoHideOnOffToolStripMenuItem.Click
+        AutoHide()
+    End Sub
+
+    Private Sub DetailLookToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DetailLookToolStripMenuItem.Click
+        T.changeNoteMode(noteData, True)
+    End Sub
+
+    Private Sub ThisNoteIsDONEToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ThisNoteIsDONEToolStripMenuItem.Click
+        NoteDone()
+    End Sub
+
+    Private Sub DeleteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteToolStripMenuItem.Click
+        If MsgBox("This will delete the Note forever," & vbCrLf & "Continue ?", MsgBoxStyle.YesNo, "Please Confirm.") = MsgBoxResult.Yes Then
+            T.deleteNote(Me.noteData.note_no)
+            T.noteDataChanged()
+        End If
+    End Sub
+
+    Private Sub ArrangeTabsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArrangeTabsToolStripMenuItem.Click
+        T.arrangeTabs()
+    End Sub
+
+    Private Sub ArrangesTabsByColorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArrangesTabsByColorToolStripMenuItem.Click
+        T.arrangeTabsByColor()
+    End Sub
+
+    Private Sub ArrangeTabsByAutoHideToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArrangeTabsByAutoHideToolStripMenuItem.Click
+        T.arrangeTabsByAutoHide()
     End Sub
 End Class

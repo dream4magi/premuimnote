@@ -14,7 +14,7 @@
         Next
         Return -1
     End Function
-    Function getNoteColorNum(ByVal noteClass As clsAllNotes.clsNoteData) As Integer
+    Function getNoteColorNum(ByVal noteClass As clsNoteData) As Integer
         Select Case noteClass.note_color
             Case "0"
                 Return 0
@@ -72,23 +72,119 @@
     Sub arrangeTabs()
         Dim start_X As Integer = 100
         Dim end_X As Integer = My.Computer.Screen.PrimaryScreen.Bounds.Width - 120
-        Dim tab_count As Integer = 0
 
         Dim aryTabs As New List(Of frmNoteTemplate)
         For Each obj As INotePaper In aryALL_NOTES_paper
             If obj.GetType.Equals(GetType(frmNoteTemplate)) Then
-                tab_count += 1
+
                 aryTabs.Add(CType(obj, frmNoteTemplate))
             End If
         Next
 
-        If tab_count * 23 + (tab_count - 1) * 2 > end_X - start_X Then
-
+        If aryTabs.Count * 23 + (aryTabs.Count - 1) * 2 > end_X - start_X Then
+            For i As Integer = 0 To aryTabs.Count - 1
+                aryTabs.Item(i).Left = CInt(start_X + i * (end_X - start_X) / aryTabs.Count)
+                aryTabs.Item(i).SendToBack()
+            Next
         Else
 
             For i As Integer = 0 To aryTabs.Count - 1
                 aryTabs.Item(i).Left = start_X + i * (23 + 2)
-                aryTabs.Item(i).BringToFront()
+                aryTabs.Item(i).SendToBack()
+            Next
+
+        End If
+
+    End Sub
+
+    Sub arrangeTabsByColor()
+        Dim start_X As Integer = 100
+        Dim end_X As Integer = My.Computer.Screen.PrimaryScreen.Bounds.Width - 120
+
+        Dim aryTabs As New List(Of frmNoteTemplate)
+        For Each obj As INotePaper In aryALL_NOTES_paper
+            If obj.GetType.Equals(GetType(frmNoteTemplate)) Then
+
+                aryTabs.Add(CType(obj, frmNoteTemplate))
+            End If
+        Next
+
+        If aryTabs.Count * 23 + (aryTabs.Count - 1) * 2 > end_X - start_X Then
+            Dim iCount As Integer = 0
+            For j As Integer = 0 To NoteColor.Length - 1
+                For i As Integer = 0 To aryTabs.Count - 1
+                    If aryTabs.Item(i).readNoteData.note_color.Equals(j.ToString) Then
+                        aryTabs.Item(i).Left = CInt(start_X + iCount * (end_X - start_X) / aryTabs.Count)
+                        aryTabs.Item(i).SendToBack()
+                        iCount += 1
+                    End If
+                Next
+            Next
+
+        Else
+            Dim iCount As Integer = 0
+            For j As Integer = 0 To NoteColor.Length - 1
+                For i As Integer = 0 To aryTabs.Count - 1
+                    If aryTabs.Item(i).readNoteData.note_color.Equals(j.ToString) Then
+                        aryTabs.Item(i).Left = start_X + iCount * (23 + 2)
+                        aryTabs.Item(i).SendToBack()
+                        iCount += 1
+                    End If
+                Next
+            Next
+        End If
+
+    End Sub
+
+    Sub arrangeTabsByAutoHide()
+        Dim start_X As Integer = 100
+        Dim end_X As Integer = My.Computer.Screen.PrimaryScreen.Bounds.Width - 120
+
+        Dim aryTabs As New List(Of frmNoteTemplate)
+        For Each obj As INotePaper In aryALL_NOTES_paper
+            If obj.GetType.Equals(GetType(frmNoteTemplate)) Then
+
+                aryTabs.Add(CType(obj, frmNoteTemplate))
+            End If
+        Next
+
+        If aryTabs.Count * 23 + (aryTabs.Count - 1) * 2 > end_X - start_X Then
+            Dim iCount As Integer = 0
+
+            For i As Integer = 0 To aryTabs.Count - 1
+                If aryTabs.Item(i).readNoteData.note_TabAutoHide.ToUpper.Equals("N") Then
+                    aryTabs.Item(i).Left = CInt(start_X + iCount * (end_X - start_X) / aryTabs.Count)
+                    aryTabs.Item(i).SendToBack()
+                    iCount += 1
+                End If
+            Next
+            For i As Integer = 0 To aryTabs.Count - 1
+                If aryTabs.Item(i).readNoteData.note_TabAutoHide.ToUpper.Equals("Y") Then
+                    aryTabs.Item(i).Left = CInt(start_X + iCount * (end_X - start_X) / aryTabs.Count)
+                    aryTabs.Item(i).SendToBack()
+                    iCount += 1
+                End If
+            Next
+
+
+        Else
+            Dim iCount As Integer = 0
+
+
+
+            For i As Integer = 0 To aryTabs.Count - 1
+                If aryTabs.Item(i).readNoteData.note_TabAutoHide.ToUpper.Equals("N") Then
+                    aryTabs.Item(i).Left = start_X + iCount * (23 + 2)
+                    aryTabs.Item(i).SendToBack()
+                    iCount += 1
+                End If
+            Next
+            For i As Integer = 0 To aryTabs.Count - 1
+                If aryTabs.Item(i).readNoteData.note_TabAutoHide.ToUpper.Equals("Y") Then
+                    aryTabs.Item(i).Left = start_X + iCount * (23 + 2)
+                    aryTabs.Item(i).SendToBack()
+                    iCount += 1
+                End If
             Next
 
         End If
@@ -98,7 +194,7 @@
 
 #Region "File Handle"
     Function readDataFile() As clsAllNotes
-        Dim ALL_NOTES As clsAllNotes
+        Dim ALL_NOTES As clsAllNotes = Nothing
         Try
 
 
@@ -107,7 +203,7 @@
 
             Dim Xmsg As New Xstream.Core.XStream
             Xmsg.Alias("AllNotes", GetType(clsAllNotes))
-            Xmsg.Alias("Note", GetType(clsAllNotes.clsNoteData))
+            Xmsg.Alias("Note", GetType(clsNoteData))
             ALL_NOTES = CType(Xmsg.FromXml(fileContents), clsAllNotes)
         Catch ex As Exception
             'MsgBox(ex.Message)
@@ -131,7 +227,7 @@
         Try
             Dim Xmsg As New Xstream.Core.XStream
             Xmsg.Alias("AllNotes", GetType(clsAllNotes))
-            Xmsg.Alias("Note", GetType(clsAllNotes.clsNoteData))
+            Xmsg.Alias("Note", GetType(clsNoteData))
 
 
             My.Computer.FileSystem.WriteAllText("data.xml", Xmsg.ToXml(ALL_NOTES), False)
@@ -142,7 +238,7 @@
 
     End Sub
     Function readDoneDataFile() As clsAllNotes
-        Dim DONE_NOTES As clsAllNotes
+        Dim DONE_NOTES As clsAllNotes = Nothing
         Try
 
 
@@ -151,7 +247,7 @@
 
             Dim Xmsg As New Xstream.Core.XStream
             Xmsg.Alias("AllNotes", GetType(clsAllNotes))
-            Xmsg.Alias("Note", GetType(clsAllNotes.clsNoteData))
+            Xmsg.Alias("Note", GetType(clsNoteData))
             DONE_NOTES = CType(Xmsg.FromXml(fileContents), clsAllNotes)
         Catch ex As Exception
             'MsgBox(ex.Message)
@@ -175,7 +271,7 @@
         Try
             Dim Xmsg As New Xstream.Core.XStream
             Xmsg.Alias("AllNotes", GetType(clsAllNotes))
-            Xmsg.Alias("Note", GetType(clsAllNotes.clsNoteData))
+            Xmsg.Alias("Note", GetType(clsNoteData))
 
 
             My.Computer.FileSystem.WriteAllText("done_data.xml", Xmsg.ToXml(DONE_NOTES), False)
@@ -189,7 +285,7 @@
 
 #Region "Note Handle"
     Sub loadAllNotePaper()
-        For Each obj As clsAllNotes.clsNoteData In aryALL_NOTES
+        For Each obj As clsNoteData In aryALL_NOTES
             If obj.blnNoteDetailmode.ToUpper.Equals("Y") Then
                 T.createNewNoteDetailPaper(obj).Owner = frmMain
             Else
@@ -197,19 +293,19 @@
             End If
         Next
     End Sub
-    Sub setNoteColor(ByVal noteClass As clsAllNotes.clsNoteData, ByVal colorNo As Integer)
+    Sub setNoteColor(ByVal noteClass As clsNoteData, ByVal colorNo As Integer)
         noteClass.note_color = colorNo.ToString
     End Sub
     Function getNewNoteNo() As Double
         Dim NextNoteNo As Double = -1
-        For Each obj As clsAllNotes.clsNoteData In aryALL_NOTES
+        For Each obj As clsNoteData In aryALL_NOTES
             If CType(obj.note_no, Double) > NextNoteNo Then
                 NextNoteNo = CType(obj.note_no, Double)
             End If
         Next
         Return NextNoteNo + 1
     End Function
-    Sub changeNoteMode(ByVal noteClass As clsAllNotes.clsNoteData, ByVal DetailMode As Boolean)
+    Sub changeNoteMode(ByVal noteClass As clsNoteData, ByVal DetailMode As Boolean)
         T.removeNotePaper(noteClass)
         If DetailMode Then
             noteClass.blnNoteDetailmode = "Y"
@@ -223,8 +319,8 @@
     Function getTotalNoteCount() As Double
         Return aryALL_NOTES.Count
     End Function
-    Function getNoteClass(ByVal note_no As String) As clsAllNotes.clsNoteData
-        For Each obj As clsAllNotes.clsNoteData In aryALL_NOTES
+    Function getNoteClass(ByVal note_no As String) As clsNoteData
+        For Each obj As clsNoteData In aryALL_NOTES
             If obj.note_no = note_no Then
                 Return obj
             End If
@@ -242,7 +338,7 @@
             MsgBox(ex.Message, , "Error")
         End Try
     End Sub
-    Function getNotePaper(ByVal noteClass As clsAllNotes.clsNoteData) As INotePaper
+    Function getNotePaper(ByVal noteClass As clsNoteData) As INotePaper
         For Each obj As INotePaper In aryALL_NOTES_paper
             If obj.readNoteData.Equals(noteClass) Then
                 Return obj
@@ -251,23 +347,24 @@
         Return Nothing
     End Function
 #Region "NotePaper"
-    Sub removeNotePaper(ByVal noteClass As clsAllNotes.clsNoteData)
+    Sub removeNotePaper(ByVal noteClass As clsNoteData)
         For Each obj As INotePaper In aryALL_NOTES_paper
             If obj.readNoteData.Equals(noteClass) Then
                 aryALL_NOTES_paper.Remove(obj)
+
                 CType(obj, Form).Dispose()
                 Return
             End If
         Next
     End Sub
-    Public Function createNewNoteDetailPaper(ByVal noteClass As clsAllNotes.clsNoteData) As frmNoteDetailTemplate
+    Public Function createNewNoteDetailPaper(ByVal noteClass As clsNoteData) As frmNoteDetailTemplate
         Dim newNoteFormDetail As New frmNoteDetailTemplate(noteClass)
         newNoteFormDetail.Show()
         newNoteFormDetail.Owner = frmMain
         aryALL_NOTES_paper.Add(newNoteFormDetail)
         Return newNoteFormDetail
     End Function
-    Public Function createNewNotePaper(ByVal noteClass As clsAllNotes.clsNoteData) As frmNoteTemplate
+    Public Function createNewNotePaper(ByVal noteClass As clsNoteData) As frmNoteTemplate
         Dim newNoteForm As New frmNoteTemplate(noteClass)
         newNoteForm.Show()
         newNoteForm.Owner = frmMain
@@ -301,7 +398,7 @@
 
     End Sub
     Sub deleteNote(ByVal note_no As String)
-        For Each obj As clsAllNotes.clsNoteData In aryALL_NOTES
+        For Each obj As clsNoteData In aryALL_NOTES
             If obj.note_no.Equals(note_no) Then
 
                 removeNotePaper(obj)
@@ -313,8 +410,8 @@
             End If
         Next
     End Sub
-    Function addNote() As clsAllNotes.clsNoteData
-        Dim newNote As New clsAllNotes.clsNoteData(getNewNoteNo.ToString)
+    Function addNote() As clsNoteData
+        Dim newNote As New clsNoteData(getNewNoteNo.ToString)
 
         aryALL_NOTES.Add(newNote)
         frmMain.refreshNote_no()
@@ -322,9 +419,9 @@
     End Function
     Function addNote(ByVal varNoteTitle As String, ByVal varNoteContent As String, _
                      ByVal alerm As String, ByVal alerm_time As String, ByVal piority As String, _
-                     ByVal noteColor As String) As clsAllNotes.clsNoteData
+                     ByVal noteColor As String) As clsNoteData
 
-        Dim newNote As New clsAllNotes.clsNoteData(getNewNoteNo.ToString)
+        Dim newNote As New clsNoteData(getNewNoteNo.ToString)
         newNote.note_title = varNoteTitle
 
         newNote.note_content = varNoteContent

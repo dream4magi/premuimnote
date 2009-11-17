@@ -33,12 +33,22 @@ Partial Class frmNoteDetailTemplate
         Me.btnEdit = New Premium_Note.uscImageButton
         Me.btnMin = New Premium_Note.uscImageButton
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.DetailLookToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
+        Me.ThisNoteIsDONEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.AddNotToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator
         Me.panNote.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'panNote
         '
         Me.panNote.BackgroundImage = Global.Premium_Note.My.Resources.Resources.noteColor0
+        Me.panNote.ContextMenuStrip = Me.ContextMenuStrip1
         Me.panNote.Controls.Add(Me.chkTop)
         Me.panNote.Controls.Add(Me.lblContent)
         Me.panNote.Controls.Add(Me.line)
@@ -56,6 +66,7 @@ Partial Class frmNoteDetailTemplate
         '
         Me.chkTop.AutoSize = True
         Me.chkTop.BackColor = System.Drawing.Color.Transparent
+        Me.chkTop.ContextMenuStrip = Me.ContextMenuStrip1
         Me.chkTop.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkTop.Location = New System.Drawing.Point(77, 160)
         Me.chkTop.Name = "chkTop"
@@ -67,6 +78,7 @@ Partial Class frmNoteDetailTemplate
         'lblContent
         '
         Me.lblContent.BackColor = System.Drawing.Color.Transparent
+        Me.lblContent.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lblContent.Location = New System.Drawing.Point(7, 27)
         Me.lblContent.Name = "lblContent"
         Me.lblContent.Size = New System.Drawing.Size(160, 134)
@@ -85,6 +97,7 @@ Partial Class frmNoteDetailTemplate
         '
         Me.lblTitle.AutoEllipsis = True
         Me.lblTitle.BackColor = System.Drawing.Color.Transparent
+        Me.lblTitle.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lblTitle.Location = New System.Drawing.Point(4, 3)
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Size = New System.Drawing.Size(166, 18)
@@ -97,6 +110,7 @@ Partial Class frmNoteDetailTemplate
         Me.btnDone.AutoSize = True
         Me.btnDone.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnDone.BackColor = System.Drawing.Color.Transparent
+        Me.btnDone.ContextMenuStrip = Me.ContextMenuStrip1
         Me.btnDone.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnDone.HoverImage = Global.Premium_Note.My.Resources.Resources.done_hover
         Me.btnDone.Location = New System.Drawing.Point(9, 164)
@@ -113,6 +127,7 @@ Partial Class frmNoteDetailTemplate
         Me.btnDelete.AutoSize = True
         Me.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnDelete.BackColor = System.Drawing.Color.Transparent
+        Me.btnDelete.ContextMenuStrip = Me.ContextMenuStrip1
         Me.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnDelete.HoverImage = Global.Premium_Note.My.Resources.Resources.delete_hover
         Me.btnDelete.Location = New System.Drawing.Point(26, 164)
@@ -129,6 +144,7 @@ Partial Class frmNoteDetailTemplate
         Me.btnEdit.AutoSize = True
         Me.btnEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnEdit.BackColor = System.Drawing.Color.Transparent
+        Me.btnEdit.ContextMenuStrip = Me.ContextMenuStrip1
         Me.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEdit.HoverImage = Global.Premium_Note.My.Resources.Resources.edit_hover
         Me.btnEdit.Location = New System.Drawing.Point(43, 164)
@@ -145,6 +161,7 @@ Partial Class frmNoteDetailTemplate
         Me.btnMin.AutoSize = True
         Me.btnMin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnMin.BackColor = System.Drawing.Color.Transparent
+        Me.btnMin.ContextMenuStrip = Me.ContextMenuStrip1
         Me.btnMin.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnMin.HoverImage = Global.Premium_Note.My.Resources.Resources.min_hover
         Me.btnMin.Location = New System.Drawing.Point(59, 164)
@@ -164,6 +181,52 @@ Partial Class frmNoteDetailTemplate
         Me.ToolTip1.ReshowDelay = 80
         Me.ToolTip1.ShowAlways = True
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DetailLookToolStripMenuItem, Me.ToolStripMenuItem1, Me.ThisNoteIsDONEToolStripMenuItem, Me.AddNotToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.ToolStripMenuItem2})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(185, 126)
+        '
+        'DetailLookToolStripMenuItem
+        '
+        Me.DetailLookToolStripMenuItem.Name = "DetailLookToolStripMenuItem"
+        Me.DetailLookToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.DetailLookToolStripMenuItem.Text = "Tabl Look"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(181, 6)
+        '
+        'ThisNoteIsDONEToolStripMenuItem
+        '
+        Me.ThisNoteIsDONEToolStripMenuItem.Name = "ThisNoteIsDONEToolStripMenuItem"
+        Me.ThisNoteIsDONEToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.ThisNoteIsDONEToolStripMenuItem.Text = "This Note Is DONE!"
+        '
+        'AddNotToolStripMenuItem
+        '
+        Me.AddNotToolStripMenuItem.Name = "AddNotToolStripMenuItem"
+        Me.AddNotToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.AddNotToolStripMenuItem.Text = "Add New Note"
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.EditToolStripMenuItem.Text = "Edit"
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(181, 6)
+        '
         'frmNoteDetailTemplate
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -179,6 +242,7 @@ Partial Class frmNoteDetailTemplate
         Me.TransparencyKey = System.Drawing.Color.Fuchsia
         Me.panNote.ResumeLayout(False)
         Me.panNote.PerformLayout()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -192,4 +256,12 @@ Partial Class frmNoteDetailTemplate
     Friend WithEvents lblTitle As System.Windows.Forms.Label
     Friend WithEvents chkTop As System.Windows.Forms.CheckBox
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents DetailLookToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ThisNoteIsDONEToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AddNotToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EditToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DeleteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
 End Class
