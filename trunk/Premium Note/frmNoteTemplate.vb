@@ -280,7 +280,8 @@ Public Class frmNoteTemplate
     End Sub
 
     Private Sub ArrangeTabsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArrangeTabsToolStripMenuItem.Click
-        T.arrangeTabs()
+        'T.arrangeTabs()
+        T.arrangeTabsByPosition()
     End Sub
 
     Private Sub ArrangesTabsByColorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArrangesTabsByColorToolStripMenuItem.Click
@@ -289,5 +290,9 @@ Public Class frmNoteTemplate
 
     Private Sub ArrangeTabsByAutoHideToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArrangeTabsByAutoHideToolStripMenuItem.Click
         T.arrangeTabsByAutoHide()
+    End Sub
+
+    Private Sub AllToTabsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AllToTabsToolStripMenuItem.Click
+        T.AlltoTabs()
     End Sub
 End Class

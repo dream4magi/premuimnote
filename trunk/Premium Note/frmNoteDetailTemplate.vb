@@ -279,4 +279,8 @@ Public Class frmNoteDetailTemplate
     Private Sub DeleteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteToolStripMenuItem.Click
         NoteDelete()
     End Sub
+
+    Private Sub AllToTabsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AllToTabsToolStripMenuItem.Click
+        T.AlltoTabs()
+    End Sub
 End Class

@@ -133,19 +133,21 @@ Public Class frmMain
         tlblStatus.Text = String.Format("Auto Save at {0}", Now().ToString("MM/dd HH:mm"))
     End Sub
 
-    Private Sub btnRecord_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRecord.Click
+ 
 
+    Private Sub AllToTabsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AllToTabsToolStripMenuItem.Click
+        AlltoTabs()
     End Sub
 
-    Private Sub ArrangeTabsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArrangeTabsToolStripMenuItem.Click
-        T.arrangeTabs()
+    Private Sub ArrangeTabsToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArrangeTabsToolStripMenuItem1.Click
+        T.arrangeTabsByPosition()
     End Sub
 
-    Private Sub ArrangeTabsByColorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArrangeTabsByColorToolStripMenuItem.Click
+    Private Sub ArrangeTabsByColorToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArrangeTabsByColorToolStripMenuItem1.Click
         T.arrangeTabsByColor()
     End Sub
 
-    Private Sub ArrangeTabsByAutoHideToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArrangeTabsByAutoHideToolStripMenuItem.Click
+    Private Sub ArrangeTabsByAutoHideToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArrangeTabsByAutoHideToolStripMenuItem1.Click
         T.arrangeTabsByAutoHide()
     End Sub
 End Class

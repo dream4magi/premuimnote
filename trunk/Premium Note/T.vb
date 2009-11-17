@@ -96,7 +96,47 @@
         End If
 
     End Sub
+    Sub arrangeTabsByPosition()
+        Dim start_X As Integer = 100
+        Dim end_X As Integer = My.Computer.Screen.PrimaryScreen.Bounds.Width - 120
 
+
+
+
+        Dim tmpList As New List(Of frmNoteTemplate)
+
+
+        For Each obj As INotePaper In aryALL_NOTES_paper
+            If obj.GetType.Equals(GetType(frmNoteTemplate)) Then
+
+                tmpList.Add(CType(obj, frmNoteTemplate))
+            End If
+        Next
+        Dim swap As frmNoteTemplate = Nothing
+
+        For i As Integer = 0 To tmpList.Count - 1
+            For j As Integer = i To tmpList.Count - 1
+                If tmpList.Item(j).Left < tmpList.Item(i).Left Then
+                    swap = tmpList.Item(j)
+                    tmpList.Item(j) = tmpList.Item(i)
+                    tmpList.Item(i) = swap
+                End If
+            Next
+        Next
+
+        If tmpList.Count * 23 + (tmpList.Count - 1) * 2 > end_X - start_X Then
+            For i As Integer = 0 To tmpList.Count - 1
+                tmpList.Item(i).Left = CInt(start_X + i * (end_X - start_X) / tmpList.Count)
+                tmpList.Item(i).BringToFront()
+            Next
+        Else
+            For i As Integer = 0 To tmpList.Count - 1
+                tmpList.Item(i).Left = start_X + i * (23 + 2)
+                tmpList.Item(i).BringToFront()
+            Next
+        End If
+
+    End Sub
     Sub arrangeTabsByColor()
         Dim start_X As Integer = 100
         Dim end_X As Integer = My.Computer.Screen.PrimaryScreen.Bounds.Width - 120
@@ -115,7 +155,7 @@
                 For i As Integer = 0 To aryTabs.Count - 1
                     If aryTabs.Item(i).readNoteData.note_color.Equals(j.ToString) Then
                         aryTabs.Item(i).Left = CInt(start_X + iCount * (end_X - start_X) / aryTabs.Count)
-                        aryTabs.Item(i).SendToBack()
+                        aryTabs.Item(i).BringToFront()
                         iCount += 1
                     End If
                 Next
@@ -127,7 +167,7 @@
                 For i As Integer = 0 To aryTabs.Count - 1
                     If aryTabs.Item(i).readNoteData.note_color.Equals(j.ToString) Then
                         aryTabs.Item(i).Left = start_X + iCount * (23 + 2)
-                        aryTabs.Item(i).SendToBack()
+                        aryTabs.Item(i).BringToFront()
                         iCount += 1
                     End If
                 Next
@@ -154,14 +194,14 @@
             For i As Integer = 0 To aryTabs.Count - 1
                 If aryTabs.Item(i).readNoteData.note_TabAutoHide.ToUpper.Equals("N") Then
                     aryTabs.Item(i).Left = CInt(start_X + iCount * (end_X - start_X) / aryTabs.Count)
-                    aryTabs.Item(i).SendToBack()
+                    aryTabs.Item(i).BringToFront()
                     iCount += 1
                 End If
             Next
             For i As Integer = 0 To aryTabs.Count - 1
                 If aryTabs.Item(i).readNoteData.note_TabAutoHide.ToUpper.Equals("Y") Then
                     aryTabs.Item(i).Left = CInt(start_X + iCount * (end_X - start_X) / aryTabs.Count)
-                    aryTabs.Item(i).SendToBack()
+                    aryTabs.Item(i).BringToFront()
                     iCount += 1
                 End If
             Next
@@ -175,19 +215,49 @@
             For i As Integer = 0 To aryTabs.Count - 1
                 If aryTabs.Item(i).readNoteData.note_TabAutoHide.ToUpper.Equals("N") Then
                     aryTabs.Item(i).Left = start_X + iCount * (23 + 2)
-                    aryTabs.Item(i).SendToBack()
+                    aryTabs.Item(i).BringToFront()
                     iCount += 1
                 End If
             Next
             For i As Integer = 0 To aryTabs.Count - 1
                 If aryTabs.Item(i).readNoteData.note_TabAutoHide.ToUpper.Equals("Y") Then
                     aryTabs.Item(i).Left = start_X + iCount * (23 + 2)
-                    aryTabs.Item(i).SendToBack()
+                    aryTabs.Item(i).BringToFront()
                     iCount += 1
                 End If
             Next
 
         End If
+
+    End Sub
+    Sub AlltoTabs()
+        Dim tmpList As New List(Of frmNoteDetailTemplate)
+
+        For Each obj As INotePaper In aryALL_NOTES_paper
+            If obj.GetType.Equals(GetType(frmNoteDetailTemplate)) Then
+                tmpList.Add(CType(obj, frmNoteDetailTemplate))
+            End If
+        Next
+
+        For Each obj As frmNoteDetailTemplate In tmpList
+            T.changeNoteMode(obj.readNoteData, False)
+        Next
+
+
+        'rearrange
+        Select Case My.Settings.SORT_METHOD
+            Case 0
+                T.arrangeTabsByPosition()
+            Case 1
+                T.arrangeTabsByColor()
+            Case 2
+                T.arrangeTabsByAutoHide()
+            Case 3
+
+            Case Else
+
+        End Select
+
 
     End Sub
 #End Region
