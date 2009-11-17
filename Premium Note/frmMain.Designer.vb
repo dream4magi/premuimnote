@@ -28,10 +28,15 @@ Partial Class frmMain
         Me.ShowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.HideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AddNewNoteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ArrangeTabsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.AllToTabsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator
         Me.StartWithSystemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
         Me.ExitPremiumNoteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.TabsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ArrangeTabsToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
+        Me.ArrangeTabsByColorToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
+        Me.ArrangeTabsByAutoHideToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
         Me.btnAddNote = New System.Windows.Forms.Button
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip
         Me.tlblNoteNo = New System.Windows.Forms.ToolStripStatusLabel
@@ -42,8 +47,6 @@ Partial Class frmMain
         Me.btnAbout = New System.Windows.Forms.LinkLabel
         Me.tmr = New System.Windows.Forms.Timer(Me.components)
         Me.tmrAlermCheck = New System.Windows.Forms.Timer(Me.components)
-        Me.ArrangeTabsByColorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ArrangeTabsByAutoHideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.TaskIconMenu.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -57,51 +60,81 @@ Partial Class frmMain
         '
         'TaskIconMenu
         '
-        Me.TaskIconMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.HideToolStripMenuItem, Me.AddNewNoteToolStripMenuItem, Me.ArrangeTabsToolStripMenuItem, Me.ArrangeTabsByColorToolStripMenuItem, Me.ArrangeTabsByAutoHideToolStripMenuItem, Me.StartWithSystemToolStripMenuItem, Me.ToolStripMenuItem1, Me.ExitPremiumNoteToolStripMenuItem})
+        Me.TaskIconMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.HideToolStripMenuItem, Me.AddNewNoteToolStripMenuItem, Me.AllToTabsToolStripMenuItem, Me.ToolStripMenuItem2, Me.StartWithSystemToolStripMenuItem, Me.ToolStripMenuItem1, Me.ExitPremiumNoteToolStripMenuItem, Me.TabsToolStripMenuItem})
         Me.TaskIconMenu.Name = "TaskIconMenu"
-        Me.TaskIconMenu.Size = New System.Drawing.Size(225, 208)
+        Me.TaskIconMenu.Size = New System.Drawing.Size(182, 192)
         '
         'ShowToolStripMenuItem
         '
         Me.ShowToolStripMenuItem.Name = "ShowToolStripMenuItem"
-        Me.ShowToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.ShowToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.ShowToolStripMenuItem.Text = "Show"
         '
         'HideToolStripMenuItem
         '
         Me.HideToolStripMenuItem.Name = "HideToolStripMenuItem"
-        Me.HideToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.HideToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.HideToolStripMenuItem.Text = "Hide"
         '
         'AddNewNoteToolStripMenuItem
         '
         Me.AddNewNoteToolStripMenuItem.Name = "AddNewNoteToolStripMenuItem"
-        Me.AddNewNoteToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.AddNewNoteToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.AddNewNoteToolStripMenuItem.Text = "Add New Note"
         '
-        'ArrangeTabsToolStripMenuItem
+        'AllToTabsToolStripMenuItem
         '
-        Me.ArrangeTabsToolStripMenuItem.Name = "ArrangeTabsToolStripMenuItem"
-        Me.ArrangeTabsToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
-        Me.ArrangeTabsToolStripMenuItem.Text = "Arrange Tabs"
+        Me.AllToTabsToolStripMenuItem.Name = "AllToTabsToolStripMenuItem"
+        Me.AllToTabsToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.AllToTabsToolStripMenuItem.Text = "All toTabs"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(221, 6)
         '
         'StartWithSystemToolStripMenuItem
         '
         Me.StartWithSystemToolStripMenuItem.CheckOnClick = True
         Me.StartWithSystemToolStripMenuItem.Name = "StartWithSystemToolStripMenuItem"
-        Me.StartWithSystemToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.StartWithSystemToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.StartWithSystemToolStripMenuItem.Text = "Start With System"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(198, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(221, 6)
         '
         'ExitPremiumNoteToolStripMenuItem
         '
         Me.ExitPremiumNoteToolStripMenuItem.Name = "ExitPremiumNoteToolStripMenuItem"
-        Me.ExitPremiumNoteToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.ExitPremiumNoteToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.ExitPremiumNoteToolStripMenuItem.Text = "Exit Premium Note"
+        '
+        'TabsToolStripMenuItem
+        '
+        Me.TabsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArrangeTabsToolStripMenuItem1, Me.ArrangeTabsByColorToolStripMenuItem1, Me.ArrangeTabsByAutoHideToolStripMenuItem1})
+        Me.TabsToolStripMenuItem.Name = "TabsToolStripMenuItem"
+        Me.TabsToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.TabsToolStripMenuItem.Text = "Tabs"
+        '
+        'ArrangeTabsToolStripMenuItem1
+        '
+        Me.ArrangeTabsToolStripMenuItem1.Name = "ArrangeTabsToolStripMenuItem1"
+        Me.ArrangeTabsToolStripMenuItem1.Size = New System.Drawing.Size(224, 22)
+        Me.ArrangeTabsToolStripMenuItem1.Text = "Arrange Tabs"
+        '
+        'ArrangeTabsByColorToolStripMenuItem1
+        '
+        Me.ArrangeTabsByColorToolStripMenuItem1.Name = "ArrangeTabsByColorToolStripMenuItem1"
+        Me.ArrangeTabsByColorToolStripMenuItem1.Size = New System.Drawing.Size(224, 22)
+        Me.ArrangeTabsByColorToolStripMenuItem1.Text = "Arrange Tabs By Color"
+        '
+        'ArrangeTabsByAutoHideToolStripMenuItem1
+        '
+        Me.ArrangeTabsByAutoHideToolStripMenuItem1.Name = "ArrangeTabsByAutoHideToolStripMenuItem1"
+        Me.ArrangeTabsByAutoHideToolStripMenuItem1.Size = New System.Drawing.Size(224, 22)
+        Me.ArrangeTabsByAutoHideToolStripMenuItem1.Text = "Arrange Tabs By AutoHide"
         '
         'btnAddNote
         '
@@ -207,18 +240,6 @@ Partial Class frmMain
         Me.tmrAlermCheck.Enabled = True
         Me.tmrAlermCheck.Interval = 25000
         '
-        'ArrangeTabsByColorToolStripMenuItem
-        '
-        Me.ArrangeTabsByColorToolStripMenuItem.Name = "ArrangeTabsByColorToolStripMenuItem"
-        Me.ArrangeTabsByColorToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
-        Me.ArrangeTabsByColorToolStripMenuItem.Text = "Arrange Tabs By Color"
-        '
-        'ArrangeTabsByAutoHideToolStripMenuItem
-        '
-        Me.ArrangeTabsByAutoHideToolStripMenuItem.Name = "ArrangeTabsByAutoHideToolStripMenuItem"
-        Me.ArrangeTabsByAutoHideToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
-        Me.ArrangeTabsByAutoHideToolStripMenuItem.Text = "Arrange Tabs By AutoHide"
-        '
         'frmMain
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -264,9 +285,12 @@ Partial Class frmMain
     Friend WithEvents btnAbout As System.Windows.Forms.LinkLabel
     Friend WithEvents tmr As System.Windows.Forms.Timer
     Friend WithEvents tmrAlermCheck As System.Windows.Forms.Timer
-    Friend WithEvents ArrangeTabsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ArrangeTabsByColorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ArrangeTabsByAutoHideToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AllToTabsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents TabsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ArrangeTabsToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ArrangeTabsByColorToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ArrangeTabsByAutoHideToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class

@@ -28,10 +28,6 @@ Partial Class frmNoteDetailTemplate
         Me.lblContent = New System.Windows.Forms.Label
         Me.line = New System.Windows.Forms.Panel
         Me.lblTitle = New System.Windows.Forms.Label
-        Me.btnDone = New Premium_Note.uscImageButton
-        Me.btnDelete = New Premium_Note.uscImageButton
-        Me.btnEdit = New Premium_Note.uscImageButton
-        Me.btnMin = New Premium_Note.uscImageButton
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.DetailLookToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -41,6 +37,11 @@ Partial Class frmNoteDetailTemplate
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator
+        Me.btnDone = New Premium_Note.uscImageButton
+        Me.btnDelete = New Premium_Note.uscImageButton
+        Me.btnEdit = New Premium_Note.uscImageButton
+        Me.btnMin = New Premium_Note.uscImageButton
+        Me.AllToTabsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.panNote.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -104,6 +105,60 @@ Partial Class frmNoteDetailTemplate
         Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "Label2"
         Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.AutomaticDelay = 400
+        Me.ToolTip1.AutoPopDelay = 5000
+        Me.ToolTip1.InitialDelay = 400
+        Me.ToolTip1.ReshowDelay = 80
+        Me.ToolTip1.ShowAlways = True
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DetailLookToolStripMenuItem, Me.AllToTabsToolStripMenuItem, Me.ToolStripMenuItem1, Me.ThisNoteIsDONEToolStripMenuItem, Me.AddNotToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.ToolStripMenuItem2})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(185, 170)
+        '
+        'DetailLookToolStripMenuItem
+        '
+        Me.DetailLookToolStripMenuItem.Name = "DetailLookToolStripMenuItem"
+        Me.DetailLookToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.DetailLookToolStripMenuItem.Text = "Tab Look"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(181, 6)
+        '
+        'ThisNoteIsDONEToolStripMenuItem
+        '
+        Me.ThisNoteIsDONEToolStripMenuItem.Name = "ThisNoteIsDONEToolStripMenuItem"
+        Me.ThisNoteIsDONEToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.ThisNoteIsDONEToolStripMenuItem.Text = "This Note Is DONE!"
+        '
+        'AddNotToolStripMenuItem
+        '
+        Me.AddNotToolStripMenuItem.Name = "AddNotToolStripMenuItem"
+        Me.AddNotToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.AddNotToolStripMenuItem.Text = "Add New Note"
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.EditToolStripMenuItem.Text = "Edit"
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(181, 6)
         '
         'btnDone
         '
@@ -173,59 +228,11 @@ Partial Class frmNoteDetailTemplate
         Me.btnMin.TabIndex = 5
         Me.btnMin.ToolTipMe = "Edge Tab"
         '
-        'ToolTip1
+        'AllToTabsToolStripMenuItem
         '
-        Me.ToolTip1.AutomaticDelay = 400
-        Me.ToolTip1.AutoPopDelay = 5000
-        Me.ToolTip1.InitialDelay = 400
-        Me.ToolTip1.ReshowDelay = 80
-        Me.ToolTip1.ShowAlways = True
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DetailLookToolStripMenuItem, Me.ToolStripMenuItem1, Me.ThisNoteIsDONEToolStripMenuItem, Me.AddNotToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.ToolStripMenuItem2})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(185, 126)
-        '
-        'DetailLookToolStripMenuItem
-        '
-        Me.DetailLookToolStripMenuItem.Name = "DetailLookToolStripMenuItem"
-        Me.DetailLookToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.DetailLookToolStripMenuItem.Text = "Tabl Look"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(181, 6)
-        '
-        'ThisNoteIsDONEToolStripMenuItem
-        '
-        Me.ThisNoteIsDONEToolStripMenuItem.Name = "ThisNoteIsDONEToolStripMenuItem"
-        Me.ThisNoteIsDONEToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.ThisNoteIsDONEToolStripMenuItem.Text = "This Note Is DONE!"
-        '
-        'AddNotToolStripMenuItem
-        '
-        Me.AddNotToolStripMenuItem.Name = "AddNotToolStripMenuItem"
-        Me.AddNotToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.AddNotToolStripMenuItem.Text = "Add New Note"
-        '
-        'EditToolStripMenuItem
-        '
-        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.EditToolStripMenuItem.Text = "Edit"
-        '
-        'DeleteToolStripMenuItem
-        '
-        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.DeleteToolStripMenuItem.Text = "Delete"
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(181, 6)
+        Me.AllToTabsToolStripMenuItem.Name = "AllToTabsToolStripMenuItem"
+        Me.AllToTabsToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.AllToTabsToolStripMenuItem.Text = "All to Tabs"
         '
         'frmNoteDetailTemplate
         '
@@ -264,4 +271,5 @@ Partial Class frmNoteDetailTemplate
     Friend WithEvents EditToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DeleteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents AllToTabsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

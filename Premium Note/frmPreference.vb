@@ -11,6 +11,8 @@ Public Class frmPreference
         Me.lblTabOpacity.Text = TrackBarTabOpacity.Value.ToString
         chkTabOnTop.Checked = My.Settings.NOTE_TAB_ON_TOP
         chkAnimation.Checked = My.Settings.ANIMATION
+
+        cboSort.SelectedIndex = My.Settings.SORT_METHOD
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
@@ -74,4 +76,7 @@ Public Class frmPreference
     End Sub
 
 
+    Private Sub cboSort_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cboSort.SelectedIndexChanged
+        My.Settings.SORT_METHOD = cboSort.SelectedIndex
+    End Sub
 End Class
