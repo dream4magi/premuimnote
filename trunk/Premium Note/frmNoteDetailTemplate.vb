@@ -6,7 +6,7 @@ Public Class frmNoteDetailTemplate
     Private WithEvents txtTitle As TextBox
     Private WithEvents txtContent As TextBox
 
-    Dim noteData As clsAllNotes.clsNoteData
+    Dim noteData As clsNoteData
     Private WithEvents tmr As New Timer
     'Public note_title As String
     'Public note_content As String
@@ -20,14 +20,14 @@ Public Class frmNoteDetailTemplate
 
     'Public note_piority As String
     'Public blnNoteDetailmode As String
-    Public Sub New(ByVal noteClass As clsAllNotes.clsNoteData)
+    Public Sub New(ByVal noteClass As clsNoteData)
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
         noteData = noteClass
         ' Add any initialization after the InitializeComponent() call.
         Me.Opacity = My.Settings.NOTE_OPACITY
     End Sub
-    Public Sub New(ByVal noteClass As clsAllNotes.clsNoteData, ByVal Opacity As Double)
+    Public Sub New(ByVal noteClass As clsNoteData, ByVal Opacity As Double)
 
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
@@ -46,17 +46,17 @@ Public Class frmNoteDetailTemplate
         Me.Font = My.Settings.NOTE_FONT
     End Sub
 
-    Sub loadNoteDataToNote(ByVal noteClass As clsAllNotes.clsNoteData) Implements INotePaper.loadNoteDataToNote
+    Sub loadNoteDataToNote(ByVal noteClass As clsNoteData) Implements INotePaper.loadNoteDataToNote
         lblTitle.Text = Me.noteData.note_title
         lblContent.Text = Me.noteData.note_content
         Me.panNote.BackgroundImage = getNoteDetailBackgroundImage(Me.noteData.note_color)
     End Sub
 
-    Property readNoteData() As clsAllNotes.clsNoteData Implements INotePaper.readNoteData
+    Property readNoteData() As clsNoteData Implements INotePaper.readNoteData
         Get
             Return noteData
         End Get
-        Set(ByVal value As clsAllNotes.clsNoteData)
+        Set(ByVal value As clsNoteData)
             Me.noteData = value
             loadNoteDataToNote(Me.noteData)
         End Set
@@ -167,21 +167,14 @@ Public Class frmNoteDetailTemplate
 
 
 
-
     Private Sub btnDone_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles btnDone.MouseClick
-        If MsgBox("Note Done ?", MsgBoxStyle.YesNo, "Please Confirm.") = MsgBoxResult.Yes Then
-            T.doneNote(Me.noteData.note_no)
-            T.noteDataChanged()
-        End If
+        NoteDone()
     End Sub
     Private Sub btnDelete_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles btnDelete.MouseClick
-        If MsgBox("This will delete the Note forever," & vbCrLf & "Continue ?", MsgBoxStyle.YesNo, "Please Confirm.") = MsgBoxResult.Yes Then
-            T.deleteNote(Me.noteData.note_no)
-            T.noteDataChanged()
-        End If
+        NoteDelete()
     End Sub
 
- 
+    
 
 #Region "Edit title"
     Private Sub lblTitle_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles lblTitle.MouseDoubleClick
@@ -195,6 +188,7 @@ Public Class frmNoteDetailTemplate
         panNote.Controls.Add(txtTitle)
         txtTitle.BringToFront()
         txtTitle.Focus()
+        txtTitle.Select(txtTitle.TextLength, 0)
     End Sub
 
     Private Sub doneTitleEdit()
@@ -224,6 +218,7 @@ Public Class frmNoteDetailTemplate
         panNote.Controls.Add(txtContent)
         txtContent.BringToFront()
         txtContent.Focus()
+        txtContent.Select(txtContent.TextLength, 0)
     End Sub
  
     Private Sub doneContentEdit()
@@ -236,6 +231,13 @@ Public Class frmNoteDetailTemplate
     Private Sub txtContent_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtContent.KeyDown
         If e.KeyCode = Keys.Escape Then
             txtContent.Dispose()
+        ElseIf e.KeyCode = Keys.Enter AndAlso e.Control Then
+            e.Handled = True
+        ElseIf e.KeyCode = Keys.Enter AndAlso e.Alt Then
+            e.Handled = True
+        ElseIf e.KeyCode = Keys.Enter Then
+            doneContentEdit()
+
         End If
     End Sub
 #End Region
@@ -254,4 +256,27 @@ Public Class frmNoteDetailTemplate
 
 
  
+    Sub NoteDelete()
+        If MsgBox("This will delete the Note forever," & vbCrLf & "Continue ?", MsgBoxStyle.YesNo, "Please Confirm.") = MsgBoxResult.Yes Then
+            T.deleteNote(Me.noteData.note_no)
+            T.noteDataChanged()
+        End If
+    End Sub
+    Sub NoteDone()
+        If MsgBox("Note Done ?", MsgBoxStyle.YesNo, "Please Confirm.") = MsgBoxResult.Yes Then
+            T.doneNote(Me.noteData.note_no)
+            T.noteDataChanged()
+        End If
+    End Sub
+    Private Sub DetailLookToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DetailLookToolStripMenuItem.Click
+        T.changeNoteMode(noteData, False)
+    End Sub
+
+    Private Sub ThisNoteIsDONEToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ThisNoteIsDONEToolStripMenuItem.Click
+        NoteDone()
+    End Sub
+
+    Private Sub DeleteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteToolStripMenuItem.Click
+        NoteDelete()
+    End Sub
 End Class

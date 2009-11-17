@@ -3,10 +3,10 @@ Option Explicit On
 Module mdlVariable
 
     Public NoteColor(4) As Color
-    Public aryALL_NOTES As New List(Of clsAllNotes.clsNoteData)
+    Public aryALL_NOTES As New List(Of clsNoteData)
     Public aryALL_NOTES_paper As New List(Of INotePaper)
 
-    Public aryDONE_NOTES As New List(Of clsAllNotes.clsNoteData)
+    Public aryDONE_NOTES As New List(Of clsNoteData)
     Sub initialNoteColor()
         NoteColor(0) = System.Drawing.Color.FromArgb(255, 230, 62)
         NoteColor(1) = System.Drawing.Color.FromArgb(181, 228, 97)

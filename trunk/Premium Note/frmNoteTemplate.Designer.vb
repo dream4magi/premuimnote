@@ -24,22 +24,110 @@ Partial Class frmNoteTemplate
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Me.panNote = New System.Windows.Forms.Panel
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.DetailLookToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.AutoHideOnOffToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
+        Me.ThisNoteIsDONEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.AddNotToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator
+        Me.ArrangeTabsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ArrangesTabsByColorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.btnNoteDone = New Premium_Note.uscImageButton
         Me.btnAutoHide = New Premium_Note.uscImageButton
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ArrangeTabsByAutoHideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.panNote.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'panNote
         '
         Me.panNote.BackgroundImage = Global.Premium_Note.My.Resources.Resources.tabColor0
+        Me.panNote.ContextMenuStrip = Me.ContextMenuStrip1
         Me.panNote.Controls.Add(Me.btnNoteDone)
         Me.panNote.Controls.Add(Me.btnAutoHide)
+        Me.panNote.Cursor = System.Windows.Forms.Cursors.Hand
         Me.panNote.Location = New System.Drawing.Point(0, 0)
         Me.panNote.Margin = New System.Windows.Forms.Padding(0)
         Me.panNote.Name = "panNote"
         Me.panNote.Size = New System.Drawing.Size(23, 62)
         Me.panNote.TabIndex = 0
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DetailLookToolStripMenuItem, Me.AutoHideOnOffToolStripMenuItem, Me.ToolStripMenuItem1, Me.ThisNoteIsDONEToolStripMenuItem, Me.AddNotToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.ToolStripMenuItem2, Me.ArrangeTabsToolStripMenuItem, Me.ArrangesTabsByColorToolStripMenuItem, Me.ArrangeTabsByAutoHideToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(225, 236)
+        '
+        'DetailLookToolStripMenuItem
+        '
+        Me.DetailLookToolStripMenuItem.Name = "DetailLookToolStripMenuItem"
+        Me.DetailLookToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.DetailLookToolStripMenuItem.Text = "Detail Look"
+        '
+        'AutoHideOnOffToolStripMenuItem
+        '
+        Me.AutoHideOnOffToolStripMenuItem.Checked = True
+        Me.AutoHideOnOffToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.AutoHideOnOffToolStripMenuItem.Name = "AutoHideOnOffToolStripMenuItem"
+        Me.AutoHideOnOffToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.AutoHideOnOffToolStripMenuItem.Text = "Auto Hide"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(221, 6)
+        '
+        'ThisNoteIsDONEToolStripMenuItem
+        '
+        Me.ThisNoteIsDONEToolStripMenuItem.Name = "ThisNoteIsDONEToolStripMenuItem"
+        Me.ThisNoteIsDONEToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.ThisNoteIsDONEToolStripMenuItem.Text = "This Note Is DONE!"
+        '
+        'AddNotToolStripMenuItem
+        '
+        Me.AddNotToolStripMenuItem.Name = "AddNotToolStripMenuItem"
+        Me.AddNotToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.AddNotToolStripMenuItem.Text = "Add New Note"
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.EditToolStripMenuItem.Text = "Edit"
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(221, 6)
+        '
+        'ArrangeTabsToolStripMenuItem
+        '
+        Me.ArrangeTabsToolStripMenuItem.Name = "ArrangeTabsToolStripMenuItem"
+        Me.ArrangeTabsToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.ArrangeTabsToolStripMenuItem.Text = "Arrange Tabs"
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.AutomaticDelay = 300
+        Me.ToolTip1.AutoPopDelay = 5000
+        Me.ToolTip1.InitialDelay = 300
+        Me.ToolTip1.ReshowDelay = 60
+        '
+        'ArrangesTabsByColorToolStripMenuItem
+        '
+        Me.ArrangesTabsByColorToolStripMenuItem.Name = "ArrangesTabsByColorToolStripMenuItem"
+        Me.ArrangesTabsByColorToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.ArrangesTabsByColorToolStripMenuItem.Text = "Arranges Tabs By Color"
         '
         'btnNoteDone
         '
@@ -73,12 +161,11 @@ Partial Class frmNoteTemplate
         Me.btnAutoHide.TabIndex = 1
         Me.btnAutoHide.ToolTipMe = "Auto Hide"
         '
-        'ToolTip1
+        'ArrangeTabsByAutoHideToolStripMenuItem
         '
-        Me.ToolTip1.AutomaticDelay = 300
-        Me.ToolTip1.AutoPopDelay = 5000
-        Me.ToolTip1.InitialDelay = 300
-        Me.ToolTip1.ReshowDelay = 60
+        Me.ArrangeTabsByAutoHideToolStripMenuItem.Name = "ArrangeTabsByAutoHideToolStripMenuItem"
+        Me.ArrangeTabsByAutoHideToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.ArrangeTabsByAutoHideToolStripMenuItem.Text = "Arrange Tabs By AutoHide"
         '
         'frmNoteTemplate
         '
@@ -97,6 +184,7 @@ Partial Class frmNoteTemplate
         Me.TransparencyKey = System.Drawing.Color.Fuchsia
         Me.panNote.ResumeLayout(False)
         Me.panNote.PerformLayout()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -104,4 +192,16 @@ Partial Class frmNoteTemplate
     Friend WithEvents btnNoteDone As Premium_Note.uscImageButton
     Friend WithEvents btnAutoHide As Premium_Note.uscImageButton
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents DetailLookToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EditToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AddNotToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AutoHideOnOffToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ThisNoteIsDONEToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DeleteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ArrangeTabsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ArrangesTabsByColorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ArrangeTabsByAutoHideToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

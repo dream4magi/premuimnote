@@ -26,10 +26,11 @@ Partial Class frmMain
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.TaskIconMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ShowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.HideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AddNewNoteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ArrangeTabsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.StartWithSystemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
-        Me.HideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ExitPremiumNoteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.btnAddNote = New System.Windows.Forms.Button
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip
@@ -41,7 +42,8 @@ Partial Class frmMain
         Me.btnAbout = New System.Windows.Forms.LinkLabel
         Me.tmr = New System.Windows.Forms.Timer(Me.components)
         Me.tmrAlermCheck = New System.Windows.Forms.Timer(Me.components)
-        Me.ArrangeTabsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ArrangeTabsByColorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ArrangeTabsByAutoHideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.TaskIconMenu.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -55,44 +57,50 @@ Partial Class frmMain
         '
         'TaskIconMenu
         '
-        Me.TaskIconMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.HideToolStripMenuItem, Me.AddNewNoteToolStripMenuItem, Me.ArrangeTabsToolStripMenuItem, Me.StartWithSystemToolStripMenuItem, Me.ToolStripMenuItem1, Me.ExitPremiumNoteToolStripMenuItem})
+        Me.TaskIconMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.HideToolStripMenuItem, Me.AddNewNoteToolStripMenuItem, Me.ArrangeTabsToolStripMenuItem, Me.ArrangeTabsByColorToolStripMenuItem, Me.ArrangeTabsByAutoHideToolStripMenuItem, Me.StartWithSystemToolStripMenuItem, Me.ToolStripMenuItem1, Me.ExitPremiumNoteToolStripMenuItem})
         Me.TaskIconMenu.Name = "TaskIconMenu"
-        Me.TaskIconMenu.Size = New System.Drawing.Size(182, 164)
+        Me.TaskIconMenu.Size = New System.Drawing.Size(225, 208)
         '
         'ShowToolStripMenuItem
         '
         Me.ShowToolStripMenuItem.Name = "ShowToolStripMenuItem"
-        Me.ShowToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.ShowToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
         Me.ShowToolStripMenuItem.Text = "Show"
+        '
+        'HideToolStripMenuItem
+        '
+        Me.HideToolStripMenuItem.Name = "HideToolStripMenuItem"
+        Me.HideToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.HideToolStripMenuItem.Text = "Hide"
         '
         'AddNewNoteToolStripMenuItem
         '
         Me.AddNewNoteToolStripMenuItem.Name = "AddNewNoteToolStripMenuItem"
-        Me.AddNewNoteToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.AddNewNoteToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
         Me.AddNewNoteToolStripMenuItem.Text = "Add New Note"
+        '
+        'ArrangeTabsToolStripMenuItem
+        '
+        Me.ArrangeTabsToolStripMenuItem.Name = "ArrangeTabsToolStripMenuItem"
+        Me.ArrangeTabsToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.ArrangeTabsToolStripMenuItem.Text = "Arrange Tabs"
         '
         'StartWithSystemToolStripMenuItem
         '
         Me.StartWithSystemToolStripMenuItem.CheckOnClick = True
         Me.StartWithSystemToolStripMenuItem.Name = "StartWithSystemToolStripMenuItem"
-        Me.StartWithSystemToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.StartWithSystemToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
         Me.StartWithSystemToolStripMenuItem.Text = "Start With System"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(178, 6)
-        '
-        'HideToolStripMenuItem
-        '
-        Me.HideToolStripMenuItem.Name = "HideToolStripMenuItem"
-        Me.HideToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
-        Me.HideToolStripMenuItem.Text = "Hide"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(198, 6)
         '
         'ExitPremiumNoteToolStripMenuItem
         '
         Me.ExitPremiumNoteToolStripMenuItem.Name = "ExitPremiumNoteToolStripMenuItem"
-        Me.ExitPremiumNoteToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.ExitPremiumNoteToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
         Me.ExitPremiumNoteToolStripMenuItem.Text = "Exit Premium Note"
         '
         'btnAddNote
@@ -199,11 +207,17 @@ Partial Class frmMain
         Me.tmrAlermCheck.Enabled = True
         Me.tmrAlermCheck.Interval = 25000
         '
-        'ArrangeTabsToolStripMenuItem
+        'ArrangeTabsByColorToolStripMenuItem
         '
-        Me.ArrangeTabsToolStripMenuItem.Name = "ArrangeTabsToolStripMenuItem"
-        Me.ArrangeTabsToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
-        Me.ArrangeTabsToolStripMenuItem.Text = "Arrange Tabs"
+        Me.ArrangeTabsByColorToolStripMenuItem.Name = "ArrangeTabsByColorToolStripMenuItem"
+        Me.ArrangeTabsByColorToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.ArrangeTabsByColorToolStripMenuItem.Text = "Arrange Tabs By Color"
+        '
+        'ArrangeTabsByAutoHideToolStripMenuItem
+        '
+        Me.ArrangeTabsByAutoHideToolStripMenuItem.Name = "ArrangeTabsByAutoHideToolStripMenuItem"
+        Me.ArrangeTabsByAutoHideToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.ArrangeTabsByAutoHideToolStripMenuItem.Text = "Arrange Tabs By AutoHide"
         '
         'frmMain
         '
@@ -251,6 +265,8 @@ Partial Class frmMain
     Friend WithEvents tmr As System.Windows.Forms.Timer
     Friend WithEvents tmrAlermCheck As System.Windows.Forms.Timer
     Friend WithEvents ArrangeTabsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ArrangeTabsByColorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ArrangeTabsByAutoHideToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class
