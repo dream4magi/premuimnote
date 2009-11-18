@@ -9,13 +9,13 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Premium Note")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("None")> 
-<Assembly: AssemblyProduct("Premium Note 1.0 Alpha")> 
-<Assembly: AssemblyCopyright("Copyright © Spike Lee 2010")> 
+<Assembly: AssemblyDescription("A holiday work for more convenient life .")> 
+<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyProduct("Premium Note 1.0")> 
+<Assembly: AssemblyCopyright("Copyrights © Spike Lee 2010")> 
 <Assembly: AssemblyTrademark("")> 
 
-<Assembly: ComVisible(True)> 
+<Assembly: ComVisible(False)> 
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
 <Assembly: Guid("87593ed0-ca22-458e-b034-c37ba699612e")> 
