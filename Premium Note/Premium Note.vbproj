@@ -20,7 +20,7 @@
     <SignManifests>true</SignManifests>
     <SignAssembly>false</SignAssembly>
     <TargetZone>LocalIntranet</TargetZone>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <ApplicationIcon>Blender.ico</ApplicationIcon>
     <ManifestCertificateThumbprint>5D4FFA4181909987E49AD581BBB687F004EC961F</ManifestCertificateThumbprint>
@@ -39,10 +39,11 @@
     <PublisherName>Spike Lee</PublisherName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -297,6 +298,7 @@
     <None Include="resources\AutoHide_hover.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="Premium Note_TemporaryKey.pfx" />
     <None Include="resources\logo.png" />
   </ItemGroup>
