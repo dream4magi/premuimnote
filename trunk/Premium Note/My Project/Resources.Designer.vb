@@ -186,6 +186,13 @@ Namespace My.Resources
             End Get
         End Property
         
+        Public ReadOnly Property logo() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("logo", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Public ReadOnly Property max() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("max", resourceCulture)
