@@ -25,6 +25,9 @@ Partial Class frmAbout
         Me.Label1 = New System.Windows.Forms.Label
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel
         Me.btnAdd = New System.Windows.Forms.Button
+        Me.Label2 = New System.Windows.Forms.Label
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -64,12 +67,36 @@ Partial Class frmAbout
         Me.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAdd.UseVisualStyleBackColor = True
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Gray
+        Me.Label2.Location = New System.Drawing.Point(180, 129)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(88, 15)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "A Holiday Work"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.Premium_Note.My.Resources.Resources.logo
+        Me.PictureBox1.Location = New System.Drawing.Point(18, 83)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(249, 43)
+        Me.PictureBox1.TabIndex = 12
+        Me.PictureBox1.TabStop = False
+        '
         'frmAbout
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackgroundImage = Global.Premium_Note.My.Resources.Resources.form_bg
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(284, 262)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.Label1)
@@ -79,6 +106,7 @@ Partial Class frmAbout
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "About"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -86,4 +114,6 @@ Partial Class frmAbout
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
     Friend WithEvents btnAdd As System.Windows.Forms.Button
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class
